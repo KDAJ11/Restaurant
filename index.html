@@ -260,6 +260,71 @@ h2.sec-title {
 .reveal.on { opacity:1; transform:none; }
 .rd1{transition-delay:0s} .rd2{transition-delay:0.14s} .rd3{transition-delay:0.28s}
 
+/* ── SLIDE 8: PRICING (LIGHT) ── */
+#s8 { background: var(--cream); }
+.price-wrap { max-width: 1160px; width: 100%; }
+.price-intro { font-family:'Cormorant Garamond',serif; font-size:1.1rem; color:rgba(26,20,16,0.68); max-width:600px; line-height:1.7; margin:16px 0 36px; font-weight:300; }
+
+/* Tab switcher */
+.price-tabs { display:flex; gap:4px; margin-bottom:32px; border:1px solid var(--light-border); border-radius:6px; padding:4px; background:white; width:fit-content; }
+.p-tab { padding:9px 24px; font-size:0.75rem; font-weight:700; letter-spacing:0.08em; border-radius:4px; cursor:pointer; transition:all 0.25s; color:var(--muted-light); border:none; background:none; font-family:'Syne',sans-serif; }
+.p-tab.active { background:var(--ink); color:var(--cream); }
+
+/* Phase 1 — project items */
+.price-items { display:flex; flex-direction:column; gap:8px; margin-bottom:24px; }
+.p-item { display:grid; grid-template-columns:1fr auto auto; align-items:center; gap:16px; padding:14px 18px; background:white; border:1px solid rgba(184,146,42,0.15); border-radius:4px; transition:border-color 0.25s, box-shadow 0.25s; cursor:pointer; position:relative; }
+.p-item:hover { border-color:var(--gold); }
+.p-item.selected { border-color:var(--gold); background:rgba(184,146,42,0.04); box-shadow:0 2px 12px rgba(184,146,42,0.1); }
+.p-item.selected::before { content:''; position:absolute; left:0; top:0; bottom:0; width:3px; background:var(--gold); border-radius:4px 0 0 4px; }
+.pi-left { display:flex; flex-direction:column; gap:3px; }
+.pi-name { font-size:0.84rem; font-weight:700; color:var(--ink); }
+.pi-desc { font-size:0.69rem; color:var(--muted-light); line-height:1.4; }
+.pi-market { font-family:'DM Mono',monospace; font-size:0.68rem; color:var(--muted-light); text-decoration:line-through; text-align:right; white-space:nowrap; }
+.pi-our { font-family:'DM Mono',monospace; font-size:0.82rem; color:var(--gold); font-weight:600; text-align:right; white-space:nowrap; }
+.pi-check { width:18px; height:18px; border-radius:50%; border:2px solid rgba(184,146,42,0.3); display:flex; align-items:center; justify-content:center; transition:all 0.2s; flex-shrink:0; }
+.p-item.selected .pi-check { background:var(--gold); border-color:var(--gold); }
+.pi-check::after { content:'✓'; font-size:0.65rem; color:white; opacity:0; transition:opacity 0.2s; }
+.p-item.selected .pi-check::after { opacity:1; }
+
+/* Summary bar */
+.price-summary { display:flex; align-items:center; justify-content:space-between; padding:18px 24px; background:var(--ink); border-radius:6px; }
+.ps-left { display:flex; flex-direction:column; gap:4px; }
+.ps-label { font-family:'DM Mono',monospace; font-size:0.62rem; color:rgba(247,242,232,0.5); letter-spacing:0.15em; text-transform:uppercase; }
+.ps-total { font-family:'Cormorant Garamond',serif; font-size:2rem; color:var(--gold-light); font-weight:300; line-height:1; }
+.ps-saving { font-size:0.7rem; color:rgba(247,242,232,0.5); margin-top:4px; }
+.ps-saving span { color:var(--gold-pale); }
+.ps-right { display:flex; flex-direction:column; align-items:flex-end; gap:6px; }
+.ps-items-count { font-family:'DM Mono',monospace; font-size:0.62rem; color:rgba(247,242,232,0.45); }
+.ps-note { font-size:0.68rem; color:rgba(247,242,232,0.55); text-align:right; line-height:1.5; }
+
+/* Phase 2 retainer */
+.retainer-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:10px; margin-bottom:24px; }
+.r-card { padding:22px 18px; border:2px solid rgba(184,146,42,0.15); border-radius:6px; background:white; cursor:pointer; transition:all 0.25s; position:relative; overflow:hidden; }
+.r-card:hover { border-color:var(--gold-light); }
+.r-card.selected { border-color:var(--gold); box-shadow:0 4px 20px rgba(184,146,42,0.15); }
+.r-card.recommended::after { content:'RECOMMENDED'; position:absolute; top:10px; right:-22px; background:var(--gold); color:white; font-size:0.5rem; letter-spacing:0.15em; padding:3px 28px; transform:rotate(45deg); font-family:'DM Mono',monospace; }
+.r-name { font-size:0.78rem; font-weight:700; color:var(--ink); margin-bottom:6px; }
+.r-price { font-family:'Cormorant Garamond',serif; font-size:2.2rem; color:var(--gold); font-weight:300; line-height:1; }
+.r-price span { font-size:0.8rem; color:var(--muted-light); font-family:'Syne',sans-serif; font-weight:400; }
+.r-market { font-family:'DM Mono',monospace; font-size:0.62rem; color:var(--muted-light); text-decoration:line-through; margin:4px 0 10px; }
+.r-ul { list-style:none; }
+.r-ul li { font-size:0.7rem; color:var(--ink-soft); padding:3px 0; border-bottom:1px solid rgba(26,20,16,0.05); }
+.r-ul li::before { content:'→ '; color:var(--gold); font-size:0.58rem; }
+.r-ul li.dimmed { color:rgba(26,20,16,0.3); }
+.r-ul li.dimmed::before { color:rgba(184,146,42,0.3); }
+
+/* Year summary */
+.year-summary { display:grid; grid-template-columns:repeat(3,1fr); gap:2px; margin-top:20px; }
+.ys-box { padding:18px 20px; background:rgba(184,146,42,0.06); border:1px solid var(--light-border); }
+.ys-label { font-family:'DM Mono',monospace; font-size:0.58rem; color:var(--muted-light); letter-spacing:0.15em; text-transform:uppercase; margin-bottom:6px; }
+.ys-val { font-family:'Cormorant Garamond',serif; font-size:1.8rem; color:var(--ink); font-weight:300; }
+.ys-val.gold { color:var(--gold); }
+.ys-note { font-size:0.65rem; color:var(--muted-light); margin-top:3px; }
+
+/* hidden panels */
+.price-panel { display:none; }
+.price-panel.active { display:block; }
+
 /* RESPONSIVE */
 @media (max-width:900px) {
   .slide { padding:100px 28px 60px; }
@@ -267,6 +332,9 @@ h2.sec-title {
   .two-col, .insight-row { grid-template-columns:1fr; gap:36px; }
   .stats-6, .eco-grid, .uniq-grid, .inspo-grid { grid-template-columns:repeat(2,1fr); }
   .stat-grid { grid-template-columns:1fr; }
+  .retainer-grid, .year-summary { grid-template-columns:1fr; }
+  .p-item { grid-template-columns:1fr auto; }
+  .pi-market { display:none; }
 }
 @media (max-width:560px) {
   .stats-6, .eco-grid, .uniq-grid, .inspo-grid { grid-template-columns:1fr; }
@@ -287,6 +355,7 @@ h2.sec-title {
     <div class="nav-dot on-dark" data-slide="s6"></div>
     <div class="nav-dot on-dark" data-slide="s7"></div>
     <div class="nav-dot on-dark" data-slide="s8"></div>
+    <div class="nav-dot on-dark" data-slide="s9"></div>
   </div>
 </nav>
 
@@ -455,8 +524,202 @@ h2.sec-title {
   </div>
 </section>
 
-<!-- S8: NEXT STEPS (LIGHT) -->
-<section class="slide light2" id="s8">
+<!-- S8: PRICING (LIGHT) -->
+<section class="slide light" id="s8">
+  <div class="price-wrap">
+    <div class="reveal rd1">
+      <div class="section-tag">Your Investment</div>
+      <h2 class="sec-title">Transparent pricing.<br><em>Exceptional value.</em></h2>
+      <p class="price-intro">See exactly what's included, what it costs elsewhere, and what you pay with DOTxLabs. Click any item to include or remove it from your package.</p>
+    </div>
+
+    <!-- Tab switcher -->
+    <div class="price-tabs reveal rd2">
+      <button class="p-tab active" onclick="switchTab('phase1',this)">Phase 1 — Foundation</button>
+      <button class="p-tab" onclick="switchTab('phase2',this)">Phase 2 — Monthly Growth</button>
+    </div>
+
+    <!-- PHASE 1 PANEL -->
+    <div class="price-panel active" id="panel-phase1">
+      <div class="price-items reveal rd2" id="item-list">
+
+        <div class="p-item selected" data-price="4500" data-market="7500" onclick="toggleItem(this)">
+          <div class="pi-left">
+            <div class="pi-name">💻 Website Design + Development</div>
+            <div class="pi-desc">Custom mobile-first restaurant website — reservations, menu, WhatsApp, Google Maps integration. Built on a fast, modern platform.</div>
+          </div>
+          <div class="pi-market">Market: $7,500</div>
+          <div class="pi-our">$4,500</div>
+          <div class="pi-check"></div>
+        </div>
+
+        <div class="p-item selected" data-price="1200" data-market="2500" onclick="toggleItem(this)">
+          <div class="pi-left">
+            <div class="pi-name">🎨 Brand Identity</div>
+            <div class="pi-desc">Logo (3 concepts), brand guidelines, color palette, typography system, and social media kit. Everything you need to look world-class.</div>
+          </div>
+          <div class="pi-market">Market: $2,500</div>
+          <div class="pi-our">$1,200</div>
+          <div class="pi-check"></div>
+        </div>
+
+        <div class="p-item selected" data-price="600" data-market="1200" onclick="toggleItem(this)">
+          <div class="pi-left">
+            <div class="pi-name">🚀 Pre-Launch Hype Page</div>
+            <div class="pi-desc">Stunning coming-soon page with email capture and countdown timer — so your opening day has an audience already waiting.</div>
+          </div>
+          <div class="pi-market">Market: $1,200</div>
+          <div class="pi-our">$600</div>
+          <div class="pi-check"></div>
+        </div>
+
+        <div class="p-item selected" data-price="400" data-market="800" onclick="toggleItem(this)">
+          <div class="pi-left">
+            <div class="pi-name">📲 QR Code Menu System</div>
+            <div class="pi-desc">Digital table menus that update instantly with no reprinting costs. Tracks which dishes customers view most.</div>
+          </div>
+          <div class="pi-market">Market: $800</div>
+          <div class="pi-our">$400</div>
+          <div class="pi-check"></div>
+        </div>
+
+        <div class="p-item selected" data-price="400" data-market="800" onclick="toggleItem(this)">
+          <div class="pi-left">
+            <div class="pi-name">📍 Google Business + Maps Setup</div>
+            <div class="pi-desc">Full Google Business Profile optimization, Maps listing, photos, hours, and attributes — so you show up when Lagos diners search.</div>
+          </div>
+          <div class="pi-market">Market: $800</div>
+          <div class="pi-our">$400</div>
+          <div class="pi-check"></div>
+        </div>
+
+        <div class="p-item selected" data-price="300" data-market="600" onclick="toggleItem(this)">
+          <div class="pi-left">
+            <div class="pi-name">🌐 TripAdvisor + Zomato + Yelp Setup</div>
+            <div class="pi-desc">Optimized presence across all three platforms — critical for tourists, expats, and corporate diners who use these before booking.</div>
+          </div>
+          <div class="pi-market">Market: $600</div>
+          <div class="pi-our">$300</div>
+          <div class="pi-check"></div>
+        </div>
+
+        <div class="p-item selected" data-price="300" data-market="600" onclick="toggleItem(this)">
+          <div class="pi-left">
+            <div class="pi-name">🔍 Google Food Ordering Integration</div>
+            <div class="pi-desc">Direct ordering from Google Search results — customers order without ever leaving Google. Most Lagos restaurants don't know this exists.</div>
+          </div>
+          <div class="pi-market">Market: $600</div>
+          <div class="pi-our">$300</div>
+          <div class="pi-check"></div>
+        </div>
+
+        <div class="p-item selected" data-price="400" data-market="1000" onclick="toggleItem(this)">
+          <div class="pi-left">
+            <div class="pi-name">📸 Photography Direction</div>
+            <div class="pi-desc">We coordinate your food shoot and distribute every image strategically across all platforms. One shoot — maximum impact, zero waste.</div>
+          </div>
+          <div class="pi-market">Market: $1,000</div>
+          <div class="pi-our">$400</div>
+          <div class="pi-check"></div>
+        </div>
+
+        <div class="p-item selected" data-price="400" data-market="800" onclick="toggleItem(this)">
+          <div class="pi-left">
+            <div class="pi-name">🌟 Lagos Influencer & PR Shortlist</div>
+            <div class="pi-desc">Curated list of food influencers, bloggers, and media contacts tailored to your concept — a launch PR playbook ready to execute.</div>
+          </div>
+          <div class="pi-market">Market: $800</div>
+          <div class="pi-our">$400</div>
+          <div class="pi-check"></div>
+        </div>
+
+      </div>
+
+      <div class="price-summary reveal rd3">
+        <div class="ps-left">
+          <div class="ps-label">Your Investment</div>
+          <div class="ps-total" id="our-total">$8,500 CAD</div>
+          <div class="ps-saving">Market value: <span id="market-total">$15,800</span> — you save <span id="saving-amt">$7,300</span></div>
+        </div>
+        <div class="ps-right">
+          <div class="ps-items-count" id="items-count">9 deliverables selected</div>
+          <div class="ps-note">50% to begin · 50% on delivery<br>Mockups delivered within 48 hours</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PHASE 2 PANEL -->
+    <div class="price-panel" id="panel-phase2">
+      <div class="retainer-grid reveal rd2">
+
+        <div class="r-card" onclick="selectRetainer(this,'1500','2800')">
+          <div class="r-name">Starter</div>
+          <div class="r-price">$1,500 <span>/ month</span></div>
+          <div class="r-market">Market rate: ~$2,800/mo</div>
+          <ul class="r-ul">
+            <li>SEO management (ongoing)</li>
+            <li>Google Business maintenance</li>
+            <li>Monthly performance report</li>
+            <li class="dimmed">Social media management</li>
+            <li class="dimmed">Content creation</li>
+            <li class="dimmed">WhatsApp automation</li>
+          </ul>
+        </div>
+
+        <div class="r-card recommended selected" onclick="selectRetainer(this,'2800','5000')">
+          <div class="r-name">Growth</div>
+          <div class="r-price">$2,800 <span>/ month</span></div>
+          <div class="r-market">Market rate: ~$5,000/mo</div>
+          <ul class="r-ul">
+            <li>SEO management (ongoing)</li>
+            <li>Social media management</li>
+            <li>Content creation (8 posts/mo)</li>
+            <li>WhatsApp automation</li>
+            <li>Review management</li>
+            <li>Monthly performance report</li>
+          </ul>
+        </div>
+
+        <div class="r-card" onclick="selectRetainer(this,'4000','7500')">
+          <div class="r-name">Full Scale</div>
+          <div class="r-price">$4,000 <span>/ month</span></div>
+          <div class="r-market">Market rate: ~$7,500/mo</div>
+          <ul class="r-ul">
+            <li>Everything in Growth, plus:</li>
+            <li>Paid social advertising</li>
+            <li>Email marketing campaigns</li>
+            <li>Influencer outreach (monthly)</li>
+            <li>Loyalty program management</li>
+            <li>Weekly performance reporting</li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="year-summary reveal rd3">
+        <div class="ys-box">
+          <div class="ys-label">Phase 1 — Foundation</div>
+          <div class="ys-val">$8,500</div>
+          <div class="ys-note">One-time project fee</div>
+        </div>
+        <div class="ys-box">
+          <div class="ys-label">Phase 2 — Monthly × 12</div>
+          <div class="ys-val" id="retainer-annual">$33,600</div>
+          <div class="ys-note">Based on Growth plan selected</div>
+        </div>
+        <div class="ys-box">
+          <div class="ys-label">Year 1 Total Investment</div>
+          <div class="ys-val gold" id="year1-total">$42,100</div>
+          <div class="ys-note">Market equivalent: ~$75,000+</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- S9: NEXT STEPS (LIGHT) -->
+<section class="slide light2" id="s9">
   <div class="cta-wrap">
     <div class="section-tag" style="justify-content:center;">What Happens Next</div>
     <h2 class="sec-title reveal rd1" style="font-size:clamp(2.6rem,5vw,4.8rem); margin:16px 0 20px;">Let's build<br><em>something legendary.</em></h2>
@@ -472,7 +735,7 @@ h2.sec-title {
   </div>
 </section>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 // Scroll reveals
 const revEls = document.querySelectorAll('.reveal');
 const revObs = new IntersectionObserver(entries => {
@@ -486,16 +749,14 @@ const allDots   = document.querySelectorAll('.nav-dot');
 const navEl     = document.getElementById('main-nav');
 const logoEl    = document.getElementById('nav-logo');
 
-const lightSlides = new Set(['s2','s4','s6','s8']);
+const lightSlides = new Set(['s2','s4','s6','s8','s9']);
 
 const slideObs = new IntersectionObserver(entries => {
   entries.forEach(e => {
     if (e.isIntersecting && e.intersectionRatio > 0.4) {
       const id = e.target.id;
       const isLight = lightSlides.has(id);
-      // swap nav theme
       navEl.className = isLight ? 'light-nav' : 'dark-nav';
-      // swap dot colours
       allDots.forEach(d => {
         d.classList.remove('on-light','on-dark');
         d.classList.add(isLight ? 'on-light' : 'on-dark');
@@ -512,6 +773,67 @@ allDots.forEach(d => {
     document.getElementById(d.dataset.slide).scrollIntoView({ behavior: 'smooth' });
   });
 });
+
+// ── PRICING INTERACTIVITY ──
+
+// Tab switcher
+function switchTab(panel, btn) {
+  document.querySelectorAll('.price-panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.p-tab').forEach(t => t.classList.remove('active'));
+  document.getElementById('panel-' + panel).classList.add('active');
+  btn.classList.add('active');
+}
+
+// Phase 1: toggle items
+function toggleItem(el) {
+  el.classList.toggle('selected');
+  updateSummary();
+}
+
+function updateSummary() {
+  const items = document.querySelectorAll('#item-list .p-item');
+  let ourTotal = 0, marketTotal = 0, count = 0;
+  items.forEach(item => {
+    if (item.classList.contains('selected')) {
+      ourTotal    += parseInt(item.dataset.price);
+      marketTotal += parseInt(item.dataset.market);
+      count++;
+    }
+  });
+  const saving = marketTotal - ourTotal;
+  document.getElementById('our-total').textContent    = '$' + ourTotal.toLocaleString() + ' CAD';
+  document.getElementById('market-total').textContent  = '$' + marketTotal.toLocaleString();
+  document.getElementById('saving-amt').textContent    = '$' + saving.toLocaleString();
+  document.getElementById('items-count').textContent   = count + ' deliverable' + (count !== 1 ? 's' : '') + ' selected';
+  // update year1
+  updateYear1(ourTotal);
+}
+
+// Phase 2: select retainer card
+let selectedRetainer = 2800;
+function selectRetainer(el, price, market) {
+  document.querySelectorAll('.r-card').forEach(c => c.classList.remove('selected'));
+  el.classList.add('selected');
+  selectedRetainer = parseInt(price);
+  const annual = selectedRetainer * 12;
+  document.getElementById('retainer-annual').textContent = '$' + annual.toLocaleString();
+  const phase1 = getPhase1Total();
+  document.getElementById('year1-total').textContent = '$' + (phase1 + annual).toLocaleString();
+}
+
+function getPhase1Total() {
+  let t = 0;
+  document.querySelectorAll('#item-list .p-item.selected').forEach(i => t += parseInt(i.dataset.price));
+  return t;
+}
+
+function updateYear1(phase1) {
+  const annual = selectedRetainer * 12;
+  document.getElementById('year1-total').textContent = '$' + (phase1 + annual).toLocaleString();
+}
+
+// Init
+updateSummary();-e 
 </script>
 </body>
 </html>
