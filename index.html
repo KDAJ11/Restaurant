@@ -813,6 +813,104 @@ h2.sec-title {
   .ugc-stat-row { grid-template-columns:1fr; }
 }
 
+
+/* ── PHASE 2 BUDGET BREAKDOWN ── */
+.budget-breakdown {
+  margin-top: 28px;
+  border: 1px solid var(--light-border);
+  border-radius: 8px;
+  overflow: hidden;
+  background: white;
+}
+.bb-header {
+  background: var(--ink);
+  padding: 16px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.bb-title {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  color: var(--gold-light);
+  text-transform: uppercase;
+}
+.bb-total {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.4rem;
+  font-weight: 300;
+  color: var(--cream);
+}
+.bb-total span {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.6rem;
+  color: rgba(247,242,232,0.45);
+  margin-left: 6px;
+}
+.bb-tagline {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.58rem;
+  letter-spacing: 0.15em;
+  color: rgba(232,133,74,0.8);
+  padding: 10px 24px;
+  background: rgba(232,133,74,0.06);
+  border-bottom: 1px solid var(--light-border);
+}
+.bb-rows {
+  padding: 8px 0;
+}
+.bb-row {
+  display: grid;
+  grid-template-columns: 180px 1fr 70px 52px;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 24px;
+  border-bottom: 1px solid rgba(184,146,42,0.06);
+  transition: background 0.2s;
+}
+.bb-row:last-child { border-bottom: none; }
+.bb-row:hover { background: rgba(184,146,42,0.03); }
+.bb-cat {
+  font-size: 0.73rem;
+  font-weight: 700;
+  color: var(--ink);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.bb-cat-icon { font-size: 0.9rem; }
+.bb-bar-wrap {
+  height: 6px;
+  background: rgba(184,146,42,0.1);
+  border-radius: 3px;
+  overflow: hidden;
+}
+.bb-bar {
+  height: 100%;
+  border-radius: 3px;
+  transition: width 0.6s ease;
+}
+.bb-amount {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.68rem;
+  color: var(--ink);
+  font-weight: 600;
+  text-align: right;
+}
+.bb-pct {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.6rem;
+  color: var(--muted-light);
+  text-align: right;
+}
+
+@media (max-width: 900px) {
+  .bb-row { grid-template-columns: 140px 1fr 60px 44px; gap: 8px; padding: 10px 16px; }
+  .bb-header { padding: 14px 16px; }
+  .bb-tagline { padding: 8px 16px; }
+}
+
 </style>
 </head>
 <body>
@@ -1515,67 +1613,58 @@ h2.sec-title {
 
     <div class="price-panel" id="panel-phase2">
       <div class="retainer-grid">
-        <div class="r-card" onclick="selectRetainer(this,'2000','4000')">
+
+        <div class="r-card" onclick="selectRetainer(this,'2000','starter')">
           <div class="r-name">Starter</div>
           <div class="r-price">$2,000 <span>/ month</span></div>
           <div class="r-market">Market rate: ~$4,000/mo</div>
           <ul class="r-ul">
-            <li>SEO management — all 4 venues</li>
-            <li>Google Business maintenance</li>
-            <li>Monthly performance report</li>
-            <li class="dimmed">Social media management</li>
-            <li class="dimmed">Content creation</li>
-            <li class="dimmed">WhatsApp automation</li>
+            <li>SEO — all 4 venues</li>
+            <li>Website hosting &amp; maintenance</li>
+            <li>Social media &amp; content</li>
           </ul>
         </div>
-        <div class="r-card recommended selected" onclick="selectRetainer(this,'3500','7000')">
+
+        <div class="r-card recommended selected" onclick="selectRetainer(this,'3500','growth')">
           <div class="r-name">Growth</div>
           <div class="r-price">$3,500 <span>/ month</span></div>
           <div class="r-market">Market rate: ~$7,000/mo</div>
           <ul class="r-ul">
             <li>SEO — all 4 venues</li>
-            <li>Social media (all 4 verticals)</li>
-            <li>Content creation (12 posts/mo)</li>
-            <li>WhatsApp automation</li>
-            <li>Review management</li>
-            <li>Monthly performance report</li>
+            <li>Social media, content &amp; influencer</li>
+            <li>Paid advertising</li>
+            <li>Website hosting &amp; maintenance</li>
           </ul>
         </div>
-        <div class="r-card" onclick="selectRetainer(this,'5000','10000')">
+
+        <div class="r-card" onclick="selectRetainer(this,'5000','fullscale')">
           <div class="r-name">Full Scale</div>
           <div class="r-price">$5,000 <span>/ month</span></div>
           <div class="r-market">Market rate: ~$10,000/mo</div>
           <ul class="r-ul">
-            <li>Everything in Growth, plus:</li>
-            <li>Paid social advertising</li>
-            <li>Email marketing campaigns</li>
-            <li>Influencer outreach (monthly)</li>
-            <li>Loyalty program management</li>
-            <li>Weekly performance reporting</li>
+            <li>SEO — all 4 venues</li>
+            <li>Social media, content &amp; influencer</li>
+            <li>Paid advertising (scaled)</li>
+            <li>Website hosting &amp; maintenance</li>
+            <li>Photography &amp; content production</li>
           </ul>
         </div>
+
       </div>
 
-      <div class="year-summary">
-        <div class="ys-box">
-          <div class="ys-label">Phase 1 — Foundation</div>
-          <div class="ys-val" id="phase1-display">$12,000</div>
-          <div class="ys-note">One-time project fee</div>
+      <!-- BUDGET BREAKDOWN -->
+      <div class="budget-breakdown" id="budget-breakdown">
+        <div class="bb-header">
+          <div class="bb-title">Where Your Budget Goes</div>
+          <div class="bb-total" id="bb-total-display">$3,500 <span>/ month</span></div>
         </div>
-        <div class="ys-box">
-          <div class="ys-label">Phase 2 — Monthly × 12</div>
-          <div class="ys-val" id="retainer-annual">$42,000</div>
-          <div class="ys-note">Based on Growth plan selected</div>
-        </div>
-        <div class="ys-box">
-          <div class="ys-label">Year 1 Total Investment</div>
-          <div class="ys-val gold" id="year1-total">$54,000</div>
-          <div class="ys-note">Market equivalent: ~$115,000+</div>
-        </div>
+        <div class="bb-tagline">ONE INVOICE. EVERYTHING INCLUDED. NO HIDDEN EXTRAS.</div>
+        <div class="bb-rows" id="bb-rows"></div>
       </div>
+
       <div style="margin-top:20px; text-align:center;">
         <a href="#" onclick="sendRetainerEmail(event)" style="display:inline-flex;align-items:center;gap:10px;padding:13px 28px;background:var(--ink);color:var(--cream);border-radius:4px;font-family:'Syne',sans-serif;font-size:0.75rem;font-weight:700;letter-spacing:0.06em;text-decoration:none;box-shadow:0 4px 16px rgba(26,20,16,0.15);">
-          ✉️ &nbsp;Send My Phase 2 Selection to David
+          &#9993;&#65039; &nbsp;Send My Phase 2 Selection to David
         </a>
       </div>
     </div>
@@ -1626,6 +1715,34 @@ h2.sec-title {
 <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
 <script>
 (function() {
+
+  // ── BUDGET BREAKDOWN DATA ──
+  var budgetPlans = {
+    starter:   [{"icon":"\ud83d\udccd","label":"SEO & Local Search","amt":1000,"color":"#B8922A"},{"icon":"\ud83c\udf10","label":"Website Hosting & Maintenance","amt":500,"color":"#D4AC52"},{"icon":"\ud83d\udcf1","label":"Social Media & Content","amt":500,"color":"#8B6E2A"}],
+    growth:    [{"icon":"\ud83d\udccd","label":"SEO & Local Search","amt":1200,"color":"#B8922A"},{"icon":"\ud83d\udcf1","label":"Social Media, Content & Influencer","amt":1100,"color":"#8B6E2A"},{"icon":"\ud83d\udcb0","label":"Paid Advertising","amt":700,"color":"#E8854A"},{"icon":"\ud83c\udf10","label":"Website Hosting & Maintenance","amt":500,"color":"#D4AC52"}],
+    fullscale: [{"icon":"\ud83d\udccd","label":"SEO & Local Search","amt":1500,"color":"#B8922A"},{"icon":"\ud83d\udcf1","label":"Social Media, Content & Influencer","amt":1500,"color":"#8B6E2A"},{"icon":"\ud83d\udcb0","label":"Paid Advertising","amt":1000,"color":"#E8854A"},{"icon":"\ud83c\udf10","label":"Website Hosting & Maintenance","amt":500,"color":"#D4AC52"},{"icon":"\ud83d\udcf8","label":"Photography & Content Production","amt":500,"color":"#C87840"}]
+  };
+
+  function renderBreakdown(planKey, total) {
+    var rows = document.getElementById('bb-rows');
+    var totalDisplay = document.getElementById('bb-total-display');
+    if (!rows) return;
+    var plan = budgetPlans[planKey];
+    if (!plan) return;
+    if (totalDisplay) totalDisplay.innerHTML = '$' + parseInt(total).toLocaleString() + ' <span>/ month</span>';
+    var html = '';
+    plan.forEach(function(item) {
+      var pct = Math.round((item.amt / total) * 100);
+      var barW = Math.round((item.amt / total) * 100);
+      html += '<div class="bb-row">' +
+        '<div class="bb-cat"><span class="bb-cat-icon">' + item.icon + '</span>' + item.label + '</div>' +
+        '<div class="bb-bar-wrap"><div class="bb-bar" style="width:' + barW + '%;background:' + item.color + '"></div></div>' +
+        '<div class="bb-amount">$' + item.amt.toLocaleString() + '</div>' +
+        '<div class="bb-pct">' + pct + '%</div>' +
+        '</div>';
+    });
+    rows.innerHTML = html;
+  }
 
   // ── REVEALS ──
   var revEls = document.querySelectorAll('.reveal');
@@ -1714,17 +1831,13 @@ h2.sec-title {
   }
 
   // ── PHASE 2: SELECT RETAINER ──
-  window.selectRetainer = function(el, price) {
+  window.selectRetainer = function(el, price, planKey) {
     document.querySelectorAll('.r-card').forEach(function(c) { c.classList.remove('selected'); });
     el.classList.add('selected');
     selectedRetainer     = parseInt(price, 10);
     var nameEl           = el.querySelector('.r-name');
     selectedRetainerName = (nameEl ? nameEl.textContent : 'Plan') + ' - $' + selectedRetainer.toLocaleString() + '/month';
-    var annual           = selectedRetainer * 12;
-    var annualEl         = document.getElementById('retainer-annual');
-    var year1El          = document.getElementById('year1-total');
-    if (annualEl) annualEl.textContent = '$' + annual.toLocaleString();
-    if (year1El)  year1El.textContent  = '$' + (getPhase1Total() + annual).toLocaleString();
+    renderBreakdown(planKey || 'growth', selectedRetainer);
   };
 
   // ── EMAIL: PHASE 1 ──
@@ -1748,16 +1861,11 @@ h2.sec-title {
   // ── EMAIL: PHASE 2 ──
   window.sendRetainerEmail = function(e) {
     e.preventDefault();
-    var p1     = getPhase1Total();
-    var annual = selectedRetainer * 12;
-    var subj   = 'Jardin - Phase 2 Retainer Selection';
-    var body   = 'Hi David,' +
+    var subj = 'Jardin - Phase 2 Retainer Selection';
+    var body = 'Hi David,' +
       '\n\nHere is my Phase 2 retainer selection:' +
       '\n\n  - Plan: ' + selectedRetainerName +
-      '\n  - Monthly: $' + selectedRetainer.toLocaleString() +
-      '\n  - Annual: $' + annual.toLocaleString() +
-      '\n\nPhase 1 total: $' + p1.toLocaleString() +
-      '\nYear 1 combined: $' + (p1 + annual).toLocaleString() +
+      '\n  - Monthly investment: $' + selectedRetainer.toLocaleString() +
       '\n\nLooking forward to moving forward.';
     window.location.href = 'mailto:david@dotxlabs.com?subject=' + encodeURIComponent(subj) + '&body=' + encodeURIComponent(body);
   };
@@ -1783,6 +1891,9 @@ h2.sec-title {
       '\n\nI will follow up with the details soon.';
     window.location.href = 'mailto:david@dotxlabs.com?subject=' + encodeURIComponent(subj) + '&body=' + encodeURIComponent(body);
   };
+
+  // Init breakdown on load
+  renderBreakdown('growth', 3500);
 
 })();
 </script>
