@@ -911,6 +911,83 @@ h2.sec-title {
   .bb-tagline { padding: 8px 16px; }
 }
 
+/* ── ROAS SLIDE (S15b) ── */
+.roas-wrap { max-width: 1120px; width: 100%; }
+.roas-intro-text { font-size: 1rem; color: rgba(247,242,232,0.62); max-width: 620px; line-height: 1.75; margin: 16px 0 32px; }
+
+/* plan selector */
+.roas-plan-tabs { display: flex; gap: 3px; margin-bottom: 32px; padding: 3px; background: rgba(255,255,255,0.04); border: 1px solid rgba(184,146,42,0.18); border-radius: 5px; width: fit-content; }
+.rpt { padding: 9px 24px; font-family: 'Syne', sans-serif; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.08em; border-radius: 3px; cursor: pointer; transition: all 0.25s; color: rgba(247,242,232,0.38); border: none; background: none; }
+.rpt.active { background: var(--gold); color: var(--dark-bg); }
+
+/* plan panels */
+.roas-plan-panel { display: none; }
+.roas-plan-panel.active { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start; }
+
+/* budget allocation strip */
+.roas-alloc-strip { display: grid; grid-template-columns: repeat(3,1fr); gap: 2px; margin-bottom: 24px; border: 1px solid rgba(184,146,42,0.12); border-radius: 4px; overflow: hidden; }
+.ras-box { padding: 14px 16px; background: rgba(255,255,255,0.03); text-align: center; }
+.ras-box.highlight { background: rgba(184,146,42,0.1); border: 1px solid rgba(184,146,42,0.25); }
+.ras-label { font-family: 'DM Mono', monospace; font-size: 0.55rem; letter-spacing: 0.14em; color: rgba(247,242,232,0.38); text-transform: uppercase; margin-bottom: 5px; }
+.ras-amt { font-family: 'Cormorant Garamond', serif; font-size: 1.7rem; font-weight: 300; color: var(--gold-light); line-height: 1; }
+.ras-box.highlight .ras-amt { color: var(--gold-pale); }
+.ras-sub { font-size: 0.58rem; color: rgba(247,242,232,0.35); margin-top: 3px; line-height: 1.4; }
+.ras-box.highlight .ras-sub { color: rgba(247,242,232,0.55); }
+
+/* no-ads note */
+.roas-no-ads { padding: 16px 20px; background: rgba(255,255,255,0.03); border: 1px solid rgba(184,146,42,0.12); border-radius: 4px; margin-bottom: 20px; }
+.roas-no-ads p { font-size: 0.75rem; color: rgba(247,242,232,0.55); line-height: 1.7; }
+.roas-no-ads strong { color: var(--gold-pale); }
+
+/* website-only baseline */
+.wo-box { border: 1px solid rgba(184,146,42,0.12); border-radius: 4px; padding: 16px 18px; background: rgba(255,255,255,0.03); margin-bottom: 20px; }
+.wo-box-title { font-family: 'DM Mono', monospace; font-size: 0.57rem; letter-spacing: 0.18em; color: rgba(247,242,232,0.35); text-transform: uppercase; margin-bottom: 11px; display: flex; align-items: center; gap: 8px; }
+.wo-box-title::before { content:''; display:block; width:18px; height:1px; background:rgba(247,242,232,0.18); }
+.wo-row { display: flex; justify-content: space-between; align-items: center; padding: 5px 0; border-bottom: 1px solid rgba(255,255,255,0.04); font-size: 0.7rem; }
+.wo-row:last-child { border-bottom: none; }
+.wo-key { color: rgba(247,242,232,0.46); }
+.wo-val { font-family: 'DM Mono', monospace; }
+.wo-val.bad  { color: #E07070; }
+.wo-val.good { color: #6EC99A; }
+
+/* result rows */
+.roas-results { display: flex; flex-direction: column; gap: 7px; margin-top: 4px; }
+.roas-rrow { display: flex; justify-content: space-between; align-items: center; padding: 10px 14px; border: 1px solid rgba(184,146,42,0.1); border-radius: 3px; background: rgba(255,255,255,0.03); }
+.rr-label { font-size: 0.71rem; color: rgba(247,242,232,0.5); }
+.rr-val { font-family: 'DM Mono', monospace; font-size: 0.82rem; }
+.rr-val.pos { color: #6EC99A; }
+.rr-val.neu { color: var(--gold-light); }
+
+/* right col */
+.roas-summary-box { background: linear-gradient(135deg, rgba(184,146,42,0.12), rgba(184,146,42,0.04)); border: 1px solid rgba(184,146,42,0.28); border-radius: 5px; padding: 22px 20px; margin-bottom: 14px; }
+.rsb-label { font-family: 'DM Mono', monospace; font-size: 0.57rem; letter-spacing: 0.18em; color: rgba(247,242,232,0.35); text-transform: uppercase; margin-bottom: 5px; }
+.rsb-total { font-family: 'Cormorant Garamond', serif; font-size: 3rem; font-weight: 300; color: var(--gold-light); line-height: 1; margin-bottom: 4px; }
+.rsb-sub { font-size: 0.68rem; color: rgba(247,242,232,0.46); line-height: 1.68; }
+.rsb-sub span { color: var(--gold-pale); }
+
+.roas-insight { padding: 14px 16px; border-radius: 3px; margin-bottom: 10px; font-size: 0.68rem; line-height: 1.72; }
+.roas-insight.seo  { background: rgba(110,201,154,0.07); border-left: 2px solid rgba(110,201,154,0.35); color: rgba(247,242,232,0.68); }
+.roas-insight.warn { background: rgba(224,112,112,0.07); border-left: 2px solid rgba(224,112,112,0.3); color: rgba(247,242,232,0.68); }
+.roas-insight strong { color: var(--gold-pale); }
+
+/* synergy strip */
+.roas-synergy { display: grid; grid-template-columns: 1fr auto 1fr auto 1fr; align-items: center; border: 1px solid rgba(184,146,42,0.14); border-radius: 4px; overflow: hidden; margin-top: 28px; }
+.rsyn-box { background: rgba(255,255,255,0.03); padding: 15px 16px; text-align: center; }
+.rsyn-arrow { display: flex; align-items: center; justify-content: center; padding: 0 6px; color: var(--gold); font-size: 0.9rem; background: rgba(255,255,255,0.02); }
+.rsyn-icon  { font-size: 1.2rem; margin-bottom: 4px; }
+.rsyn-title { font-size: 0.7rem; font-weight: 700; color: var(--cream); margin-bottom: 2px; }
+.rsyn-desc  { font-size: 0.58rem; color: rgba(247,242,232,0.4); line-height: 1.45; }
+.rsyn-res   { font-family: 'DM Mono', monospace; font-size: 0.53rem; color: var(--gold-light); margin-top: 4px; }
+
+.roas-disclaimer { font-family: 'DM Mono', monospace; font-size: 0.52rem; color: rgba(247,242,232,0.26); margin-top: 16px; line-height: 1.65; }
+
+@media(max-width:900px){
+  .roas-plan-panel.active { grid-template-columns: 1fr; }
+  .roas-synergy { grid-template-columns: 1fr; }
+  .rsyn-arrow { display: none; }
+  .roas-alloc-strip { grid-template-columns: 1fr; }
+}
+
 </style>
 </head>
 <body>
@@ -933,12 +1010,12 @@ h2.sec-title {
     <div class="nav-dot on-dark" data-slide="s12"></div>
     <div class="nav-dot on-dark" data-slide="s13"></div>
     <div class="nav-dot on-dark" data-slide="s14"></div>
+    <div class="nav-dot on-dark" data-slide="s15b"></div>
     <div class="nav-dot on-dark" data-slide="s15"></div>
     <div class="nav-dot on-dark" data-slide="s16"></div>
   </div>
 </nav>
 
-<body>
 <!-- S1: HERO (DARK) -->
 <section class="slide dark" id="s1">
   <div style="text-align:center; max-width:820px;">
@@ -1143,7 +1220,7 @@ h2.sec-title {
     <div class="ugc-stat-row">
       <div class="ugc-stat"><span class="ugc-stat-num">2.3B</span><div class="ugc-stat-lbl">#FoodPhotography posts on Instagram</div></div>
       <div class="ugc-stat"><span class="ugc-stat-num">79%</span><div class="ugc-stat-lbl">of diners choose restaurants based on social media photos</div></div>
-      <div class="ugc-stat"><span class="ugc-stat-num">₦0</span><div class="ugc-stat-lbl">Cost per post when guests create the content for you</div></div>
+      <div class="ugc-stat"><span class="ugc-stat-num">$0</span><div class="ugc-stat-lbl">Cost per post when guests create the content for you</div></div>
     </div>
   </div>
 </section>
@@ -1379,7 +1456,7 @@ h2.sec-title {
         <div class="es-lbl">Event Categories Served</div>
       </div>
       <div class="es-box">
-        <div class="es-num">₦₦₦</div>
+        <div class="es-num">$$$</div>
         <div class="es-lbl">Premium Positioning in Lagos</div>
       </div>
     </div>
@@ -1536,6 +1613,154 @@ h2.sec-title {
         <div class="tf-num">June</div>
         <div class="tf-lbl">Grand Opening — Jardin Lagos</div>
       </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- S15b: WHAT YOUR MARKETING BUDGET RETURNS (DARK) -->
+<section class="slide dark" id="s15b">
+  <div class="roas-wrap">
+    <div class="reveal">
+      <div class="section-tag">What This Actually Returns</div>
+      <h2 class="sec-title">Your marketing budget<br><em>as a growth lever.</em></h2>
+      <p class="roas-intro-text">A website is your foundation — not your growth engine. The monthly retainer is what turns Jardin Lagos from a site that exists into a destination people discover, book, and come back to. See what each plan's social media and ad spend actually returns.</p>
+    </div>
+
+    <!-- PLAN SELECTOR — mirrors Phase 2 exactly -->
+    <div class="roas-plan-tabs reveal">
+      <button class="rpt" onclick="switchRoasPlan('starter',this)">Starter — $2,000/mo</button>
+      <button class="rpt active" onclick="switchRoasPlan('growth',this)">Growth — $3,500/mo</button>
+      <button class="rpt" onclick="switchRoasPlan('fullscale',this)">Full Scale — $5,000/mo</button>
+    </div>
+
+    <!-- ── STARTER ── -->
+    <div class="roas-plan-panel" id="rpp-starter">
+      <div>
+        <!-- budget allocation -->
+        <div class="roas-alloc-strip">
+          <div class="ras-box"><div class="ras-label">SEO & Search</div><div class="ras-amt">$1,000</div><div class="ras-sub">Organic visibility builds over time</div></div>
+          <div class="ras-box highlight"><div class="ras-label">Social Media & Content ↑</div><div class="ras-amt">$500</div><div class="ras-sub">Active acquisition budget</div></div>
+          <div class="ras-box"><div class="ras-label">Hosting & Maintenance</div><div class="ras-amt">$500</div><div class="ras-sub">Site performance & uptime</div></div>
+        </div>
+        <div class="roas-no-ads">
+          <p><strong>Note:</strong> The Starter plan includes social media content but no dedicated paid advertising budget. Jardin gets organic reach, SEO growth, and a content presence — but paid ads that actively target Lagos diners and event planners are not included until Growth.</p>
+        </div>
+        <div class="wo-box">
+          <div class="wo-box-title">Website alone — no retainer at all</div>
+          <div class="wo-row"><span class="wo-key">New diners discovered via search</span><span class="wo-val bad">Near zero yr 1</span></div>
+          <div class="wo-row"><span class="wo-key">Organic social reach</span><span class="wo-val bad">Followers only</span></div>
+          <div class="wo-row"><span class="wo-key">Google ranking for "garden restaurant Lagos"</span><span class="wo-val bad">Page 3+</span></div>
+          <div class="wo-row"><span class="wo-key">Repeat guest re-engagement</span><span class="wo-val bad">None</span></div>
+        </div>
+        <div class="roas-results">
+          <div class="roas-rrow"><span class="rr-label">📱 Monthly Social Impressions</span><span class="rr-val neu">42,000</span></div>
+          <div class="roas-rrow"><span class="rr-label">🌐 Website Visits from Social</span><span class="rr-val neu">1,400</span></div>
+          <div class="roas-rrow"><span class="rr-label">📅 Est. New Reservations / Enquiries</span><span class="rr-val neu">18–25</span></div>
+          <div class="roas-rrow"><span class="rr-label">💰 Est. Monthly Revenue Influenced</span><span class="rr-val pos">$4,200–$6,000</span></div>
+        </div>
+        <p class="roas-disclaimer">* Organic social reach based on consistent posting cadence in Lagos premium dining segment. No paid amplification. Results compound as following grows.</p>
+      </div>
+      <div>
+        <div class="roas-summary-box">
+          <div class="rsb-label">Est. Monthly Revenue Influenced</div>
+          <div class="rsb-total">$4,200–$6,000</div>
+          <div class="rsb-sub">Marketing spend: <span>$500/mo</span> (social content)<br>Plan total: <span>$2,000/mo</span> · Est. return on marketing spend: <span>8–12×</span></div>
+        </div>
+        <div class="roas-insight seo">
+          <strong>What Starter gets you:</strong> a consistent, professional social presence that builds Jardin's audience and reputation over time. SEO compounds quietly in the background. You won't dominate search overnight — but by month 6 you're visible, credible, and growing.
+        </div>
+        <div class="roas-insight warn">
+          <strong>What Starter doesn't get you:</strong> the ability to put Jardin in front of Lagos' premium dining audience <em>today</em>. Without paid ads, discovery depends entirely on who already follows you. At launch — when you need the most momentum — that's a slower start.
+        </div>
+      </div>
+    </div>
+
+    <!-- ── GROWTH ── -->
+    <div class="roas-plan-panel active" id="rpp-growth">
+      <div>
+        <div class="roas-alloc-strip">
+          <div class="ras-box"><div class="ras-label">SEO & Search</div><div class="ras-amt">$1,200</div><div class="ras-sub">Rankings & Maps visibility</div></div>
+          <div class="ras-box highlight"><div class="ras-label">Social, Content & Ads ↑</div><div class="ras-amt">$1,800</div><div class="ras-sub">$1,100 content + $700 paid ads</div></div>
+          <div class="ras-box"><div class="ras-label">Hosting & Maintenance</div><div class="ras-amt">$500</div><div class="ras-sub">Site performance & uptime</div></div>
+        </div>
+        <div class="wo-box">
+          <div class="wo-box-title">Website alone — no retainer at all</div>
+          <div class="wo-row"><span class="wo-key">New diners from Instagram/Facebook ads</span><span class="wo-val bad">Zero</span></div>
+          <div class="wo-row"><span class="wo-key">Google ranking for "garden restaurant Lagos"</span><span class="wo-val bad">Page 3+</span></div>
+          <div class="wo-row"><span class="wo-key">Reservations from digital channels</span><span class="wo-val bad">0–5/month</span></div>
+          <div class="wo-row"><span class="wo-key">Event enquiries from corporate planners</span><span class="wo-val bad">Referral only</span></div>
+        </div>
+        <div class="roas-results">
+          <div class="roas-rrow"><span class="rr-label">📱 Monthly Social + Paid Impressions</span><span class="rr-val neu">110,000</span></div>
+          <div class="roas-rrow"><span class="rr-label">🌐 Website Visits Generated</span><span class="rr-val neu">3,800</span></div>
+          <div class="roas-rrow"><span class="rr-label">📅 Restaurant Reservations</span><span class="rr-val neu">35–50/month</span></div>
+          <div class="roas-rrow"><span class="rr-label">🎉 Event / Spa Enquiries</span><span class="rr-val neu">8–12/month</span></div>
+          <div class="roas-rrow"><span class="rr-label">💰 Est. Monthly Revenue Influenced</span><span class="rr-val pos">$9,000–$14,000</span></div>
+        </div>
+        <p class="roas-disclaimer">* $700 paid ad allocation split across Meta (Instagram/Facebook) targeting Lagos premium dining audience + Google Search for event venue & restaurant keywords. Restaurant: avg party $140. Events: avg booking $3,000 at 40% close.</p>
+      </div>
+      <div>
+        <div class="roas-summary-box">
+          <div class="rsb-label">Est. Monthly Revenue Influenced</div>
+          <div class="rsb-total">$9,000–$14,000</div>
+          <div class="rsb-sub">Active marketing spend: <span>$1,800/mo</span> (content + ads)<br>Plan total: <span>$3,500/mo</span> · Est. return on marketing spend: <span>5–8×</span></div>
+        </div>
+        <div class="roas-insight seo">
+          <strong>Month 6 projection (SEO compounding):</strong> Once "garden restaurant Lagos" and "event venue Lagos" rankings build, organic traffic supplements paid. By month 6 you're generating enquiries from both channels — paid cost-per-acquisition drops while total revenue grows.
+        </div>
+        <div class="roas-insight warn">
+          <strong>The $700 paid ads at Growth unlocks something Starter can't:</strong> Jardin appears in front of Lagos' premium diners and corporate event planners at the exact moment they're searching — not just in front of people who already follow you. That's the difference between building an audience slowly and filling tables now.
+        </div>
+      </div>
+    </div>
+
+    <!-- ── FULL SCALE ── -->
+    <div class="roas-plan-panel" id="rpp-fullscale">
+      <div>
+        <div class="roas-alloc-strip">
+          <div class="ras-box"><div class="ras-label">SEO & Search</div><div class="ras-amt">$1,500</div><div class="ras-sub">Dominate all 4 venue categories</div></div>
+          <div class="ras-box highlight"><div class="ras-label">Social, Content & Ads ↑</div><div class="ras-amt">$2,500</div><div class="ras-sub">$1,500 content + $1,000 paid ads</div></div>
+          <div class="ras-box"><div class="ras-label">Hosting, Maintenance & Photography</div><div class="ras-amt">$1,000</div><div class="ras-sub">Site + monthly content shoots</div></div>
+        </div>
+        <div class="wo-box">
+          <div class="wo-box-title">Website alone — no retainer at all</div>
+          <div class="wo-row"><span class="wo-key">Scaled paid campaigns across all 4 venues</span><span class="wo-val bad">Zero</span></div>
+          <div class="wo-row"><span class="wo-key">Monthly photography for content</span><span class="wo-val bad">Not included</span></div>
+          <div class="wo-row"><span class="wo-key">Influencer amplification</span><span class="wo-val bad">Ad hoc / none</span></div>
+          <div class="wo-row"><span class="wo-key">Revenue from all 4 venues combined</span><span class="wo-val bad">Walk-in only</span></div>
+        </div>
+        <div class="roas-results">
+          <div class="roas-rrow"><span class="rr-label">📱 Monthly Social + Paid Impressions</span><span class="rr-val neu">200,000+</span></div>
+          <div class="roas-rrow"><span class="rr-label">🌐 Website Visits Generated</span><span class="rr-val neu">7,000+</span></div>
+          <div class="roas-rrow"><span class="rr-label">📅 Restaurant Reservations</span><span class="rr-val neu">70–100/month</span></div>
+          <div class="roas-rrow"><span class="rr-label">🎉 Event / Spa Enquiries</span><span class="rr-val neu">18–26/month</span></div>
+          <div class="roas-rrow"><span class="rr-label">💰 Est. Monthly Revenue Influenced</span><span class="rr-val pos">$18,000–$28,000</span></div>
+        </div>
+        <p class="roas-disclaimer">* $1,000 paid ads scaled across Meta + Google targeting all 4 venue categories. Monthly photography refreshes content pipeline. Influencer amplification multiplies organic reach significantly.</p>
+      </div>
+      <div>
+        <div class="roas-summary-box">
+          <div class="rsb-label">Est. Monthly Revenue Influenced</div>
+          <div class="rsb-total">$18,000–$28,000</div>
+          <div class="rsb-sub">Active marketing spend: <span>$2,500/mo</span> (content + ads)<br>Plan total: <span>$5,000/mo</span> · Est. return on marketing spend: <span>7–11×</span></div>
+        </div>
+        <div class="roas-insight seo">
+          <strong>Full Scale is where Jardin becomes the Lagos benchmark.</strong> Monthly photography keeps every platform fresh. Scaled ads mean all four venues — restaurant, spa, event centre, rooftop — are actively being promoted simultaneously, not competing for the same small budget.
+        </div>
+        <div class="roas-insight warn">
+          <strong>One event booking at $5,000</strong> covers the Full Scale retainer for a month. Two bookings and it's paid for itself twice over. At this level, the question isn't whether it returns — it's how fast you want to compound.
+        </div>
+      </div>
+    </div>
+
+    <!-- SYNERGY STRIP -->
+    <div class="roas-synergy reveal">
+      <div class="rsyn-box"><div class="rsyn-icon">🔍</div><div class="rsyn-title">SEO</div><div class="rsyn-desc">Jardin ranks when Lagos diners search</div><div class="rsyn-res">Free traffic — compounds forever</div></div>
+      <div class="rsyn-arrow">→</div>
+      <div class="rsyn-box"><div class="rsyn-icon">📱</div><div class="rsyn-title">Social & Paid Ads</div><div class="rsyn-desc">Puts Jardin in front of the right audience today</div><div class="rsyn-res">Immediate bookings & enquiries</div></div>
+      <div class="rsyn-arrow">→</div>
+      <div class="rsyn-box"><div class="rsyn-icon">📧</div><div class="rsyn-title">Email & Retargeting</div><div class="rsyn-desc">One-time guests become regulars</div><div class="rsyn-res">3–5× higher lifetime value</div></div>
     </div>
 
   </div>
@@ -1890,6 +2115,14 @@ h2.sec-title {
       '\n\n' + lines.join('\n') +
       '\n\nI will follow up with the details soon.';
     window.location.href = 'mailto:david@dotxlabs.com?subject=' + encodeURIComponent(subj) + '&body=' + encodeURIComponent(body);
+  };
+
+  // ── ROAS PLAN SWITCHER ──
+  window.switchRoasPlan = function(plan, btn) {
+    document.querySelectorAll('.roas-plan-panel').forEach(function(p){ p.classList.remove('active'); });
+    document.querySelectorAll('.rpt').forEach(function(t){ t.classList.remove('active'); });
+    document.getElementById('rpp-' + plan).classList.add('active');
+    btn.classList.add('active');
   };
 
   // Init breakdown on load
