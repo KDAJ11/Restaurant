@@ -256,7 +256,7 @@ h2.sec-title {
 .fade-in { opacity:0; animation:fadeUp 0.9s forwards; }
 .d1{animation-delay:0.3s} .d2{animation-delay:0.55s} .d3{animation-delay:0.8s}
 .d4{animation-delay:1.05s} .d5{animation-delay:1.3s}
-.reveal { opacity:0; transform:translateY(26px); transition:opacity 0.7s ease, transform 0.7s ease; }
+.reveal { opacity:1; transform:none; transition:opacity 0.7s ease, transform 0.7s ease; }
 .reveal.on { opacity:1; transform:none; }
 .rd1{transition-delay:0s} .rd2{transition-delay:0.14s} .rd3{transition-delay:0.28s}
 
@@ -339,6 +339,480 @@ h2.sec-title {
 @media (max-width:560px) {
   .stats-6, .eco-grid, .uniq-grid, .inspo-grid { grid-template-columns:1fr; }
 }
+
+/* ── NEW SLIDES: GARDEN, MOCKUP, EVENTS, JOURNEY ── */
+
+/* Floral SVG background utility */
+.floral-bg {
+  position:absolute; inset:0; pointer-events:none; overflow:hidden; z-index:0;
+}
+.floral-bg svg { position:absolute; opacity:0.07; }
+
+/* ── S10: JARDIN (LIGHT) ── */
+#s10 { background: #FDF6EE; }
+.garden-wrap { max-width:1100px; width:100%; }
+.garden-grid { display:grid; grid-template-columns:1fr 1fr; gap:64px; align-items:center; margin-top:48px; }
+.garden-left {}
+.garden-desc { font-family:'Cormorant Garamond',serif; font-size:1.2rem; line-height:1.75; color:rgba(26,20,16,0.75); font-weight:300; margin-bottom:28px; }
+.garden-pillars { display:flex; flex-direction:column; gap:10px; }
+.gpillar {
+  display:flex; align-items:flex-start; gap:14px; padding:14px 18px;
+  border:1px solid rgba(219,132,80,0.2); border-radius:4px;
+  background:rgba(219,132,80,0.04); transition:all 0.3s;
+}
+.gpillar:hover { border-color:rgba(219,132,80,0.5); background:rgba(219,132,80,0.08); }
+.gpillar-icon { font-size:1.2rem; }
+.gpillar-text strong { font-size:0.82rem; font-weight:700; color:#5C2E0A; display:block; margin-bottom:3px; }
+.gpillar-text span { font-size:0.73rem; color:var(--muted-light); line-height:1.45; }
+
+.garden-right { display:flex; flex-direction:column; gap:14px; }
+.garden-visual {
+  width:100%; border-radius:8px; overflow:hidden; position:relative;
+  background:linear-gradient(135deg, #F5E6D0, #FDEBD8, #F0D5B8);
+  border:1px solid rgba(219,132,80,0.2);
+}
+.gv-main {
+  height:280px; display:flex; align-items:center; justify-content:center;
+  flex-direction:column; gap:12px; position:relative; overflow:hidden;
+}
+.gv-main::before {
+  content:''; position:absolute; inset:0;
+  background:
+    radial-gradient(circle at 20% 30%, rgba(255,150,100,0.3) 0%, transparent 40%),
+    radial-gradient(circle at 80% 70%, rgba(255,180,120,0.25) 0%, transparent 35%),
+    radial-gradient(circle at 50% 10%, rgba(255,200,150,0.2) 0%, transparent 40%);
+}
+.gv-flowers { font-size:3.5rem; letter-spacing:0.1em; position:relative; z-index:1; }
+.gv-label {
+  font-family:'Cormorant Garamond',serif; font-style:italic;
+  font-size:1.4rem; color:#8B3A0A; position:relative; z-index:1;
+}
+.gv-tag { font-family:'DM Mono',monospace; font-size:0.58rem; letter-spacing:0.2em; color:rgba(139,58,10,0.6); position:relative; z-index:1; }
+
+.garden-mini-row { display:grid; grid-template-columns:1fr 1fr; gap:10px; }
+.gm-card {
+  border-radius:6px; overflow:hidden; position:relative;
+  border:1px solid rgba(219,132,80,0.15);
+}
+.gm-vis {
+  height:90px; display:flex; align-items:center; justify-content:center;
+  font-size:2rem; position:relative;
+}
+.gm-vis.pink { background:linear-gradient(135deg,#FFE4EC,#FFDDE8,#FFD0DF); }
+.gm-vis.orange { background:linear-gradient(135deg,#FFE8D6,#FFD8BC,#FFC9A0); }
+.gm-lbl { font-size:0.65rem; font-weight:700; letter-spacing:0.08em; color:#5C2E0A; text-align:center; padding:8px; background:rgba(255,255,255,0.7); }
+
+/* ── S11: WEBSITE MOCKUP (DARK) ── */
+#s11 {
+  background:radial-gradient(ellipse at 20% 50%, rgba(139,58,10,0.12), transparent 55%),
+             radial-gradient(ellipse at 80% 30%, rgba(184,146,42,0.08), transparent 50%),
+             var(--dark-bg);
+}
+.mockup-wrap { max-width:1100px; width:100%; }
+.mockup-header { display:grid; grid-template-columns:1fr 1fr; gap:60px; align-items:end; margin-bottom:48px; }
+.full-browser {
+  background:#1A1614; border-radius:12px; overflow:hidden;
+  border:1px solid rgba(184,146,42,0.2);
+  box-shadow:0 32px 80px rgba(0,0,0,0.5);
+}
+.fb-bar {
+  background:#252118; padding:14px 20px;
+  display:flex; align-items:center; gap:16px;
+  border-bottom:1px solid rgba(184,146,42,0.1);
+}
+.fb-dots { display:flex; gap:7px; }
+.fb-dot { width:12px; height:12px; border-radius:50%; }
+.fb-url {
+  flex:1; background:rgba(255,255,255,0.06); border-radius:4px;
+  padding:5px 14px; font-family:'DM Mono',monospace;
+  font-size:0.65rem; color:rgba(247,242,232,0.4); text-align:center;
+}
+.fb-nav-strip {
+  background:rgba(10,8,6,0.95); padding:0 28px;
+  display:flex; align-items:center; justify-content:space-between; height:52px;
+  border-bottom:1px solid rgba(184,146,42,0.12);
+}
+.fb-nav-links { display:flex; gap:24px; }
+.fb-nav-links span { font-size:0.62rem; letter-spacing:0.14em; color:rgba(247,242,232,0.45); }
+.fb-logo { font-family:'Cormorant Garamond',serif; font-style:italic; font-size:1.1rem; color:var(--gold-light); }
+.fb-nav-cta { font-size:0.58rem; letter-spacing:0.12em; padding:6px 16px; border:1px solid var(--gold); color:var(--gold-light); border-radius:2px; }
+
+.fb-hero {
+  height:220px; position:relative; overflow:hidden;
+  background:linear-gradient(135deg, #3D1200, #5C2008, #3D1200);
+  display:flex; align-items:center; justify-content:center; flex-direction:column; gap:6px;
+}
+.fb-hero::before {
+  content:''; position:absolute; inset:0;
+  background:
+    radial-gradient(ellipse at 30% 60%, rgba(255,140,80,0.15), transparent 50%),
+    radial-gradient(ellipse at 70% 40%, rgba(255,100,60,0.1), transparent 45%);
+}
+.fb-flower-strip {
+  position:absolute; top:0; left:0; right:0; height:3px;
+  background:linear-gradient(90deg, #E8854A, #F5A870, #FFD4A0, #F5A870, #E8854A);
+}
+.fb-hero-title { font-family:'Cormorant Garamond',serif; font-style:italic; font-size:2.4rem; color:#FDF6EE; line-height:1; position:relative; z-index:1; }
+.fb-hero-sub { font-family:'DM Mono',monospace; font-size:0.55rem; letter-spacing:0.3em; color:rgba(253,246,238,0.45); position:relative; z-index:1; }
+.fb-hero-tag { font-size:0.62rem; letter-spacing:0.1em; color:rgba(253,246,238,0.35); position:relative; z-index:1; margin-top:4px; }
+.fb-cta-btn {
+  position:relative; z-index:1; margin-top:10px;
+  padding:8px 24px; font-size:0.62rem; letter-spacing:0.15em;
+  border:1px solid rgba(232,133,74,0.6); color:#F5A870; border-radius:2px;
+}
+
+.fb-sections {
+  display:grid; grid-template-columns:repeat(4,1fr);
+  border-top:1px solid rgba(184,146,42,0.1);
+}
+.fb-sec {
+  padding:16px 14px; text-align:center; border-right:1px solid rgba(184,146,42,0.08);
+  cursor:pointer; transition:background 0.2s;
+}
+.fb-sec:last-child { border-right:none; }
+.fb-sec:hover { background:rgba(232,133,74,0.05); }
+.fb-sec-icon { font-size:1.3rem; margin-bottom:6px; }
+.fb-sec-title { font-size:0.6rem; letter-spacing:0.12em; color:rgba(247,242,232,0.55); font-weight:700; }
+.fb-sec-sub { font-size:0.55rem; color:rgba(247,242,232,0.3); margin-top:3px; }
+
+.mockup-callouts { display:grid; grid-template-columns:repeat(4,1fr); gap:10px; margin-top:14px; }
+.m-callout {
+  padding:14px 16px; border:1px solid var(--dark-border); border-radius:4px;
+  background:rgba(255,255,255,0.02); text-align:center;
+}
+.mc-icon { font-size:1.1rem; margin-bottom:6px; }
+.mc-title { font-size:0.68rem; font-weight:700; color:var(--cream); margin-bottom:3px; }
+.mc-desc { font-size:0.62rem; color:var(--muted-dark); line-height:1.4; }
+
+/* ── S12: EVENT CENTRE (LIGHT) ── */
+#s12 { background:var(--cream); }
+.events-wrap { max-width:1100px; width:100%; }
+.events-grid { display:grid; grid-template-columns:1fr 1fr 1fr; gap:16px; margin-top:44px; }
+.ev-card {
+  border-radius:8px; overflow:hidden; border:1px solid var(--light-border);
+  transition:transform 0.35s, box-shadow 0.35s; cursor:default;
+  background:white;
+}
+.ev-card:hover { transform:translateY(-6px); box-shadow:0 20px 48px rgba(184,146,42,0.12); }
+.ev-vis {
+  height:160px; display:flex; align-items:center; justify-content:center;
+  font-size:2.6rem; position:relative; overflow:hidden;
+}
+.ev1 { background:linear-gradient(135deg,#FFF0F5,#FFE4EC,#FFD4E4); }
+.ev2 { background:linear-gradient(135deg,#FFF5E8,#FFE8CC,#FFD4AA); }
+.ev3 { background:linear-gradient(135deg,#F5F0FF,#EDE0FF,#DFC8FF); }
+.ev-body { padding:20px; }
+.ev-type { font-family:'DM Mono',monospace; font-size:0.58rem; letter-spacing:0.18em; color:var(--gold); margin-bottom:8px; text-transform:uppercase; }
+.ev-name { font-family:'Cormorant Garamond',serif; font-size:1.35rem; font-weight:400; color:var(--ink); margin-bottom:8px; }
+.ev-desc { font-size:0.73rem; color:var(--muted-light); line-height:1.55; }
+.ev-capacity { font-family:'DM Mono',monospace; font-size:0.6rem; color:var(--gold); margin-top:12px; padding-top:12px; border-top:1px solid var(--light-border); }
+
+.events-stat-row { display:grid; grid-template-columns:repeat(3,1fr); gap:2px; margin-top:16px; }
+.es-box { background:var(--cream-dark); padding:20px 24px; text-align:center; }
+.es-num { font-family:'Cormorant Garamond',serif; font-size:2.4rem; font-weight:300; color:var(--gold); line-height:1; }
+.es-lbl { font-size:0.66rem; color:var(--muted-light); letter-spacing:0.08em; margin-top:5px; }
+
+/* ── S13: DAY JOURNEY (LIGHT2) ── */
+#s13 { background:var(--cream-dark); }
+.journey-wrap { max-width:1100px; width:100%; }
+.journey-line {
+  position:relative; margin-top:52px;
+  display:grid; grid-template-columns:repeat(4,1fr); gap:0;
+}
+.journey-line::before {
+  content:''; position:absolute; top:32px; left:12.5%; right:12.5%; height:1px;
+  background:linear-gradient(90deg, transparent, var(--gold), var(--gold), var(--gold), transparent);
+  z-index:0;
+}
+.j-stop { text-align:center; position:relative; z-index:1; padding:0 8px; }
+.j-node {
+  width:64px; height:64px; border-radius:50%; margin:0 auto 16px;
+  display:flex; align-items:center; justify-content:center; font-size:1.8rem;
+  border:2px solid var(--light-border); background:white;
+  box-shadow:0 4px 16px rgba(184,146,42,0.1);
+  transition:transform 0.3s, box-shadow 0.3s;
+}
+.j-stop:hover .j-node { transform:scale(1.1); box-shadow:0 8px 28px rgba(184,146,42,0.2); }
+.j-time { font-family:'DM Mono',monospace; font-size:0.58rem; letter-spacing:0.18em; color:var(--gold); margin-bottom:8px; }
+.j-title { font-family:'Cormorant Garamond',serif; font-size:1.15rem; color:var(--ink); margin-bottom:6px; font-weight:400; }
+.j-desc { font-size:0.68rem; color:var(--muted-light); line-height:1.5; }
+
+.journey-cta-box {
+  margin-top:52px; padding:32px 40px;
+  background:linear-gradient(135deg, rgba(219,132,80,0.08), rgba(184,146,42,0.06));
+  border:1px solid rgba(219,132,80,0.2); border-radius:6px;
+  display:flex; align-items:center; justify-content:space-between; gap:40px;
+}
+.jcta-left {}
+.jcta-title { font-family:'Cormorant Garamond',serif; font-size:1.6rem; font-weight:300; color:var(--ink); margin-bottom:8px; }
+.jcta-title em { font-style:italic; color:var(--gold); }
+.jcta-sub { font-size:0.78rem; color:var(--muted-light); line-height:1.55; max-width:480px; }
+.jcta-right {}
+.jcta-stat { text-align:center; }
+.jcta-num { font-family:'Cormorant Garamond',serif; font-size:3rem; font-weight:300; color:var(--gold); line-height:1; }
+.jcta-lbl { font-size:0.65rem; color:var(--muted-light); letter-spacing:0.08em; margin-top:4px; }
+
+@media (max-width:900px) {
+  .garden-grid, .mockup-header, .events-grid { grid-template-columns:1fr; gap:32px; }
+  .journey-line { grid-template-columns:1fr 1fr; gap:32px; }
+  .journey-line::before { display:none; }
+  .mockup-callouts { grid-template-columns:1fr 1fr; }
+  .garden-mini-row { grid-template-columns:1fr 1fr; }
+}
+
+
+/* ── S14: LAUNCH TIMELINE ── */
+#s14 { background: var(--cream); }
+.timeline-wrap { max-width: 1100px; width: 100%; }
+
+.phase-track {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  gap: 0; margin-top: 52px; position: relative;
+}
+.phase-track::before {
+  content: ''; position: absolute; top: 48px; left: 0; right: 0; height: 2px;
+  background: linear-gradient(90deg, #E8854A, #D4AC52, #E8854A, #B8922A);
+  z-index: 0;
+}
+
+.phase {
+  position: relative; z-index: 1; padding: 0 12px;
+  display: flex; flex-direction: column; align-items: center; text-align: center;
+}
+.phase-node {
+  width: 96px; height: 96px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  flex-direction: column; margin-bottom: 20px;
+  border: 2px solid; position: relative;
+  transition: transform 0.3s, box-shadow 0.3s;
+  cursor: default;
+}
+.phase:hover .phase-node { transform: scale(1.06); }
+.phase-node.roots  { background: #FFF5EE; border-color: #E8854A; box-shadow: 0 4px 20px rgba(232,133,74,0.15); }
+.phase-node.bloom  { background: #FFF0F5; border-color: #D4547A; box-shadow: 0 4px 20px rgba(212,84,122,0.15); }
+.phase-node.flourish { background: #FFFBEE; border-color: #B8922A; box-shadow: 0 4px 20px rgba(184,146,42,0.15); }
+.phase-node.open   { background: linear-gradient(135deg, #FFF5EE, #FFF0F5); border-color: #8B3A0A; box-shadow: 0 8px 32px rgba(139,58,10,0.2); }
+
+.phase-emoji { font-size: 1.8rem; line-height: 1; }
+.phase-month {
+  font-family: 'DM Mono', monospace; font-size: 0.55rem;
+  letter-spacing: 0.18em; margin-top: 3px;
+}
+.roots .phase-month  { color: #8B4513; }
+.bloom .phase-month  { color: #8B2252; }
+.flourish .phase-month { color: #7A6020; }
+.open .phase-month   { color: #5C1A00; }
+
+.phase-name {
+  font-family: 'Cormorant Garamond', serif; font-size: 1.5rem;
+  font-weight: 400; color: var(--ink); margin-bottom: 10px;
+}
+.phase-name em { font-style: italic; }
+
+.phase-items { display: flex; flex-direction: column; gap: 5px; width: 100%; }
+.ph-item {
+  font-size: 0.68rem; color: var(--muted-light); line-height: 1.4;
+  padding: 6px 10px; border-radius: 3px; text-align: left;
+  border-left: 2px solid;
+}
+.roots  .ph-item { border-color: rgba(232,133,74,0.4); background: rgba(232,133,74,0.04); }
+.bloom  .ph-item { border-color: rgba(212,84,122,0.4); background: rgba(212,84,122,0.04); }
+.flourish .ph-item { border-color: rgba(184,146,42,0.4); background: rgba(184,146,42,0.04); }
+.open   .ph-item { border-color: rgba(139,58,10,0.4); background: rgba(139,58,10,0.04); }
+.ph-item strong { color: var(--ink); font-size: 0.7rem; display: block; margin-bottom: 1px; }
+
+.ph-milestone {
+  margin-top: 10px; padding: 8px 12px; border-radius: 3px; text-align: left;
+  font-size: 0.68rem; font-weight: 700; letter-spacing: 0.03em;
+}
+.roots .ph-milestone    { background: rgba(232,133,74,0.12); color: #8B3A0A; }
+.bloom .ph-milestone    { background: rgba(212,84,122,0.12); color: #7A1A40; }
+.flourish .ph-milestone { background: rgba(184,146,42,0.12); color: #7A6020; }
+.open .ph-milestone     { background: rgba(139,58,10,0.15); color: #5C1A00; }
+
+.timeline-footer {
+  margin-top: 40px; padding: 28px 36px;
+  background: linear-gradient(135deg, rgba(232,133,74,0.06), rgba(184,146,42,0.05));
+  border: 1px solid rgba(184,146,42,0.2); border-radius: 6px;
+  display: flex; align-items: center; justify-content: space-between; gap: 32px;
+  flex-wrap: wrap;
+}
+.tf-item { text-align: center; }
+.tf-num { font-family: 'Cormorant Garamond', serif; font-size: 2.2rem; font-weight: 300; color: var(--gold); line-height: 1; }
+.tf-lbl { font-size: 0.62rem; color: var(--muted-light); letter-spacing: 0.08em; margin-top: 4px; }
+.tf-divider { width: 1px; height: 40px; background: var(--light-border); }
+
+@media (max-width: 900px) {
+  .phase-track { grid-template-columns: 1fr 1fr; gap: 28px; }
+  .phase-track::before { display: none; }
+  .timeline-footer { flex-direction: column; gap: 20px; align-items: flex-start; }
+  .tf-divider { display: none; }
+}
+
+
+/* ── S9: WHAT HAPPENS NEXT (REDESIGNED) ── */
+.next-wrap { max-width: 960px; width: 100%; }
+.next-steps { display: flex; flex-direction: column; gap: 0; margin: 40px 0; }
+.next-step {
+  display: flex; gap: 24px; padding: 24px 0;
+  border-bottom: 1px solid rgba(26,20,16,0.08);
+  align-items: flex-start;
+}
+.next-step:last-child { border-bottom: none; }
+.ns-num {
+  font-family: 'Cormorant Garamond', serif; font-size: 2.8rem;
+  font-weight: 300; color: var(--gold); line-height: 1; min-width: 48px;
+}
+.ns-body {}
+.ns-title { font-size: 0.88rem; font-weight: 700; color: var(--ink); margin-bottom: 5px; letter-spacing: 0.02em; }
+.ns-desc { font-size: 0.78rem; color: var(--muted-light); line-height: 1.6; }
+
+/* Tell me about the restaurant */
+.tell-me-box {
+  background: white; border: 1px solid var(--light-border);
+  border-radius: 8px; overflow: hidden;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+  margin-top: 8px;
+}
+.tell-me-header {
+  padding: 20px 28px; background: var(--ink); color: var(--cream);
+  display: flex; align-items: center; gap: 12px;
+}
+.tell-me-header span { font-size: 1.2rem; }
+.tell-me-header-text strong { font-size: 0.85rem; font-weight: 700; display: block; }
+.tell-me-header-text small { font-size: 0.68rem; color: rgba(247,242,232,0.55); letter-spacing: 0.06em; }
+
+.tell-me-items {
+  display: grid; grid-template-columns: 1fr 1fr;
+  padding: 20px 24px; gap: 8px;
+}
+.tell-item {
+  display: flex; align-items: flex-start; gap: 10px; padding: 10px 12px;
+  border: 1px solid rgba(184,146,42,0.12); border-radius: 4px;
+  cursor: pointer; transition: all 0.2s; user-select: none;
+  background: rgba(184,146,42,0.02);
+}
+.tell-item:hover { border-color: rgba(184,146,42,0.35); background: rgba(184,146,42,0.05); }
+.tell-item.checked { border-color: var(--gold); background: rgba(184,146,42,0.08); }
+.tell-checkbox {
+  width: 18px; height: 18px; border: 1.5px solid rgba(184,146,42,0.35);
+  border-radius: 3px; flex-shrink: 0; margin-top: 1px;
+  display: flex; align-items: center; justify-content: center;
+  transition: all 0.2s; font-size: 0.65rem;
+}
+.tell-item.checked .tell-checkbox { background: var(--gold); border-color: var(--gold); color: white; }
+.tell-item-text strong { font-size: 0.75rem; color: var(--ink); display: block; margin-bottom: 2px; }
+.tell-item-text span { font-size: 0.65rem; color: var(--muted-light); line-height: 1.4; }
+
+.tell-me-footer {
+  padding: 16px 24px; border-top: 1px solid rgba(184,146,42,0.1);
+  display: flex; align-items: center; justify-content: space-between; gap: 16px;
+  background: rgba(184,146,42,0.02);
+}
+.tell-count { font-family: 'DM Mono', monospace; font-size: 0.65rem; color: var(--muted-light); }
+.tell-count strong { color: var(--gold); }
+.wa-btn {
+  display: flex; align-items: center; gap: 8px;
+  padding: 11px 22px; background: #25D366; color: white;
+  border: none; border-radius: 4px; cursor: pointer; font-family: 'Syne', sans-serif;
+  font-size: 0.72rem; font-weight: 700; letter-spacing: 0.05em;
+  transition: all 0.3s; text-decoration: none;
+}
+.wa-btn:hover { background: #1DAA55; transform: translateY(-1px); box-shadow: 0 6px 20px rgba(37,211,102,0.3); }
+.wa-icon { font-size: 1rem; }
+
+.next-contact {
+  margin-top: 32px; padding: 20px 24px;
+  border: 1px solid var(--light-border); border-radius: 4px;
+  background: white; display: flex; align-items: center; justify-content: space-between;
+  gap: 20px; flex-wrap: wrap;
+}
+.nc-text { font-family: 'DM Mono', monospace; font-size: 0.68rem; color: var(--muted-light); line-height: 2; }
+.nc-text strong { color: var(--gold); }
+.nc-badge { font-size: 0.62rem; letter-spacing: 0.1em; padding: 6px 14px; border: 1px solid var(--light-border); border-radius: 20px; color: var(--muted-light); }
+
+@media (max-width: 900px) {
+  .tell-me-items { grid-template-columns: 1fr; }
+  .next-contact { flex-direction: column; }
+}
+
+
+/* ── S8: UGC JARDIN MOMENT (DARK) ── */
+#s8 {
+  background:radial-gradient(ellipse at 30% 60%, rgba(219,132,80,0.12), transparent 55%),
+             radial-gradient(ellipse at 75% 25%, rgba(184,146,42,0.07), transparent 50%),
+             var(--dark-bg);
+}
+.ugc-wrap { max-width:1100px; width:100%; }
+.ugc-intro { font-family:'Cormorant Garamond',serif; font-size:1.1rem; color:rgba(247,242,232,0.7); max-width:620px; line-height:1.75; margin:18px 0 44px; font-weight:300; }
+.ugc-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; margin-bottom:28px; }
+.ugc-card { border-radius:8px; overflow:hidden; border:1px solid rgba(219,132,80,0.2); background:rgba(255,255,255,0.03); transition:transform 0.35s, box-shadow 0.35s; }
+.ugc-card:hover { transform:translateY(-5px); box-shadow:0 20px 48px rgba(219,132,80,0.15); }
+.ugc-vis { height:170px; display:flex; align-items:center; justify-content:center; position:relative; overflow:hidden; }
+.ugc1 { background:linear-gradient(145deg,#3D1200,#6B2A0A,#3D1200); }
+.ugc2 { background:linear-gradient(145deg,#2A0A2A,#5C1A4A,#3D0A30); }
+.ugc3 { background:linear-gradient(145deg,#1A2A0A,#3D5C1A,#2A3D0A); }
+.ugc-emoji { font-size:2.8rem; position:relative; z-index:1; }
+.ugc-glow { position:absolute; width:120px; height:120px; border-radius:50%; }
+.ugc1 .ugc-glow { background:radial-gradient(circle, rgba(255,140,80,0.3), transparent 70%); }
+.ugc2 .ugc-glow { background:radial-gradient(circle, rgba(255,100,160,0.25), transparent 70%); }
+.ugc3 .ugc-glow { background:radial-gradient(circle, rgba(100,200,80,0.2), transparent 70%); }
+.ugc-body { padding:18px 20px 22px; }
+.ugc-type { font-family:'DM Mono',monospace; font-size:0.57rem; letter-spacing:0.2em; color:rgba(219,132,80,0.8); margin-bottom:7px; text-transform:uppercase; }
+.ugc-name { font-family:'Cormorant Garamond',serif; font-size:1.2rem; color:var(--cream); margin-bottom:7px; font-weight:400; }
+.ugc-desc { font-size:0.71rem; color:rgba(247,242,232,0.6); line-height:1.6; }
+.ugc-impact { margin-top:10px; font-size:0.67rem; color:rgba(219,132,80,0.9); font-weight:600; }
+.ugc-stat-row { display:grid; grid-template-columns:repeat(3,1fr); gap:2px; }
+.ugc-stat { background:rgba(255,255,255,0.03); padding:20px 24px; text-align:center; }
+.ugc-stat-num { font-family:'Cormorant Garamond',serif; font-size:2.6rem; font-weight:300; color:var(--gold-light); line-height:1; display:block; }
+.ugc-stat-lbl { font-size:0.64rem; color:rgba(247,242,232,0.5); margin-top:6px; letter-spacing:0.06em; }
+
+/* ── S9: TELL ME (LIGHT2) ── */
+#s9 { background:var(--cream-dark); }
+.tellme-wrap { max-width:900px; width:100%; }
+.tellme-grid { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:36px; }
+.tell-item {
+  display:flex; align-items:flex-start; gap:12px; padding:14px 16px;
+  border:1px solid rgba(184,146,42,0.15); border-radius:5px;
+  cursor:pointer; transition:all 0.2s; user-select:none; background:white;
+}
+.tell-item:hover { border-color:rgba(184,146,42,0.4); background:rgba(184,146,42,0.04); }
+.tell-item.checked { border-color:var(--gold); background:rgba(184,146,42,0.08); }
+.tell-checkbox {
+  width:20px; height:20px; border:1.5px solid rgba(184,146,42,0.3); border-radius:3px;
+  flex-shrink:0; margin-top:2px; display:flex; align-items:center; justify-content:center;
+  transition:all 0.2s; font-size:0.7rem; color:white;
+}
+.tell-item.checked .tell-checkbox { background:var(--gold); border-color:var(--gold); }
+.tell-item-text strong { font-size:0.78rem; color:var(--ink); display:block; margin-bottom:3px; font-weight:700; }
+.tell-item-text span { font-size:0.67rem; color:var(--muted-light); line-height:1.45; }
+.tellme-footer {
+  margin-top:20px; padding:16px 22px; background:white;
+  border:1px solid var(--light-border); border-radius:6px;
+  display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap;
+}
+.tellme-count { font-family:'DM Mono',monospace; font-size:0.65rem; color:var(--muted-light); }
+.tellme-count strong { color:var(--gold); }
+.email-btn-dark {
+  display:inline-flex; align-items:center; gap:8px; padding:11px 22px;
+  background:var(--ink); color:var(--cream); border:none; border-radius:4px;
+  cursor:pointer; font-family:'Syne',sans-serif; font-size:0.72rem;
+  font-weight:700; letter-spacing:0.05em; transition:all 0.3s; text-decoration:none;
+}
+.email-btn-dark:hover { background:var(--ink-soft); transform:translateY(-1px); box-shadow:0 6px 20px rgba(26,20,16,0.2); }
+
+/* ── S15: PRICING (LIGHT) ── */
+#s15 { background:var(--cream); }
+
+/* ── S16: WHAT HAPPENS NEXT (LIGHT2) ── */
+#s16 { background:var(--cream-dark); }
+
+@media (max-width:900px) {
+  .ugc-grid { grid-template-columns:1fr; }
+  .tellme-grid { grid-template-columns:1fr; }
+  .ugc-stat-row { grid-template-columns:1fr; }
+}
+
 </style>
 </head>
 <body>
@@ -356,23 +830,31 @@ h2.sec-title {
     <div class="nav-dot on-dark" data-slide="s7"></div>
     <div class="nav-dot on-dark" data-slide="s8"></div>
     <div class="nav-dot on-dark" data-slide="s9"></div>
+    <div class="nav-dot on-dark" data-slide="s10"></div>
+    <div class="nav-dot on-dark" data-slide="s11"></div>
+    <div class="nav-dot on-dark" data-slide="s12"></div>
+    <div class="nav-dot on-dark" data-slide="s13"></div>
+    <div class="nav-dot on-dark" data-slide="s14"></div>
+    <div class="nav-dot on-dark" data-slide="s15"></div>
+    <div class="nav-dot on-dark" data-slide="s16"></div>
   </div>
 </nav>
 
+<body>
 <!-- S1: HERO (DARK) -->
 <section class="slide dark" id="s1">
   <div style="text-align:center; max-width:820px;">
     <p class="eyebrow fade-in d1">Prepared exclusively for you</p>
-    <h1 class="hero-title fade-in d2">Your Restaurant.<br><em>Owned Online.</em></h1>
-    <p class="hero-sub fade-in d3">A complete digital ecosystem — built to fill your tables from day one.</p>
+    <h1 class="hero-title fade-in d2">Your Destination.<br><em>Owned Online.</em></h1>
+    <p class="hero-sub fade-in d3">A complete digital ecosystem for your restaurant, spa, event centre & rooftop — built to fill every space from day one.</p>
     <div class="hero-line fade-in d4"></div>
     <div class="badges fade-in d5">
+      <span class="badge">Restaurant</span>
+      <span class="badge">Spa</span>
+      <span class="badge">Event Centre</span>
+      <span class="badge">Rooftop</span>
       <span class="badge">Brand Identity</span>
-      <span class="badge">Premium Website</span>
       <span class="badge">Local SEO</span>
-      <span class="badge">QR Menu</span>
-      <span class="badge">Pre-Launch Page</span>
-      <span class="badge">Influencer Strategy</span>
     </div>
   </div>
   <div class="scroll-hint">
@@ -433,31 +915,31 @@ h2.sec-title {
   <div class="two-col">
     <div class="reveal rd1">
       <div class="section-tag">What We Build</div>
-      <h2 class="sec-title">A website that <em>works</em><br>as hard as you do.</h2>
+      <h2 class="sec-title">One destination.<br><em>Four experiences.</em></h2>
       <div class="wf-list">
-        <div class="wf-item"><div class="wf-n">01</div><div><div class="wf-t">Online Reservations & Table Booking</div><div class="wf-d">Customers book directly 24/7 — no phone calls needed, no missed tables.</div></div></div>
-        <div class="wf-item"><div class="wf-n">02</div><div><div class="wf-t">Digital Menu with Food Photography</div><div class="wf-d">Mouth-watering presentation that drives decisions before they even walk in.</div></div></div>
-        <div class="wf-item"><div class="wf-n">03</div><div><div class="wf-t">WhatsApp Integration</div><div class="wf-d">Automated replies, reservations & inquiries through the #1 app in Nigeria.</div></div></div>
-        <div class="wf-item"><div class="wf-n">04</div><div><div class="wf-t">Google Business Profile + Maps</div><div class="wf-d">Show up when Lagos diners search "restaurant near me" on Google Maps.</div></div></div>
-        <div class="wf-item"><div class="wf-n">05</div><div><div class="wf-t">Mobile-First Design</div><div class="wf-d">Over 57% of restaurant searches happen on phones — perfect on every screen.</div></div></div>
+        <div class="wf-item"><div class="wf-n">01</div><div><div class="wf-t">Restaurant — Reservations & Digital Menu</div><div class="wf-d">Online table booking 24/7, QR code menus, WhatsApp ordering and Google Maps integration.</div></div></div>
+        <div class="wf-item"><div class="wf-n">02</div><div><div class="wf-t">Spa — Appointment Booking System</div><div class="wf-d">Full service menu, treatment packages, and an online booking calendar so clients book without calling.</div></div></div>
+        <div class="wf-item"><div class="wf-n">03</div><div><div class="wf-t">Event Centre — Enquiry & Availability</div><div class="wf-d">Package tiers, capacity info, availability calendar and event enquiry flow — capturing every corporate and private booking.</div></div></div>
+        <div class="wf-item"><div class="wf-n">04</div><div><div class="wf-t">Rooftop — Experience Page</div><div class="wf-d">An atmosphere-first showcase of your rooftop — stunning visuals, opening hours, and reservation access driving foot traffic.</div></div></div>
+        <div class="wf-item"><div class="wf-n">05</div><div><div class="wf-t">Mobile-First, All Screens</div><div class="wf-d">Over 57% of searches happen on phones — every section flawless on mobile, tablet and desktop.</div></div></div>
       </div>
     </div>
     <div class="reveal rd2">
       <div class="browser">
         <div class="b-bar">
           <div class="b-dots"><div class="b-dot" style="background:#FF5F57"></div><div class="b-dot" style="background:#FEBC2E"></div><div class="b-dot" style="background:#28C840"></div></div>
-          <div class="b-url">yourrestaurant.com</div>
+          <div class="b-url">yourdestination.com</div>
         </div>
         <div class="b-hero">
-          <div class="b-nav"><span>MENU</span><span class="b-logo">Your Restaurant</span><span>RESERVE</span></div>
-          <div class="b-rest">Fine Dining<br><em>Redefined</em></div>
-          <div class="b-tag">LAGOS · NIGERIA · EST. 2025</div>
-          <div class="b-cta">RESERVE A TABLE</div>
+          <div class="b-nav"><span>MENU</span><span class="b-logo">Your Destination</span><span>BOOK</span></div>
+          <div class="b-rest">Where Lagos<br><em>Comes to Life</em></div>
+          <div class="b-tag">RESTAURANT · SPA · EVENTS · ROOFTOP</div>
+          <div class="b-cta">EXPLORE & BOOK</div>
         </div>
         <div class="b-secs">
-          <div class="b-sec"><div class="b-sec-i">🍽️</div><div class="b-sec-t">OUR MENU</div><div class="b-sec-s">Curated with love</div></div>
-          <div class="b-sec"><div class="b-sec-i">📍</div><div class="b-sec-t">FIND US</div><div class="b-sec-s">Lagos, Nigeria</div></div>
-          <div class="b-sec"><div class="b-sec-i">💬</div><div class="b-sec-t">WHATSAPP US</div><div class="b-sec-s">Instant replies</div></div>
+          <div class="b-sec"><div class="b-sec-i">🍽️</div><div class="b-sec-t">RESTAURANT</div><div class="b-sec-s">Reserve a table</div></div>
+          <div class="b-sec"><div class="b-sec-i">💆</div><div class="b-sec-t">SPA</div><div class="b-sec-s">Book a treatment</div></div>
+          <div class="b-sec"><div class="b-sec-i">🎉</div><div class="b-sec-t">EVENTS</div><div class="b-sec-s">Plan your occasion</div></div>
         </div>
       </div>
     </div>
@@ -498,8 +980,8 @@ h2.sec-title {
     </div>
     <div class="eco-grid reveal rd2">
       <div class="eco-col"><span class="eco-top-line"></span><div class="eco-icon">🎨</div><div class="eco-title">Brand Identity</div><ul class="eco-ul"><li>Logo (3 concepts)</li><li>Brand guidelines</li><li>Color & typography</li><li>Menu design</li><li>Social media kit</li></ul></div>
-      <div class="eco-col"><span class="eco-top-line"></span><div class="eco-icon">💻</div><div class="eco-title">Premium Website</div><ul class="eco-ul"><li>Mobile-first design</li><li>Online reservations</li><li>QR code menu system</li><li>WhatsApp integration</li><li>Pre-launch hype page</li></ul></div>
-      <div class="eco-col"><span class="eco-top-line"></span><div class="eco-icon">📍</div><div class="eco-title">Local SEO</div><ul class="eco-ul"><li>Google Food Ordering</li><li>Google Business Profile</li><li>TripAdvisor + Zomato</li><li>Review management</li><li>Maps optimization</li></ul></div>
+      <div class="eco-col"><span class="eco-top-line"></span><div class="eco-icon">💻</div><div class="eco-title">Destination Website</div><ul class="eco-ul"><li>Restaurant + reservations</li><li>Spa booking system</li><li>Event centre enquiry</li><li>Rooftop experience page</li><li>WhatsApp + Pre-launch page</li></ul></div>
+      <div class="eco-col"><span class="eco-top-line"></span><div class="eco-icon">📍</div><div class="eco-title">Multi-Venue SEO</div><ul class="eco-ul"><li>4 Google Business Profiles</li><li>Per-venue schema markup</li><li>TripAdvisor + Zomato</li><li>Google Food Ordering</li><li>Maps optimization</li></ul></div>
       <div class="eco-col"><span class="eco-top-line"></span><div class="eco-icon">📱</div><div class="eco-title">Social & Growth</div><ul class="eco-ul"><li>Instagram & TikTok</li><li>Photography direction</li><li>Influencer shortlist</li><li>WhatsApp automation</li><li>Monthly reporting</li></ul></div>
     </div>
   </div>
@@ -517,147 +999,528 @@ h2.sec-title {
       <div class="u-card"><div class="u-head"><span class="u-icon">🔍</span><span class="u-pill">Google Native</span></div><div class="u-title">Google Food Ordering Integration</div><div class="u-desc">Customers order directly from your Google Search listing — without ever visiting another site. Most Lagos restaurants don't know this exists. We set it up and optimize it.</div><div class="u-impact">Impact: <strong>Orders captured before they reach a competitor</strong></div></div>
       <div class="u-card"><div class="u-head"><span class="u-icon">📲</span><span class="u-pill">In-Venue Tech</span></div><div class="u-title">QR Code Menu System</div><div class="u-desc">Scannable table menus that update instantly — no reprinting costs. Every scan gives you data on what dishes customers view most, informing your menu decisions.</div><div class="u-impact">Impact: <strong>Modern guest experience + menu intelligence</strong></div></div>
       <div class="u-card"><div class="u-head"><span class="u-icon">🌐</span><span class="u-pill">Multi-Platform</span></div><div class="u-title">TripAdvisor + Zomato + Yelp Setup</div><div class="u-desc">Lagos diners — especially tourists, expats, and corporate guests — rely on these platforms before booking. We optimize your presence across all three, not just Google.</div><div class="u-impact">Impact: <strong>Visible everywhere your customers look</strong></div></div>
+      <div class="u-card"><div class="u-head"><span class="u-icon">🗺️</span><span class="u-pill">SEO Strategy</span></div><div class="u-title">Multi-Venue Google Presence</div><div class="u-desc">One powerful website, four separate Google Business Profiles — restaurant, spa, event centre, and rooftop each rank independently. You show up in four different search categories instead of one.</div><div class="u-impact">Impact: <strong>4× the Google Map Pack visibility from one domain</strong></div></div>
       <div class="u-card"><div class="u-head"><span class="u-icon">🚀</span><span class="u-pill">Pre-Launch</span></div><div class="u-title">Coming Soon & Hype Page</div><div class="u-desc">Before your doors open, we build buzz. A stunning teaser page with email capture and a countdown — so your opening day has a ready audience waiting, not a blank slate.</div><div class="u-impact">Impact: <strong>An audience before day one</strong></div></div>
-      <div class="u-card"><div class="u-head"><span class="u-icon">📸</span><span class="u-pill">Visual Strategy</span></div><div class="u-title">Food Photography Direction</div><div class="u-desc">We coordinate your professional food shoot then distribute the visuals strategically across your website, Google Business, Instagram, Zomato, and print menus. One shoot, maximum impact.</div><div class="u-impact">Impact: <strong>Consistent premium visuals everywhere</strong></div></div>
-      <div class="u-card"><div class="u-head"><span class="u-icon">🌟</span><span class="u-pill">Growth Engine</span></div><div class="u-title">Lagos Influencer & PR Strategy</div><div class="u-desc">We research and shortlist Lagos food influencers, bloggers, and media contacts relevant to your concept — giving you a curated launch PR playbook, ready to execute.</div><div class="u-impact">Impact: <strong>Word-of-mouth, amplified from day one</strong></div></div>
+      <div class="u-card"><div class="u-head"><span class="u-icon">📸</span><span class="u-pill">Visual Strategy</span></div><div class="u-title">Full Property Photography Direction</div><div class="u-desc">We coordinate your shoot across all four spaces — restaurant, spa, event centre, and rooftop — then distribute every image strategically across all platforms. One shoot, maximum impact everywhere.</div><div class="u-impact">Impact: <strong>Consistent premium visuals across all venues</strong></div></div>
+      <div class="u-card"><div class="u-head"><span class="u-icon">🌟</span><span class="u-pill">Growth Engine</span></div><div class="u-title">Lagos Influencer & PR Strategy</div><div class="u-desc">We research and shortlist Lagos food, wellness, lifestyle, and events influencers relevant to your concept — covering all four verticals with a curated launch PR playbook, ready to execute.</div><div class="u-impact">Impact: <strong>Word-of-mouth amplified across every venue</strong></div></div>
     </div>
   </div>
 </section>
 
-<!-- S8: PRICING (LIGHT) -->
-<section class="slide light" id="s8">
-  <div class="price-wrap">
-    <div class="reveal rd1">
-      <div class="section-tag">Your Investment</div>
-      <h2 class="sec-title">Transparent pricing.<br><em>Exceptional value.</em></h2>
-      <p class="price-intro">See exactly what's included, what it costs elsewhere, and what you pay with DOTxLabs. Click any item to include or remove it from your package.</p>
+<!-- S8: UGC JARDIN MOMENT (DARK) -->
+<section class="slide dark" id="s8">
+  <div class="ugc-wrap">
+    <div class="section-tag">The Jardin Moment</div>
+    <h2 class="sec-title">Design the space to<br><em>market itself.</em></h2>
+    <p class="ugc-intro">The most powerful marketing tool isn't an ad — it's a photo your guest takes and shares with thousands of followers. Every upscale venue that wins on Instagram did it on purpose. We help you design those moments into Jardin from day one.</p>
+    <div class="ugc-grid">
+      <div class="ugc-card">
+        <div class="ugc-vis ugc1"><div class="ugc-glow"></div><div class="ugc-emoji">🌺</div></div>
+        <div class="ugc-body">
+          <div class="ugc-type">Statement Wall</div>
+          <div class="ugc-name">The Floral Mural</div>
+          <div class="ugc-desc">A floor-to-ceiling mural in your signature pink and orange — with the Jardin name subtly woven into the design. Every guest photographs it. Every post tags the location. Every share is free advertising to their entire network.</div>
+          <div class="ugc-impact">📸 The most-photographed feature in Lagos</div>
+        </div>
+      </div>
+      <div class="ugc-card">
+        <div class="ugc-vis ugc2"><div class="ugc-glow"></div><div class="ugc-emoji">🌸</div></div>
+        <div class="ugc-body">
+          <div class="ugc-type">Interactive Feature</div>
+          <div class="ugc-name">The Garden Swing</div>
+          <div class="ugc-desc">A flower-draped swing inside the indoor garden — surrounded by blooms, perfect light, and the mural behind it. People wait for their turn. They post it the moment they land. The swing alone will fill your reservation book.</div>
+          <div class="ugc-impact">📸 Guests book tables specifically to use it</div>
+        </div>
+      </div>
+      <div class="ugc-card">
+        <div class="ugc-vis ugc3"><div class="ugc-glow"></div><div class="ugc-emoji">☀️</div></div>
+        <div class="ugc-body">
+          <div class="ugc-type">Signature Setup</div>
+          <div class="ugc-name">The Jardin Table</div>
+          <div class="ugc-desc">One table. Best light in the house. Styled every morning with signature flowers, beautiful crockery, and natural garden light. The breakfast shot that makes thousands wish they were there — and then make a booking.</div>
+          <div class="ugc-impact">📸 Your most-shared content, created by guests</div>
+        </div>
+      </div>
+    </div>
+    <div class="ugc-stat-row">
+      <div class="ugc-stat"><span class="ugc-stat-num">2.3B</span><div class="ugc-stat-lbl">#FoodPhotography posts on Instagram</div></div>
+      <div class="ugc-stat"><span class="ugc-stat-num">79%</span><div class="ugc-stat-lbl">of diners choose restaurants based on social media photos</div></div>
+      <div class="ugc-stat"><span class="ugc-stat-num">₦0</span><div class="ugc-stat-lbl">Cost per post when guests create the content for you</div></div>
+    </div>
+  </div>
+</section>
+<!-- S9: TELL ME ABOUT THE RESTAURANT (LIGHT2) -->
+<section class="slide light2" id="s9">
+  <div class="tellme-wrap">
+    <div class="section-tag">Before We Build</div>
+    <h2 class="sec-title">Tell me about<br><em>the restaurant.</em></h2>
+    <p class="body-serif" style="margin-top:16px; max-width:580px;">Share whatever you have — photos, mockups, names, references. The more I can see and feel, the closer the first concepts will be to your vision. Check what you can share and I'll get it straight to my inbox.</p>
+    <div class="tellme-grid" id="tell-items">
+      <div class="tell-item" onclick="toggleTell(this)" data-label="Photos of the space so far (construction, the garden, progress)">
+        <div class="tell-checkbox">✓</div>
+        <div class="tell-item-text"><strong>📷 Space Photos</strong><span>Construction, the indoor garden, event centre — anything in progress</span></div>
+      </div>
+      <div class="tell-item" onclick="toggleTell(this)" data-label="Floral mural mockups or design references">
+        <div class="tell-checkbox">✓</div>
+        <div class="tell-item-text"><strong>🌸 Mural Mockups</strong><span>The floral designs, colour references, or anything from the muralist</span></div>
+      </div>
+      <div class="tell-item" onclick="toggleTell(this)" data-label="Confirmed restaurant name">
+        <div class="tell-checkbox">✓</div>
+        <div class="tell-item-text"><strong>✍️ Restaurant Name</strong><span>Confirmed name or names you're still deciding between</span></div>
+      </div>
+      <div class="tell-item" onclick="toggleTell(this)" data-label="Spa name or branding ideas">
+        <div class="tell-checkbox">✓</div>
+        <div class="tell-item-text"><strong>💆 Spa Name / Ideas</strong><span>Any name or concept you're considering for the spa</span></div>
+      </div>
+      <div class="tell-item" onclick="toggleTell(this)" data-label="Event centre name or positioning concept">
+        <div class="tell-checkbox">✓</div>
+        <div class="tell-item-text"><strong>🎉 Event Centre Name</strong><span>How you want to position your 300-seat venue</span></div>
+      </div>
+      <div class="tell-item" onclick="toggleTell(this)" data-label="Rooftop name or concept (bar, lounge, sundowner terrace?)">
+        <div class="tell-checkbox">✓</div>
+        <div class="tell-item-text"><strong>🌅 Rooftop Concept</strong><span>Name, vibe — bar, lounge, sundowner terrace, or something else?</span></div>
+      </div>
+      <div class="tell-item" onclick="toggleTell(this)" data-label="Instagram pages or restaurants with a look she loves">
+        <div class="tell-checkbox">✓</div>
+        <div class="tell-item-text"><strong>💫 Inspiration References</strong><span>Instagram pages, restaurants, or spaces with a look you love</span></div>
+      </div>
+      <div class="tell-item" onclick="toggleTell(this)" data-label="Existing logos, colours, or brand assets already decided">
+        <div class="tell-checkbox">✓</div>
+        <div class="tell-item-text"><strong>🎨 Existing Brand Assets</strong><span>Any logos, colours, or fonts already decided</span></div>
+      </div>
+    </div>
+    <div class="tellme-footer">
+      <div class="tellme-count">Selected: <strong id="tell-count-num">0</strong> items</div>
+      <a class="email-btn-dark" href="#" onclick="sendTellMeEmail(event)">✉️ &nbsp;Send to David</a>
+    </div>
+  </div>
+</section>
+<!-- S10: JARDIN (LIGHT) -->
+<section class="slide light" id="s10">
+  <div class="garden-wrap">
+    <div class="section-tag">The Centrepiece</div>
+    <h2 class="sec-title">Not just a restaurant.<br><em>A Jardin experience.</em></h2>
+    <div class="garden-grid">
+      <div class="garden-left">
+        <p class="garden-desc">An <strong>indoor garden</strong> unlike anything Lagos has seen — a living, breathing space where pink and orange blooms fill every corner, floral murals dress every wall, and natural light turns every breakfast into a moment worth remembering.</p>
+        <div class="garden-pillars">
+          <div class="gpillar">
+            <div class="gpillar-icon">🌸</div>
+            <div class="gpillar-text">
+              <strong>Floral Mural Walls</strong>
+              <span>Hand-crafted botanical murals that make every table an Instagram-worthy backdrop — guests share your space before they finish their first coffee.</span>
+            </div>
+          </div>
+          <div class="gpillar">
+            <div class="gpillar-icon">☀️</div>
+            <div class="gpillar-text">
+              <strong>Breakfast & Lunch — By Design</strong>
+              <span>Daytime only — and that's the point. Morning light, Jardin ambience, and unhurried dining. This is a destination, not a stopover.</span>
+            </div>
+          </div>
+          <div class="gpillar">
+            <div class="gpillar-icon">🌿</div>
+            <div class="gpillar-text">
+              <strong>A Living Brand Identity</strong>
+              <span>Jardin isn't just décor — it's your brand. Pink, orange, and lush green carry through from the physical space into your website, menu design, and social presence.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="garden-right">
+        <div class="garden-visual">
+          <div class="gv-main">
+            <div class="gv-flowers">🌸🌺🌼🌸🌺</div>
+            <div class="gv-label">Jardin — Indoor Garden</div>
+            <div class="gv-tag">LAGOS · EST. 2025</div>
+          </div>
+        </div>
+        <div class="garden-mini-row">
+          <div class="gm-card">
+            <div class="gm-vis pink">🌸</div>
+            <div class="gm-lbl">Pink Blossom Walls</div>
+          </div>
+          <div class="gm-card">
+            <div class="gm-vis orange">🌺</div>
+            <div class="gm-lbl">Orange Floral Accents</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- S11: WEBSITE MOCKUP (DARK) -->
+<section class="slide dark" id="s11">
+  <div class="mockup-wrap">
+    <div class="mockup-header">
+      <div>
+        <div class="section-tag">What It Could Look Like</div>
+        <h2 class="sec-title">Your website,<br><em>imagined.</em></h2>
+      </div>
+      <p class="body-serif">This is a first glimpse — a feel for the visual direction. Warm, botanical, luminous. Jardin brings the brand to life online just as powerfully as it does in person.</p>
     </div>
 
-    <!-- Tab switcher -->
-    <div class="price-tabs reveal rd2">
+    <div class="full-browser">
+      <div class="fb-bar">
+        <div class="fb-dots">
+          <div class="fb-dot" style="background:#FF5F57"></div>
+          <div class="fb-dot" style="background:#FEBC2E"></div>
+          <div class="fb-dot" style="background:#28C840"></div>
+        </div>
+        <div class="fb-url">jardinlagos.com</div>
+      </div>
+      <div class="fb-nav-strip">
+        <div class="fb-nav-links">
+          <span>JARDIN</span>
+          <span>MENU</span>
+          <span>SPA</span>
+          <span>EVENTS</span>
+          <span>ROOFTOP</span>
+        </div>
+        <div class="fb-logo">Jardin</div>
+        <div class="fb-nav-cta">RESERVE</div>
+      </div>
+      <div class="fb-hero">
+        <div class="fb-flower-strip"></div>
+        <div class="fb-hero-title">Where mornings bloom.</div>
+        <div class="fb-hero-sub">BREAKFAST · LUNCH · JARDIN DINING · LAGOS</div>
+        <div class="fb-hero-tag">Open daily 7am – 6pm</div>
+        <div class="fb-cta-btn">RESERVE YOUR TABLE</div>
+      </div>
+      <div class="fb-sections">
+        <div class="fb-sec">
+          <div class="fb-sec-icon">🌸</div>
+          <div class="fb-sec-title">JARDIN</div>
+          <div class="fb-sec-sub">Immersive floral dining</div>
+        </div>
+        <div class="fb-sec">
+          <div class="fb-sec-icon">💆</div>
+          <div class="fb-sec-title">THE SPA</div>
+          <div class="fb-sec-sub">Book a treatment</div>
+        </div>
+        <div class="fb-sec">
+          <div class="fb-sec-icon">🎉</div>
+          <div class="fb-sec-title">EVENTS</div>
+          <div class="fb-sec-sub">300+ capacity venue</div>
+        </div>
+        <div class="fb-sec">
+          <div class="fb-sec-icon">🌅</div>
+          <div class="fb-sec-title">ROOFTOP</div>
+          <div class="fb-sec-sub">Afternoon & evening</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="mockup-callouts">
+      <div class="m-callout">
+        <div class="mc-icon">🌸</div>
+        <div class="mc-title">Botanical Visual Language</div>
+        <div class="mc-desc">Pink & orange floral palette carried from the garden into every page of the website</div>
+      </div>
+      <div class="m-callout">
+        <div class="mc-icon">☀️</div>
+        <div class="mc-title">Daytime Brand Positioning</div>
+        <div class="mc-desc">Warm, luminous aesthetic that communicates the magic of morning and midday dining</div>
+      </div>
+      <div class="m-callout">
+        <div class="mc-icon">📱</div>
+        <div class="mc-title">Instagram-First Design</div>
+        <div class="mc-desc">Every section designed to be screenshot-worthy — guests become brand ambassadors</div>
+      </div>
+      <div class="m-callout">
+        <div class="mc-icon">🔗</div>
+        <div class="mc-title">One Link, Four Experiences</div>
+        <div class="mc-desc">Restaurant, spa, events and rooftop — all discoverable from a single unforgettable domain</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- S12: EVENT CENTRE (LIGHT) -->
+<section class="slide light" id="s12">
+  <div class="events-wrap">
+    <div class="section-tag">The Event Centre</div>
+    <h2 class="sec-title">300 guests.<br><em>Infinite possibilities.</em></h2>
+    <div class="events-grid">
+      <div class="ev-card">
+        <div class="ev-vis ev1">💍</div>
+        <div class="ev-body">
+          <div class="ev-type">Celebrations</div>
+          <div class="ev-name">Weddings & Traditional Ceremonies</div>
+          <div class="ev-desc">A grand, beautifully adorned venue for the most important days. Full floral décor, catering from the restaurant kitchen, and Jardin backdrop photography.</div>
+          <div class="ev-capacity">📍 Up to 300 guests · Full catering available</div>
+        </div>
+      </div>
+      <div class="ev-card">
+        <div class="ev-vis ev2">🏆</div>
+        <div class="ev-body">
+          <div class="ev-type">Corporate</div>
+          <div class="ev-name">Conferences, Galas & Product Launches</div>
+          <div class="ev-desc">Impress clients and teams with a venue that doubles as an experience. AV ready, branded setup options, and Jardin catering that elevates any corporate occasion.</div>
+          <div class="ev-capacity">📍 Flexible seating · AV infrastructure included</div>
+        </div>
+      </div>
+      <div class="ev-card">
+        <div class="ev-vis ev3">🎂</div>
+        <div class="ev-body">
+          <div class="ev-type">Private Events</div>
+          <div class="ev-name">Birthdays, Bridal Showers & Celebrations</div>
+          <div class="ev-desc">From intimate gatherings to full-scale parties, every private event receives the same Jardin luxury. Custom menus, floral styling, and a space that photographs beautifully.</div>
+          <div class="ev-capacity">📍 Scalable from 50 to 300 guests</div>
+        </div>
+      </div>
+    </div>
+    <div class="events-stat-row">
+      <div class="es-box">
+        <div class="es-num">300+</div>
+        <div class="es-lbl">Seat Capacity</div>
+      </div>
+      <div class="es-box">
+        <div class="es-num">3</div>
+        <div class="es-lbl">Event Categories Served</div>
+      </div>
+      <div class="es-box">
+        <div class="es-num">₦₦₦</div>
+        <div class="es-lbl">Premium Positioning in Lagos</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- S13: THE DAY JOURNEY (LIGHT2) -->
+<section class="slide light2" id="s13">
+  <div class="journey-wrap">
+    <div class="section-tag">The Full Experience</div>
+    <h2 class="sec-title">Arrive for breakfast.<br><em>Stay for the day.</em></h2>
+    <div class="journey-line">
+      <div class="j-stop">
+        <div class="j-time">7AM – 12PM</div>
+        <div class="j-node">🌸</div>
+        <div class="j-title">Jardin Breakfast</div>
+        <div class="j-desc">Start the day surrounded by pink and orange blooms. A curated breakfast menu in Lagos' most beautiful indoor garden.</div>
+      </div>
+      <div class="j-stop">
+        <div class="j-time">12PM – 3PM</div>
+        <div class="j-node">🍽️</div>
+        <div class="j-title">Lunch & Linger</div>
+        <div class="j-desc">An unhurried afternoon menu, natural light, and the garden in full bloom. The table is yours for as long as you need it.</div>
+      </div>
+      <div class="j-stop">
+        <div class="j-time">Anytime</div>
+        <div class="j-node">💆</div>
+        <div class="j-title">The Spa</div>
+        <div class="j-desc">Step away into the spa — treatments, relaxation, and restoration. A seamless extension of the garden's calm.</div>
+      </div>
+      <div class="j-stop">
+        <div class="j-time">Afternoon & Evening</div>
+        <div class="j-node">🌅</div>
+        <div class="j-title">Rooftop Sundowners</div>
+        <div class="j-desc">As the day softens, move to the rooftop. Open air, Lagos skyline, and the perfect end to a perfect day.</div>
+      </div>
+    </div>
+    <div class="journey-cta-box">
+      <div class="jcta-left">
+        <div class="jcta-title">This experience deserves a website<br><em>that lives up to it.</em></div>
+        <div class="jcta-sub">We'll build a digital presence that captures every dimension of what you're creating — so that before a single guest walks through your doors, they already feel it.</div>
+      </div>
+      <div class="jcta-right">
+        <div class="jcta-stat">
+          <div class="jcta-num">4</div>
+          <div class="jcta-lbl">Experiences. One Destination.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- S14: LAUNCH TIMELINE (LIGHT) -->
+<section class="slide light" id="s14">
+  <div class="timeline-wrap">
+    <div class="section-tag">The Roadmap</div>
+    <h2 class="sec-title">From now to<br><em>opening day.</em></h2>
+
+    <div class="phase-track">
+
+      <!-- ROOTS -->
+      <div class="phase">
+        <div class="phase-node roots">
+          <div class="phase-emoji">🌱</div>
+          <div class="phase-month">FEB – MAR</div>
+        </div>
+        <div class="phase-name"><em>Roots</em></div>
+        <div class="phase-items">
+          <div class="ph-item"><strong>Brand Identity</strong>Logo, palette, typography — Jardin comes to life visually</div>
+          <div class="ph-item"><strong>Website Design</strong>All four sections designed — restaurant, spa, events, rooftop</div>
+          <div class="ph-item"><strong>SEO Architecture</strong>Four GBP listings created, keywords mapped, schema built</div>
+          <div class="ph-item"><strong>Hype Page Live</strong>jardinlagos.com goes live — email capture begins</div>
+          <div class="ph-item"><strong>3rd Party Platforms</strong>TripAdvisor, Zomato, Yelp — all claimed and optimised</div>
+        </div>
+        <div class="ph-milestone">🎯 Hype page live by mid-March</div>
+      </div>
+
+      <!-- BLOOM -->
+      <div class="phase">
+        <div class="phase-node bloom">
+          <div class="phase-emoji">🌸</div>
+          <div class="phase-month">APRIL</div>
+        </div>
+        <div class="phase-name"><em>Bloom</em></div>
+        <div class="phase-items">
+          <div class="ph-item"><strong>Progress Photos Arrive</strong>Murals going up, garden taking shape — the first real visuals</div>
+          <div class="ph-item"><strong>Hype Page Updates</strong>Photos replace placeholder content — anticipation builds</div>
+          <div class="ph-item"><strong>Social Content Launches</strong>First posts go live — behind the scenes, the mural reveal</div>
+          <div class="ph-item"><strong>Influencer Seeding Begins</strong>Curated Lagos influencers get early access to the story</div>
+          <div class="ph-item"><strong>WhatsApp Automation Live</strong>Enquiries start being captured automatically</div>
+        </div>
+        <div class="ph-milestone">🌺 First content drop — the mural reveal</div>
+      </div>
+
+      <!-- FLOURISH -->
+      <div class="phase">
+        <div class="phase-node flourish">
+          <div class="phase-emoji">🌿</div>
+          <div class="phase-month">MAY</div>
+        </div>
+        <div class="phase-name"><em>Flourish</em></div>
+        <div class="phase-items">
+          <div class="ph-item"><strong>Full Website Live</strong>Photography integrated, all booking flows active and tested</div>
+          <div class="ph-item"><strong>Reservations Open</strong>Pre-opening waitlist converts to confirmed bookings</div>
+          <div class="ph-item"><strong>SEO Compounds</strong>Google rankings building — "garden restaurant Lagos" visible</div>
+          <div class="ph-item"><strong>Influencer Preview Events</strong>Select visits, content creation, word-of-mouth accelerates</div>
+          <div class="ph-item"><strong>Opening Date Announced</strong>Full PR push — press, influencers, and email list activated</div>
+        </div>
+        <div class="ph-milestone">📅 Reservations open, opening announced</div>
+      </div>
+
+      <!-- OPEN -->
+      <div class="phase">
+        <div class="phase-node open">
+          <div class="phase-emoji">🌺</div>
+          <div class="phase-month">JUNE</div>
+        </div>
+        <div class="phase-name"><em>Open</em></div>
+        <div class="phase-items">
+          <div class="ph-item"><strong>Grand Opening</strong>Doors open to an audience that already knows and loves Jardin</div>
+          <div class="ph-item"><strong>Full Digital Presence</strong>Ranking across all four categories on Google Lagos</div>
+          <div class="ph-item"><strong>Monthly Retainer Active</strong>Ongoing SEO, social, content, and review management</div>
+          <div class="ph-item"><strong>Review Generation Begins</strong>Every happy guest becomes a five-star review</div>
+          <div class="ph-item"><strong>Growth Reporting</strong>Monthly dashboards — traffic, bookings, rankings, revenue</div>
+        </div>
+        <div class="ph-milestone">🎉 Not a cold opening — a celebrated one</div>
+      </div>
+
+    </div>
+
+    <div class="timeline-footer">
+      <div class="tf-item">
+        <div class="tf-num">4</div>
+        <div class="tf-lbl">Months Feb → June</div>
+      </div>
+      <div class="tf-divider"></div>
+      <div class="tf-item">
+        <div class="tf-num">4</div>
+        <div class="tf-lbl">Google Presences Built</div>
+      </div>
+      <div class="tf-divider"></div>
+      <div class="tf-item">
+        <div class="tf-num">~3</div>
+        <div class="tf-lbl">Weeks to Hype Page Live</div>
+      </div>
+      <div class="tf-divider"></div>
+      <div class="tf-item">
+        <div class="tf-num">April</div>
+        <div class="tf-lbl">First Content Drop — Progress Photos</div>
+      </div>
+      <div class="tf-divider"></div>
+      <div class="tf-item">
+        <div class="tf-num">June</div>
+        <div class="tf-lbl">Grand Opening — Jardin Lagos</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- S15: PRICING (LIGHT) -->
+<section class="slide light" id="s15">
+  <div class="price-wrap">
+    <div class="section-tag">Your Investment</div>
+    <h2 class="sec-title">Transparent pricing.<br><em>Exceptional value.</em></h2>
+    <p class="price-intro">Click any item to include or remove it. When you're happy with your selection, send it to David directly.</p>
+
+    <div class="price-tabs">
       <button class="p-tab active" onclick="switchTab('phase1',this)">Phase 1 — Foundation</button>
       <button class="p-tab" onclick="switchTab('phase2',this)">Phase 2 — Monthly Growth</button>
     </div>
 
-    <!-- PHASE 1 PANEL -->
     <div class="price-panel active" id="panel-phase1">
-      <div class="price-items reveal rd2" id="item-list">
+      <div class="price-items" id="item-list">
 
-        <div class="p-item selected" data-price="4500" data-market="7500" onclick="toggleItem(this)">
-          <div class="pi-left">
-            <div class="pi-name">💻 Website Design + Development</div>
-            <div class="pi-desc">Custom mobile-first restaurant website — reservations, menu, WhatsApp, Google Maps integration. Built on a fast, modern platform.</div>
-          </div>
-          <div class="pi-market">Market: $7,500</div>
-          <div class="pi-our">$4,500</div>
-          <div class="pi-check"></div>
+        <div class="p-item selected" data-price="4500" data-market="14000" data-label="Destination Website — 4 Venues ($4,500)" onclick="toggleItem(this)">
+          <div class="pi-left"><div class="pi-name">💻 Destination Website — 4 Venues</div><div class="pi-desc">One flagship site covering restaurant, spa, event centre &amp; rooftop. Each with its own booking flow, service pages, and mobile-first design.</div></div>
+          <div class="pi-market">Market: $14,000</div><div class="pi-our">$4,500</div><div class="pi-check"></div>
         </div>
 
-        <div class="p-item selected" data-price="1200" data-market="2500" onclick="toggleItem(this)">
-          <div class="pi-left">
-            <div class="pi-name">🎨 Brand Identity</div>
-            <div class="pi-desc">Logo (3 concepts), brand guidelines, color palette, typography system, and social media kit. Everything you need to look world-class.</div>
-          </div>
-          <div class="pi-market">Market: $2,500</div>
-          <div class="pi-our">$1,200</div>
-          <div class="pi-check"></div>
+        <div class="p-item selected" data-price="1800" data-market="3700" data-label="Brand Identity + Pre-Launch Hype Page ($1,800)" onclick="toggleItem(this)">
+          <div class="pi-left"><div class="pi-name">🎨 Brand Identity + Pre-Launch Hype Page</div><div class="pi-desc">Logo (3 concepts), brand guidelines, colour palette, typography, and social media kit — plus a coming-soon page with email capture and countdown to build your audience before opening.</div></div>
+          <div class="pi-market">Market: $3,700</div><div class="pi-our">$1,800</div><div class="pi-check"></div>
         </div>
 
-        <div class="p-item selected" data-price="600" data-market="1200" onclick="toggleItem(this)">
-          <div class="pi-left">
-            <div class="pi-name">🚀 Pre-Launch Hype Page</div>
-            <div class="pi-desc">Stunning coming-soon page with email capture and countdown timer — so your opening day has an audience already waiting.</div>
-          </div>
-          <div class="pi-market">Market: $1,200</div>
-          <div class="pi-our">$600</div>
-          <div class="pi-check"></div>
+        <div class="p-item selected" data-price="1500" data-market="3200" data-label="Google Presence — 4 Venue Listings + Review Platforms ($1,500)" onclick="toggleItem(this)">
+          <div class="pi-left"><div class="pi-name">📍 Google Presence — 4 Listings + Review Platforms</div><div class="pi-desc">Four separate Google Business Profiles, Google Food Ordering integration, plus TripAdvisor, Zomato, and Yelp — all fully optimised and live from day one.</div></div>
+          <div class="pi-market">Market: $3,200</div><div class="pi-our">$1,500</div><div class="pi-check"></div>
         </div>
 
-        <div class="p-item selected" data-price="400" data-market="800" onclick="toggleItem(this)">
-          <div class="pi-left">
-            <div class="pi-name">📲 QR Code Menu System</div>
-            <div class="pi-desc">Digital table menus that update instantly with no reprinting costs. Tracks which dishes customers view most.</div>
-          </div>
-          <div class="pi-market">Market: $800</div>
-          <div class="pi-our">$400</div>
-          <div class="pi-check"></div>
+        <div class="p-item selected" data-price="400" data-market="800" data-label="QR Code Menu System ($400)" onclick="toggleItem(this)">
+          <div class="pi-left"><div class="pi-name">📲 QR Code Menu System</div><div class="pi-desc">Scannable table menus that update instantly — no reprinting costs. Tracks which dishes customers view most, giving you live menu intelligence.</div></div>
+          <div class="pi-market">Market: $800</div><div class="pi-our">$400</div><div class="pi-check"></div>
         </div>
 
-        <div class="p-item selected" data-price="400" data-market="800" onclick="toggleItem(this)">
-          <div class="pi-left">
-            <div class="pi-name">📍 Google Business + Maps Setup</div>
-            <div class="pi-desc">Full Google Business Profile optimization, Maps listing, photos, hours, and attributes — so you show up when Lagos diners search.</div>
-          </div>
-          <div class="pi-market">Market: $800</div>
-          <div class="pi-our">$400</div>
-          <div class="pi-check"></div>
+        <div class="p-item selected" data-price="1800" data-market="4000" data-label="Spa + Event Centre Booking Systems ($1,800)" onclick="toggleItem(this)">
+          <div class="pi-left"><div class="pi-name">💆 Spa + Event Centre Booking Systems</div><div class="pi-desc">Full spa service menu with online appointment calendar, plus event centre package tiers, availability calendar, and corporate/private enquiry flow — every booking captured automatically.</div></div>
+          <div class="pi-market">Market: $4,000</div><div class="pi-our">$1,800</div><div class="pi-check"></div>
         </div>
 
-        <div class="p-item selected" data-price="300" data-market="600" onclick="toggleItem(this)">
-          <div class="pi-left">
-            <div class="pi-name">🌐 TripAdvisor + Zomato + Yelp Setup</div>
-            <div class="pi-desc">Optimized presence across all three platforms — critical for tourists, expats, and corporate diners who use these before booking.</div>
-          </div>
-          <div class="pi-market">Market: $600</div>
-          <div class="pi-our">$300</div>
-          <div class="pi-check"></div>
+        <div class="p-item selected" data-price="600" data-market="1200" data-label="Rooftop Experience Page ($600)" onclick="toggleItem(this)">
+          <div class="pi-left"><div class="pi-name">🌅 Rooftop Experience Page</div><div class="pi-desc">An atmosphere-first showcase — stunning visuals, opening hours, dress code, and reservation access. Designed to make people feel it before they arrive.</div></div>
+          <div class="pi-market">Market: $1,200</div><div class="pi-our">$600</div><div class="pi-check"></div>
         </div>
 
-        <div class="p-item selected" data-price="300" data-market="600" onclick="toggleItem(this)">
-          <div class="pi-left">
-            <div class="pi-name">🔍 Google Food Ordering Integration</div>
-            <div class="pi-desc">Direct ordering from Google Search results — customers order without ever leaving Google. Most Lagos restaurants don't know this exists.</div>
-          </div>
-          <div class="pi-market">Market: $600</div>
-          <div class="pi-our">$300</div>
-          <div class="pi-check"></div>
-        </div>
-
-        <div class="p-item selected" data-price="400" data-market="1000" onclick="toggleItem(this)">
-          <div class="pi-left">
-            <div class="pi-name">📸 Photography Direction</div>
-            <div class="pi-desc">We coordinate your food shoot and distribute every image strategically across all platforms. One shoot — maximum impact, zero waste.</div>
-          </div>
-          <div class="pi-market">Market: $1,000</div>
-          <div class="pi-our">$400</div>
-          <div class="pi-check"></div>
-        </div>
-
-        <div class="p-item selected" data-price="400" data-market="800" onclick="toggleItem(this)">
-          <div class="pi-left">
-            <div class="pi-name">🌟 Lagos Influencer & PR Shortlist</div>
-            <div class="pi-desc">Curated list of food influencers, bloggers, and media contacts tailored to your concept — a launch PR playbook ready to execute.</div>
-          </div>
-          <div class="pi-market">Market: $800</div>
-          <div class="pi-our">$400</div>
-          <div class="pi-check"></div>
+        <div class="p-item selected" data-price="1400" data-market="4000" data-label="Photography Direction + Influencer Strategy + SEO Architecture ($1,400)" onclick="toggleItem(this)">
+          <div class="pi-left"><div class="pi-name">📸 Photography + Influencer Strategy + SEO Architecture</div><div class="pi-desc">Full property shoot coordination across all four spaces, strategic image distribution, curated Lagos influencer shortlist, and multi-venue keyword and schema architecture for day-one rankings.</div></div>
+          <div class="pi-market">Market: $4,000</div><div class="pi-our">$1,400</div><div class="pi-check"></div>
         </div>
 
       </div>
 
-      <div class="price-summary reveal rd3">
+      <div class="price-summary">
         <div class="ps-left">
           <div class="ps-label">Your Investment</div>
-          <div class="ps-total" id="our-total">$8,500 CAD</div>
-          <div class="ps-saving">Market value: <span id="market-total">$15,800</span> — you save <span id="saving-amt">$7,300</span></div>
+          <div class="ps-total" id="our-total">$12,000 CAD</div>
+          <div class="ps-saving">Market value: <span id="market-total">$30,900</span> — you save <span id="saving-amt">$18,900</span></div>
         </div>
         <div class="ps-right">
-          <div class="ps-items-count" id="items-count">9 deliverables selected</div>
-          <div class="ps-note">50% to begin · 50% on delivery<br>Mockups delivered within 48 hours</div>
+          <div class="ps-items-count" id="items-count">7 deliverables selected</div>
+          <div class="ps-note">50% to begin · 50% on delivery<br>Brand direction within 7 days</div>
         </div>
+      </div>
+      <div style="margin-top:16px; text-align:center;">
+        <a href="#" onclick="sendPricingEmail(event)" style="display:inline-flex;align-items:center;gap:10px;padding:13px 28px;background:var(--ink);color:var(--cream);border-radius:4px;font-family:'Syne',sans-serif;font-size:0.75rem;font-weight:700;letter-spacing:0.06em;text-decoration:none;box-shadow:0 4px 16px rgba(26,20,16,0.15);">
+          ✉️ &nbsp;Send My Phase 1 Selection to David
+        </a>
       </div>
     </div>
 
-    <!-- PHASE 2 PANEL -->
     <div class="price-panel" id="panel-phase2">
-      <div class="retainer-grid reveal rd2">
-
-        <div class="r-card" onclick="selectRetainer(this,'1500','2800')">
+      <div class="retainer-grid">
+        <div class="r-card" onclick="selectRetainer(this,'2000','4000')">
           <div class="r-name">Starter</div>
-          <div class="r-price">$1,500 <span>/ month</span></div>
-          <div class="r-market">Market rate: ~$2,800/mo</div>
+          <div class="r-price">$2,000 <span>/ month</span></div>
+          <div class="r-market">Market rate: ~$4,000/mo</div>
           <ul class="r-ul">
-            <li>SEO management (ongoing)</li>
+            <li>SEO management — all 4 venues</li>
             <li>Google Business maintenance</li>
             <li>Monthly performance report</li>
             <li class="dimmed">Social media management</li>
@@ -665,25 +1528,23 @@ h2.sec-title {
             <li class="dimmed">WhatsApp automation</li>
           </ul>
         </div>
-
-        <div class="r-card recommended selected" onclick="selectRetainer(this,'2800','5000')">
+        <div class="r-card recommended selected" onclick="selectRetainer(this,'3500','7000')">
           <div class="r-name">Growth</div>
-          <div class="r-price">$2,800 <span>/ month</span></div>
-          <div class="r-market">Market rate: ~$5,000/mo</div>
+          <div class="r-price">$3,500 <span>/ month</span></div>
+          <div class="r-market">Market rate: ~$7,000/mo</div>
           <ul class="r-ul">
-            <li>SEO management (ongoing)</li>
-            <li>Social media management</li>
-            <li>Content creation (8 posts/mo)</li>
+            <li>SEO — all 4 venues</li>
+            <li>Social media (all 4 verticals)</li>
+            <li>Content creation (12 posts/mo)</li>
             <li>WhatsApp automation</li>
             <li>Review management</li>
             <li>Monthly performance report</li>
           </ul>
         </div>
-
-        <div class="r-card" onclick="selectRetainer(this,'4000','7500')">
+        <div class="r-card" onclick="selectRetainer(this,'5000','10000')">
           <div class="r-name">Full Scale</div>
-          <div class="r-price">$4,000 <span>/ month</span></div>
-          <div class="r-market">Market rate: ~$7,500/mo</div>
+          <div class="r-price">$5,000 <span>/ month</span></div>
+          <div class="r-market">Market rate: ~$10,000/mo</div>
           <ul class="r-ul">
             <li>Everything in Growth, plus:</li>
             <li>Paid social advertising</li>
@@ -693,147 +1554,237 @@ h2.sec-title {
             <li>Weekly performance reporting</li>
           </ul>
         </div>
-
       </div>
 
-      <div class="year-summary reveal rd3">
+      <div class="year-summary">
         <div class="ys-box">
           <div class="ys-label">Phase 1 — Foundation</div>
-          <div class="ys-val">$8,500</div>
+          <div class="ys-val" id="phase1-display">$12,000</div>
           <div class="ys-note">One-time project fee</div>
         </div>
         <div class="ys-box">
           <div class="ys-label">Phase 2 — Monthly × 12</div>
-          <div class="ys-val" id="retainer-annual">$33,600</div>
+          <div class="ys-val" id="retainer-annual">$42,000</div>
           <div class="ys-note">Based on Growth plan selected</div>
         </div>
         <div class="ys-box">
           <div class="ys-label">Year 1 Total Investment</div>
-          <div class="ys-val gold" id="year1-total">$42,100</div>
-          <div class="ys-note">Market equivalent: ~$75,000+</div>
+          <div class="ys-val gold" id="year1-total">$54,000</div>
+          <div class="ys-note">Market equivalent: ~$115,000+</div>
         </div>
+      </div>
+      <div style="margin-top:20px; text-align:center;">
+        <a href="#" onclick="sendRetainerEmail(event)" style="display:inline-flex;align-items:center;gap:10px;padding:13px 28px;background:var(--ink);color:var(--cream);border-radius:4px;font-family:'Syne',sans-serif;font-size:0.75rem;font-weight:700;letter-spacing:0.06em;text-decoration:none;box-shadow:0 4px 16px rgba(26,20,16,0.15);">
+          ✉️ &nbsp;Send My Phase 2 Selection to David
+        </a>
       </div>
     </div>
 
   </div>
 </section>
+<!-- S16: WHAT HAPPENS NEXT (LIGHT2) -->
+<section class="slide light2" id="s16">
+  <div class="next-wrap">
+    <div class="section-tag">What Happens Next</div>
+    <h2 class="sec-title" style="font-size:clamp(2.2rem,4vw,3.8rem); margin-bottom:8px;">We've talked.<br><em>Now let's move.</em></h2>
 
-<!-- S9: NEXT STEPS (LIGHT) -->
-<section class="slide light2" id="s9">
-  <div class="cta-wrap">
-    <div class="section-tag" style="justify-content:center;">What Happens Next</div>
-    <h2 class="sec-title reveal rd1" style="font-size:clamp(2.6rem,5vw,4.8rem); margin:16px 0 20px;">Let's build<br><em>something legendary.</em></h2>
-    <p class="cta-desc reveal rd2">Your restaurant deserves a digital presence that matches the experience you're creating inside. Here's how we move forward.</p>
-    <div class="steps reveal rd3">
-      <div class="step"><div class="step-n">1</div><div class="step-t"><strong>Discovery Session (Today)</strong>Walk me through your vision — cuisine, vibe, target customer, location. The more I know, the better I build.</div></div>
-      <div class="step"><div class="step-n">2</div><div class="step-t"><strong>Mockups Delivered Within 48 Hours</strong>Logo concepts, full website design, and brand identity board — see exactly what you're getting before committing.</div></div>
-      <div class="step"><div class="step-n">3</div><div class="step-t"><strong>Custom Proposal & Investment Review</strong>A clear, phased proposal showing exactly what you get, when you get it, and what it costs. No surprises.</div></div>
+    <div class="next-steps">
+      <div class="next-step">
+        <div class="ns-num">1</div>
+        <div class="ns-body">
+          <div class="ns-title">You've shared your vision.</div>
+          <div class="ns-desc">The conversation has happened. I know what you're building and why it matters. Everything from here is momentum.</div>
+        </div>
+      </div>
+      <div class="next-step">
+        <div class="ns-num">2</div>
+        <div class="ns-body">
+          <div class="ns-title">Tell me about the restaurant.</div>
+          <div class="ns-desc">You've already shared your vision — now send me whatever assets you have. Photos, mockups, names, references. Use the checklist on the previous slide or WhatsApp them directly to 647-460-3641. I'll come back within 7 days with brand direction.</div>
+        </div>
+      </div>
+      <div class="next-step">
+        <div class="ns-num">3</div>
+        <div class="ns-body">
+          <div class="ns-title">Brand direction in 7 days. Full mockups in 2 weeks.</div>
+          <div class="ns-desc">First — a mood board, colour direction, and initial logo concept so you can react and shape the vision early. Then within two weeks, the full website design across all four venues. We move in March. Hype page live before April. By the time your murals go up, the world is already watching.</div>
+        </div>
+      </div>
     </div>
-    <div class="contact reveal rd3">
-      <p><strong>David Ajai</strong> — Founder, DOTxLabs<br><strong>david@dotxlabs.com</strong> &nbsp;·&nbsp; <strong>647-460-3641</strong><br><strong>www.dotxlabs.com</strong></p>
+
+    <div class="next-contact" style="justify-content:center; text-align:center;">
+      <div class="nc-text">
+        <strong>David Ajai</strong> — Founder, DOTxLabs &nbsp;·&nbsp;
+        <strong><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="f79396819e93b79398838f9b969584d994989a">[email&#160;protected]</a></strong> &nbsp;·&nbsp;
+        <strong>647-460-3641</strong> &nbsp;·&nbsp;
+        <strong>www.dotxlabs.com</strong>
+      </div>
     </div>
   </div>
 </section>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-// Scroll reveals
-const revEls = document.querySelectorAll('.reveal');
-const revObs = new IntersectionObserver(entries => {
-  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('on'); });
-}, { threshold: 0.1 });
-revEls.forEach(el => revObs.observe(el));
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+<script>
+(function() {
 
-// Nav theme + active dot switching
-const allSlides = document.querySelectorAll('.slide');
-const allDots   = document.querySelectorAll('.nav-dot');
-const navEl     = document.getElementById('main-nav');
-const logoEl    = document.getElementById('nav-logo');
+  // ── REVEALS ──
+  var revEls = document.querySelectorAll('.reveal');
+  var revObs = new IntersectionObserver(function(entries) {
+    entries.forEach(function(e) { if (e.isIntersecting) e.target.classList.add('on'); });
+  }, { threshold: 0.1 });
+  revEls.forEach(function(el) { revObs.observe(el); });
 
-const lightSlides = new Set(['s2','s4','s6','s8','s9']);
+  // ── NAV DOTS ──
+  var allSlides = document.querySelectorAll('.slide');
+  var allDots   = document.querySelectorAll('.nav-dot');
+  var navEl     = document.getElementById('main-nav');
+  var lightSet  = { s2:1, s4:1, s6:1, s9:1, s10:1, s12:1, s13:1, s14:1, s15:1, s16:1 };
 
-const slideObs = new IntersectionObserver(entries => {
-  entries.forEach(e => {
-    if (e.isIntersecting && e.intersectionRatio > 0.4) {
-      const id = e.target.id;
-      const isLight = lightSlides.has(id);
-      navEl.className = isLight ? 'light-nav' : 'dark-nav';
-      allDots.forEach(d => {
-        d.classList.remove('on-light','on-dark');
-        d.classList.add(isLight ? 'on-light' : 'on-dark');
-        d.classList.toggle('active', d.dataset.slide === id);
-      });
-    }
+  var slideObs = new IntersectionObserver(function(entries) {
+    entries.forEach(function(e) {
+      if (e.isIntersecting && e.intersectionRatio > 0.4) {
+        var id    = e.target.id;
+        var light = !!lightSet[id];
+        navEl.className = light ? 'light-nav' : 'dark-nav';
+        allDots.forEach(function(d) {
+          d.classList.remove('on-light', 'on-dark');
+          d.classList.add(light ? 'on-light' : 'on-dark');
+          d.classList.toggle('active', d.dataset.slide === id);
+        });
+      }
+    });
+  }, { threshold: 0.4 });
+  allSlides.forEach(function(s) { slideObs.observe(s); });
+
+  allDots.forEach(function(d) {
+    d.addEventListener('click', function() {
+      var target = document.getElementById(d.dataset.slide);
+      if (target) target.scrollIntoView({ behavior: 'smooth' });
+    });
   });
-}, { threshold: 0.4 });
-allSlides.forEach(s => slideObs.observe(s));
 
-// Dot click navigation
-allDots.forEach(d => {
-  d.addEventListener('click', () => {
-    document.getElementById(d.dataset.slide).scrollIntoView({ behavior: 'smooth' });
-  });
-});
+  // ── PRICING STATE ──
+  var selectedRetainer     = 3500;
+  var selectedRetainerName = 'Growth - $3,500/month';
 
-// ── PRICING INTERACTIVITY ──
+  // ── TAB SWITCHER ──
+  window.switchTab = function(panel, btn) {
+    document.querySelectorAll('.price-panel').forEach(function(p) { p.classList.remove('active'); });
+    document.querySelectorAll('.p-tab').forEach(function(t) { t.classList.remove('active'); });
+    document.getElementById('panel-' + panel).classList.add('active');
+    btn.classList.add('active');
+  };
 
-// Tab switcher
-function switchTab(panel, btn) {
-  document.querySelectorAll('.price-panel').forEach(p => p.classList.remove('active'));
-  document.querySelectorAll('.p-tab').forEach(t => t.classList.remove('active'));
-  document.getElementById('panel-' + panel).classList.add('active');
-  btn.classList.add('active');
-}
+  // ── PHASE 1: TOGGLE ITEMS ──
+  window.toggleItem = function(el) {
+    el.classList.toggle('selected');
+    updateSummary();
+  };
 
-// Phase 1: toggle items
-function toggleItem(el) {
-  el.classList.toggle('selected');
-  updateSummary();
-}
+  function updateSummary() {
+    var our = 0, mkt = 0, cnt = 0;
+    document.querySelectorAll('#item-list .p-item').forEach(function(item) {
+      if (item.classList.contains('selected')) {
+        our += parseInt(item.dataset.price,  10);
+        mkt += parseInt(item.dataset.market, 10);
+        cnt++;
+      }
+    });
+    var saving = mkt - our;
+    document.getElementById('our-total').textContent    = '$' + our.toLocaleString() + ' CAD';
+    document.getElementById('market-total').textContent = '$' + mkt.toLocaleString();
+    document.getElementById('saving-amt').textContent   = '$' + saving.toLocaleString();
+    document.getElementById('items-count').textContent  = cnt + ' deliverable' + (cnt !== 1 ? 's' : '') + ' selected';
+    var p1el = document.getElementById('phase1-display');
+    if (p1el) p1el.textContent = '$' + our.toLocaleString();
+    updateYear1(our);
+  }
 
-function updateSummary() {
-  const items = document.querySelectorAll('#item-list .p-item');
-  let ourTotal = 0, marketTotal = 0, count = 0;
-  items.forEach(item => {
-    if (item.classList.contains('selected')) {
-      ourTotal    += parseInt(item.dataset.price);
-      marketTotal += parseInt(item.dataset.market);
-      count++;
-    }
-  });
-  const saving = marketTotal - ourTotal;
-  document.getElementById('our-total').textContent    = '$' + ourTotal.toLocaleString() + ' CAD';
-  document.getElementById('market-total').textContent  = '$' + marketTotal.toLocaleString();
-  document.getElementById('saving-amt').textContent    = '$' + saving.toLocaleString();
-  document.getElementById('items-count').textContent   = count + ' deliverable' + (count !== 1 ? 's' : '') + ' selected';
-  // update year1
-  updateYear1(ourTotal);
-}
+  function getPhase1Total() {
+    var t = 0;
+    document.querySelectorAll('#item-list .p-item.selected').forEach(function(i) {
+      t += parseInt(i.dataset.price, 10);
+    });
+    return t;
+  }
 
-// Phase 2: select retainer card
-let selectedRetainer = 2800;
-function selectRetainer(el, price, market) {
-  document.querySelectorAll('.r-card').forEach(c => c.classList.remove('selected'));
-  el.classList.add('selected');
-  selectedRetainer = parseInt(price);
-  const annual = selectedRetainer * 12;
-  document.getElementById('retainer-annual').textContent = '$' + annual.toLocaleString();
-  const phase1 = getPhase1Total();
-  document.getElementById('year1-total').textContent = '$' + (phase1 + annual).toLocaleString();
-}
+  function updateYear1(p1) {
+    var el = document.getElementById('year1-total');
+    if (el) el.textContent = '$' + (p1 + selectedRetainer * 12).toLocaleString();
+  }
 
-function getPhase1Total() {
-  let t = 0;
-  document.querySelectorAll('#item-list .p-item.selected').forEach(i => t += parseInt(i.dataset.price));
-  return t;
-}
+  // ── PHASE 2: SELECT RETAINER ──
+  window.selectRetainer = function(el, price) {
+    document.querySelectorAll('.r-card').forEach(function(c) { c.classList.remove('selected'); });
+    el.classList.add('selected');
+    selectedRetainer     = parseInt(price, 10);
+    var nameEl           = el.querySelector('.r-name');
+    selectedRetainerName = (nameEl ? nameEl.textContent : 'Plan') + ' - $' + selectedRetainer.toLocaleString() + '/month';
+    var annual           = selectedRetainer * 12;
+    var annualEl         = document.getElementById('retainer-annual');
+    var year1El          = document.getElementById('year1-total');
+    if (annualEl) annualEl.textContent = '$' + annual.toLocaleString();
+    if (year1El)  year1El.textContent  = '$' + (getPhase1Total() + annual).toLocaleString();
+  };
 
-function updateYear1(phase1) {
-  const annual = selectedRetainer * 12;
-  document.getElementById('year1-total').textContent = '$' + (phase1 + annual).toLocaleString();
-}
+  // ── EMAIL: PHASE 1 ──
+  window.sendPricingEmail = function(e) {
+    e.preventDefault();
+    var selected = document.querySelectorAll('#item-list .p-item.selected');
+    if (!selected.length) { alert('Please select at least one deliverable.'); return; }
+    var lines = [];
+    selected.forEach(function(el) { lines.push('  - ' + el.dataset.label); });
+    var totalEl = document.getElementById('our-total');
+    var total   = totalEl ? totalEl.textContent : '';
+    var subj    = 'Jardin - Phase 1 Package Selection';
+    var body    = 'Hi David,' +
+      '\n\nHere is my Phase 1 selection for Jardin:' +
+      '\n\n' + lines.join('\n') +
+      '\n\nTotal: ' + total +
+      '\n\nLooking forward to moving forward.';
+    window.location.href = 'mailto:david@dotxlabs.com?subject=' + encodeURIComponent(subj) + '&body=' + encodeURIComponent(body);
+  };
 
-// Init
-updateSummary();-e 
+  // ── EMAIL: PHASE 2 ──
+  window.sendRetainerEmail = function(e) {
+    e.preventDefault();
+    var p1     = getPhase1Total();
+    var annual = selectedRetainer * 12;
+    var subj   = 'Jardin - Phase 2 Retainer Selection';
+    var body   = 'Hi David,' +
+      '\n\nHere is my Phase 2 retainer selection:' +
+      '\n\n  - Plan: ' + selectedRetainerName +
+      '\n  - Monthly: $' + selectedRetainer.toLocaleString() +
+      '\n  - Annual: $' + annual.toLocaleString() +
+      '\n\nPhase 1 total: $' + p1.toLocaleString() +
+      '\nYear 1 combined: $' + (p1 + annual).toLocaleString() +
+      '\n\nLooking forward to moving forward.';
+    window.location.href = 'mailto:david@dotxlabs.com?subject=' + encodeURIComponent(subj) + '&body=' + encodeURIComponent(body);
+  };
+
+  // ── TELL ME CHECKLIST ──
+  window.toggleTell = function(el) {
+    el.classList.toggle('checked');
+    var n       = document.querySelectorAll('#tell-items .tell-item.checked').length;
+    var counter = document.getElementById('tell-count-num');
+    if (counter) counter.textContent = n;
+  };
+
+  window.sendTellMeEmail = function(e) {
+    e.preventDefault();
+    var checked = document.querySelectorAll('#tell-items .tell-item.checked');
+    if (!checked.length) { alert('Please check at least one item you can share.'); return; }
+    var lines = [];
+    checked.forEach(function(el) { lines.push('  - ' + el.dataset.label); });
+    var subj = 'Jardin - Restaurant Information and Assets';
+    var body = 'Hi David,' +
+      '\n\nHere is what I can share about the restaurant:' +
+      '\n\n' + lines.join('\n') +
+      '\n\nI will follow up with the details soon.';
+    window.location.href = 'mailto:david@dotxlabs.com?subject=' + encodeURIComponent(subj) + '&body=' + encodeURIComponent(body);
+  };
+
+})();
 </script>
 </body>
 </html>
