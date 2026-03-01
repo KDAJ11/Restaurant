@@ -923,13 +923,13 @@ h2.sec-title {
     <div class="nav-dot on-dark" data-slide="s2"></div>
     <div class="nav-dot on-dark" data-slide="s3"></div>
     <div class="nav-dot on-dark" data-slide="s4"></div>
+    <div class="nav-dot on-dark" data-slide="s4b"></div>
     <div class="nav-dot on-dark" data-slide="s6"></div>
     <div class="nav-dot on-dark" data-slide="s7"></div>
     <div class="nav-dot on-dark" data-slide="s7b"></div>
     <div class="nav-dot on-dark" data-slide="s7c"></div>
     <div class="nav-dot on-dark" data-slide="s8"></div>
     <div class="nav-dot on-dark" data-slide="s9"></div>
-    <div class="nav-dot on-dark" data-slide="s11"></div>
     <div class="nav-dot on-dark" data-slide="s14"></div>
     <div class="nav-dot on-dark" data-slide="s15"></div>
     <div class="nav-dot on-dark" data-slide="s16"></div>
@@ -1042,6 +1042,585 @@ h2.sec-title {
   </div>
 </section>
 
+
+<!-- S4b: ONLINE PRESENCE SHOWCASE (DARK) -->
+<section class="slide dark" id="s4b" style="padding:80px 40px 60px; align-items:flex-start;">
+<style>
+/* ── SHOWCASE SLIDE ── */
+#s4b { background: radial-gradient(ellipse at 20% 50%, rgba(139,58,10,0.15), transparent 55%), radial-gradient(ellipse at 80% 20%, rgba(184,146,42,0.08), transparent 50%), var(--dark-bg); }
+
+.showcase-header { max-width:1200px; width:100%; margin:0 auto 40px; }
+.showcase-header h2 { margin-top:10px; }
+
+/* Device selector tabs */
+.device-tabs { display:flex; gap:4px; margin-bottom:40px; background:rgba(255,255,255,0.04); padding:4px; border-radius:8px; width:fit-content; }
+.device-tab {
+  padding:10px 28px; border-radius:6px; cursor:pointer;
+  font-family:'DM Mono',monospace; font-size:0.72rem; letter-spacing:0.12em;
+  text-transform:uppercase; color:rgba(247,242,232,0.4);
+  transition:all 0.3s; border:none; background:none; display:flex; align-items:center; gap:8px;
+}
+.device-tab.active { background:rgba(255,255,255,0.1); color:var(--cream); }
+.device-tab:hover:not(.active) { color:rgba(247,242,232,0.7); }
+.device-tab-icon { font-size:1rem; }
+
+/* Stage area */
+.showcase-stage {
+  max-width:1200px; width:100%; margin:0 auto;
+  display:grid; grid-template-columns:1fr 360px; gap:60px; align-items:center;
+}
+
+/* Device panels */
+.device-panel { display:none; animation:deviceFadeIn 0.4s ease forwards; }
+.device-panel.active { display:grid; grid-template-columns:1fr 360px; gap:60px; align-items:center; width:100%; }
+@keyframes deviceFadeIn { from{opacity:0;transform:translateY(12px)} to{opacity:1;transform:translateY(0)} }
+
+/* Info side */
+.showcase-info { display:flex; flex-direction:column; gap:24px; }
+.showcase-value-pill {
+  display:inline-flex; align-items:center; gap:8px;
+  background:rgba(184,146,42,0.12); border:1px solid rgba(184,146,42,0.25);
+  padding:6px 14px; border-radius:20px; width:fit-content;
+  font-family:'DM Mono',monospace; font-size:0.68rem; letter-spacing:0.1em; color:var(--gold-light);
+}
+.showcase-title { font-family:'Cormorant Garamond',serif; font-size:2.4rem; font-weight:300; color:var(--cream); line-height:1.1; }
+.showcase-title em { color:var(--gold-light); font-style:italic; }
+.showcase-desc { font-size:0.88rem; color:rgba(247,242,232,0.65); line-height:1.7; }
+.showcase-points { display:flex; flex-direction:column; gap:10px; }
+.showcase-point { display:flex; align-items:flex-start; gap:12px; }
+.sp-icon { font-size:1rem; margin-top:1px; flex-shrink:0; }
+.sp-text { font-size:0.84rem; color:rgba(247,242,232,0.7); line-height:1.5; }
+.sp-text strong { color:var(--gold-pale); }
+
+/* ─── WEBSITE MOCKUP ─── */
+.web-device {
+  background:#1A1614; border-radius:14px; overflow:hidden;
+  border:1px solid rgba(184,146,42,0.2);
+  box-shadow:0 40px 80px rgba(0,0,0,0.6), 0 0 0 1px rgba(184,146,42,0.1);
+}
+.web-bar {
+  background:#252118; padding:12px 18px;
+  display:flex; align-items:center; gap:14px;
+  border-bottom:1px solid rgba(184,146,42,0.08);
+}
+.web-dots { display:flex; gap:6px; }
+.web-dot { width:11px; height:11px; border-radius:50%; }
+.web-url {
+  flex:1; background:rgba(255,255,255,0.06); border-radius:4px;
+  padding:5px 12px; font-family:'DM Mono',monospace;
+  font-size:0.62rem; color:rgba(247,242,232,0.35); text-align:center;
+}
+.web-nav {
+  background:rgba(8,6,4,0.98); padding:0 24px;
+  display:flex; align-items:center; justify-content:space-between; height:48px;
+  border-bottom:1px solid rgba(184,146,42,0.1);
+}
+.web-nav-links { display:flex; gap:20px; }
+.web-nav-link {
+  font-size:0.58rem; letter-spacing:0.14em; color:rgba(247,242,232,0.4);
+  cursor:pointer; padding:4px 0; border-bottom:1px solid transparent; transition:all 0.2s;
+}
+.web-nav-link:hover, .web-nav-link.wactive { color:var(--gold-light); border-bottom-color:var(--gold); }
+.web-logo-text { font-family:'Cormorant Garamond',serif; font-style:italic; font-size:1rem; color:var(--gold-light); }
+.web-reserve-btn { font-size:0.54rem; letter-spacing:0.12em; padding:5px 14px; border:1px solid rgba(232,133,74,0.5); color:#F5A870; border-radius:2px; cursor:pointer; transition:all 0.2s; }
+.web-reserve-btn:hover { background:rgba(232,133,74,0.1); }
+
+/* Hero area with tab content */
+.web-content { overflow:hidden; }
+.web-page { display:none; }
+.web-page.wpage-active { display:block; }
+
+/* Restaurant page */
+.web-hero-rest {
+  height:200px; position:relative; overflow:hidden;
+  background:linear-gradient(135deg, #3D1200, #6B2A08, #3D1200);
+  display:flex; align-items:center; justify-content:center; flex-direction:column; gap:5px;
+}
+.web-hero-rest::before {
+  content:''; position:absolute; inset:0;
+  background:radial-gradient(ellipse at 35% 60%, rgba(255,140,80,0.18), transparent 50%),
+             radial-gradient(ellipse at 70% 35%, rgba(255,100,60,0.12), transparent 45%);
+}
+.web-hero-rest::after { content:'🌸🌺🌸'; position:absolute; top:10px; left:0; right:0; text-align:center; font-size:0.9rem; letter-spacing:6px; opacity:0.4; }
+.web-hero-title { font-family:'Cormorant Garamond',serif; font-style:italic; font-size:2rem; color:#FDF6EE; line-height:1; position:relative; z-index:1; }
+.web-hero-sub { font-family:'DM Mono',monospace; font-size:0.5rem; letter-spacing:0.28em; color:rgba(253,246,238,0.4); position:relative; z-index:1; }
+.web-hero-cta { position:relative; z-index:1; margin-top:10px; padding:7px 20px; font-size:0.56rem; letter-spacing:0.14em; border:1px solid rgba(232,133,74,0.6); color:#F5A870; border-radius:2px; cursor:pointer; transition:all 0.25s; }
+.web-hero-cta:hover { background:rgba(232,133,74,0.15); }
+.web-venue-strip { display:grid; grid-template-columns:repeat(4,1fr); border-top:1px solid rgba(184,146,42,0.1); }
+.web-venue-item { padding:12px 8px; text-align:center; border-right:1px solid rgba(184,146,42,0.07); cursor:pointer; transition:background 0.2s; }
+.web-venue-item:last-child { border-right:none; }
+.web-venue-item:hover { background:rgba(232,133,74,0.06); }
+.web-venue-icon { font-size:1.1rem; margin-bottom:4px; }
+.web-venue-name { font-size:0.52rem; letter-spacing:0.1em; color:rgba(247,242,232,0.5); font-weight:700; }
+.web-venue-sub { font-size:0.46rem; color:rgba(247,242,232,0.25); margin-top:2px; }
+.web-menu-strip { padding:14px 18px; background:rgba(255,255,255,0.02); display:grid; grid-template-columns:1fr 1fr; gap:8px; }
+.web-dish { background:rgba(255,255,255,0.04); border-radius:4px; padding:8px 10px; display:flex; align-items:center; gap:8px; }
+.web-dish-color { width:28px; height:28px; border-radius:3px; flex-shrink:0; }
+.web-dish-name { font-size:0.56rem; color:rgba(247,242,232,0.7); line-height:1.3; }
+.web-dish-price { font-family:'DM Mono',monospace; font-size:0.52rem; color:var(--gold-light); margin-top:2px; }
+
+/* Spa page */
+.web-hero-spa {
+  height:200px; background:linear-gradient(135deg,#2A0A2A,#4A1A48,#2A0A2A);
+  display:flex; align-items:center; justify-content:center; flex-direction:column; gap:5px; position:relative; overflow:hidden;
+}
+.web-hero-spa::before { content:''; position:absolute; inset:0; background:radial-gradient(ellipse at 50% 50%, rgba(192,100,180,0.2), transparent 60%); }
+.web-spa-title { font-family:'Cormorant Garamond',serif; font-style:italic; font-size:1.8rem; color:#FDF6EE; line-height:1; position:relative; z-index:1; }
+.web-spa-sub { font-family:'DM Mono',monospace; font-size:0.5rem; letter-spacing:0.24em; color:rgba(253,246,238,0.35); position:relative; z-index:1; }
+.web-spa-book { position:relative; z-index:1; margin-top:10px; padding:7px 20px; font-size:0.56rem; letter-spacing:0.14em; border:1px solid rgba(192,100,180,0.5); color:rgba(220,150,210,0.9); border-radius:2px; cursor:pointer; }
+.web-treatments { padding:14px 18px; background:rgba(255,255,255,0.02); display:flex; flex-direction:column; gap:6px; }
+.web-treat { display:flex; align-items:center; justify-content:space-between; padding:8px 10px; background:rgba(255,255,255,0.04); border-radius:4px; }
+.web-treat-name { font-size:0.60rem; color:rgba(247,242,232,0.75); }
+.web-treat-price { font-family:'DM Mono',monospace; font-size:0.58rem; color:#C084B8; }
+.web-treat-book { font-size:0.5rem; padding:3px 10px; border:1px solid rgba(192,100,180,0.3); border-radius:2px; color:rgba(192,100,180,0.8); cursor:pointer; transition:all 0.2s; }
+.web-treat-book:hover { background:rgba(192,100,180,0.1); }
+
+/* Events page */
+.web-hero-events {
+  height:200px; background:linear-gradient(135deg,#0A1628,#1A2E48,#0A1628);
+  display:flex; align-items:center; justify-content:center; flex-direction:column; gap:5px; position:relative; overflow:hidden;
+}
+.web-hero-events::before { content:''; position:absolute; inset:0; background:radial-gradient(ellipse at 50% 50%, rgba(80,120,220,0.15), transparent 60%); }
+.web-events-title { font-family:'Cormorant Garamond',serif; font-style:italic; font-size:1.8rem; color:#FDF6EE; line-height:1; position:relative; z-index:1; }
+.web-events-sub { font-family:'DM Mono',monospace; font-size:0.5rem; letter-spacing:0.22em; color:rgba(253,246,238,0.35); position:relative; z-index:1; }
+.web-events-cap { font-size:0.58rem; color:rgba(107,159,212,0.8); margin-top:6px; position:relative; z-index:1; }
+.web-event-types { padding:14px 18px; display:grid; grid-template-columns:1fr 1fr 1fr; gap:6px; background:rgba(255,255,255,0.02); }
+.web-ev-type { padding:10px 8px; text-align:center; background:rgba(255,255,255,0.04); border-radius:4px; cursor:pointer; transition:background 0.2s; }
+.web-ev-type:hover { background:rgba(107,159,212,0.08); }
+.web-ev-icon { font-size:1.1rem; margin-bottom:4px; }
+.web-ev-name { font-size:0.54rem; color:rgba(247,242,232,0.6); font-weight:700; }
+.web-ev-price { font-size:0.5rem; color:#6B9FD4; margin-top:2px; }
+
+/* Rooftop page */
+.web-hero-roof {
+  height:200px; background:linear-gradient(135deg,#1A1200,#3A2800,#1A1200);
+  display:flex; align-items:center; justify-content:center; flex-direction:column; gap:5px; position:relative; overflow:hidden;
+}
+.web-hero-roof::before { content:''; position:absolute; inset:0; background:radial-gradient(ellipse at 50% 80%, rgba(184,146,42,0.2), transparent 60%); }
+.web-hero-roof::after { content:'★ ★ ★ ★ ★'; position:absolute; top:12px; left:0; right:0; text-align:center; font-size:0.6rem; color:rgba(184,146,42,0.3); letter-spacing:4px; }
+.web-roof-title { font-family:'Cormorant Garamond',serif; font-style:italic; font-size:1.8rem; color:#FDF6EE; line-height:1; position:relative; z-index:1; }
+.web-roof-sub { font-family:'DM Mono',monospace; font-size:0.5rem; letter-spacing:0.24em; color:rgba(253,246,238,0.35); position:relative; z-index:1; }
+.web-roof-times { font-size:0.58rem; color:rgba(184,146,42,0.8); margin-top:6px; position:relative; z-index:1; }
+.web-roof-info { padding:14px 18px; display:grid; grid-template-columns:1fr 1fr; gap:8px; background:rgba(255,255,255,0.02); }
+.web-roof-card { padding:10px 12px; background:rgba(255,255,255,0.04); border-radius:4px; border-left:2px solid rgba(184,146,42,0.4); }
+.web-roof-card-title { font-size:0.60rem; color:rgba(247,242,232,0.75); font-weight:700; margin-bottom:3px; }
+.web-roof-card-text { font-size:0.54rem; color:rgba(247,242,232,0.4); line-height:1.4; }
+
+/* ─── GOOGLE BUSINESS PROFILE ─── */
+.phone-device {
+  width:260px; margin:0 auto;
+  background:#1C1C1E; border-radius:44px; overflow:hidden;
+  border:6px solid #2C2C2E;
+  box-shadow:0 40px 80px rgba(0,0,0,0.7), 0 0 0 1px rgba(255,255,255,0.05), inset 0 0 0 1px rgba(255,255,255,0.03);
+  position:relative;
+}
+.phone-notch {
+  background:#1C1C1E; height:28px; display:flex; align-items:center; justify-content:center;
+  position:relative; z-index:10;
+}
+.phone-notch-bar { width:80px; height:10px; background:#0A0A0A; border-radius:8px; }
+.phone-screen { background:#fff; overflow:hidden; height:480px; overflow-y:auto; }
+.phone-screen::-webkit-scrollbar { display:none; }
+
+/* Google UI */
+.g-search-bar { background:#f8f9fa; padding:10px 14px; display:flex; align-items:center; gap:8px; border-bottom:1px solid #e8eaed; position:sticky; top:0; z-index:5; }
+.g-logo { font-size:0.8rem; font-weight:700; letter-spacing:-0.02em; }
+.g-logo span:nth-child(1){color:#4285F4}
+.g-logo span:nth-child(2){color:#EA4335}
+.g-logo span:nth-child(3){color:#FBBC04}
+.g-logo span:nth-child(4){color:#4285F4}
+.g-logo span:nth-child(5){color:#34A853}
+.g-logo span:nth-child(6){color:#EA4335}
+.g-search-input { flex:1; background:white; border:1px solid #dfe1e5; border-radius:20px; padding:5px 12px; font-size:0.62rem; color:#202124; }
+.g-map-strip { height:90px; background:linear-gradient(135deg,#e8f0fe,#d2e3fc,#c5d9f7); position:relative; overflow:hidden; }
+.g-map-roads { position:absolute; inset:0; opacity:0.4; }
+.g-map-pin { position:absolute; top:50%; left:50%; transform:translate(-50%,-60%); font-size:1.4rem; filter:drop-shadow(0 2px 4px rgba(0,0,0,0.3)); }
+.g-map-label { position:absolute; bottom:6px; left:50%; transform:translateX(-50%); background:white; border-radius:4px; padding:2px 8px; font-size:0.52rem; color:#202124; font-weight:600; box-shadow:0 1px 4px rgba(0,0,0,0.2); white-space:nowrap; }
+.g-card { background:white; padding:14px; }
+.g-biz-name { font-size:0.92rem; font-weight:700; color:#202124; margin-bottom:3px; }
+.g-biz-cat { font-size:0.62rem; color:#70757a; margin-bottom:6px; }
+.g-rating-row { display:flex; align-items:center; gap:5px; margin-bottom:10px; }
+.g-rating-num { font-size:0.75rem; font-weight:700; color:#202124; }
+.g-stars { color:#FBBC04; font-size:0.7rem; letter-spacing:1px; }
+.g-review-count { font-size:0.62rem; color:#1a73e8; }
+.g-status { font-size:0.64rem; color:#188038; font-weight:600; margin-bottom:10px; }
+.g-actions { display:grid; grid-template-columns:repeat(4,1fr); gap:6px; margin-bottom:12px; }
+.g-action { display:flex; flex-direction:column; align-items:center; gap:4px; padding:8px 4px; background:#f8f9fa; border-radius:8px; cursor:pointer; transition:background 0.2s; }
+.g-action:hover { background:#e8f0fe; }
+.g-action-icon { font-size:0.9rem; }
+.g-action-label { font-size:0.48rem; color:#1a73e8; font-weight:600; text-align:center; }
+.g-order-btn { width:100%; padding:10px; background:#1a73e8; color:white; border:none; border-radius:8px; font-size:0.68rem; font-weight:700; cursor:pointer; margin-bottom:12px; transition:background 0.2s; }
+.g-order-btn:hover { background:#1557b0; }
+.g-photo-strip { display:grid; grid-template-columns:repeat(3,1fr); gap:2px; margin-bottom:12px; }
+.g-photo { height:56px; border-radius:4px; overflow:hidden; cursor:pointer; transition:opacity 0.2s; }
+.g-photo:hover { opacity:0.85; }
+.gp1{background:linear-gradient(135deg,#E8854A,#F5A870,#FFDAB8);}
+.gp2{background:linear-gradient(135deg,#C084B8,#E8A8D8,#F5D0EE);}
+.gp3{background:linear-gradient(135deg,#6B9FD4,#9DC0E8,#C5DAFA);}
+.gp4{background:linear-gradient(135deg,#B8922A,#D4AC52,#EDD98A);}
+.gp5{background:linear-gradient(135deg,#3D8C40,#60B863,#90D493);}
+.gp6{background:linear-gradient(135deg,#8C3D3D,#B86060,#D49090);}
+.g-info-row { display:flex; align-items:flex-start; gap:8px; padding:6px 0; border-top:1px solid #f0f0f0; }
+.g-info-icon { font-size:0.75rem; color:#70757a; margin-top:1px; flex-shrink:0; }
+.g-info-text { font-size:0.60rem; color:#202124; line-height:1.4; }
+.g-info-text a { color:#1a73e8; }
+.g-review { padding:10px 0; border-top:1px solid #f0f0f0; }
+.g-rev-header { display:flex; align-items:center; gap:6px; margin-bottom:4px; }
+.g-rev-avatar { width:22px; height:22px; border-radius:50%; background:linear-gradient(135deg,#E8854A,#F5A870); display:flex; align-items:center; justify-content:center; font-size:0.55rem; color:white; font-weight:700; }
+.g-rev-name { font-size:0.62rem; font-weight:600; color:#202124; }
+.g-rev-stars { color:#FBBC04; font-size:0.6rem; }
+.g-rev-text { font-size:0.58rem; color:#3c4043; line-height:1.5; }
+.g-badge { display:inline-flex; align-items:center; gap:4px; background:#e8f5e9; border-radius:4px; padding:3px 7px; font-size:0.54rem; color:#1e8e3e; font-weight:600; margin-bottom:8px; }
+
+/* ─── INSTAGRAM ─── */
+.ig-screen { background:#fff; height:480px; overflow-y:auto; }
+.ig-screen::-webkit-scrollbar { display:none; }
+.ig-topbar { padding:10px 14px; display:flex; align-items:center; justify-content:space-between; border-bottom:1px solid #dbdbdb; position:sticky; top:0; background:white; z-index:5; }
+.ig-topbar-logo { font-family:'Cormorant Garamond',serif; font-size:1.1rem; font-style:italic; color:#262626; }
+.ig-topbar-icons { display:flex; gap:12px; }
+.ig-topbar-icon { font-size:1rem; color:#262626; cursor:pointer; }
+.ig-profile { padding:14px; }
+.ig-profile-top { display:flex; align-items:center; gap:14px; margin-bottom:12px; }
+.ig-avatar {
+  width:56px; height:56px; border-radius:50%; flex-shrink:0;
+  background:linear-gradient(45deg,#E8854A,#C084B8,#6B9FD4);
+  padding:2px;
+}
+.ig-avatar-inner { width:100%; height:100%; border-radius:50%; background:linear-gradient(135deg,#F5D5B8,#E8B890,#D4956A); display:flex; align-items:center; justify-content:center; font-size:1.2rem; }
+.ig-stats { display:flex; gap:16px; flex:1; }
+.ig-stat { text-align:center; }
+.ig-stat-num { font-size:0.8rem; font-weight:700; color:#262626; display:block; }
+.ig-stat-lbl { font-size:0.52rem; color:#737373; }
+.ig-name { font-size:0.72rem; font-weight:700; color:#262626; margin-bottom:3px; }
+.ig-bio { font-size:0.60rem; color:#262626; line-height:1.5; margin-bottom:6px; }
+.ig-link { font-size:0.60rem; color:#00376b; font-weight:600; }
+.ig-follow-btn { width:100%; padding:7px; background:#0095f6; color:white; border:none; border-radius:8px; font-size:0.70rem; font-weight:700; cursor:pointer; margin-bottom:12px; transition:background 0.2s; }
+.ig-follow-btn:hover { background:#0074cc; }
+.ig-highlights { display:flex; gap:14px; padding:4px 0 14px; overflow-x:auto; }
+.ig-highlights::-webkit-scrollbar { display:none; }
+.ig-highlight { display:flex; flex-direction:column; align-items:center; gap:4px; flex-shrink:0; cursor:pointer; }
+.ig-hl-ring {
+  width:52px; height:52px; border-radius:50%;
+  padding:2px; transition:transform 0.2s;
+}
+.ig-hl-ring:hover { transform:scale(1.08); }
+.ig-hl-inner { width:100%; height:100%; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:1.2rem; border:2px solid white; }
+.hl1 { background:linear-gradient(45deg,#E8854A,#F5A870); }
+.hl2 { background:linear-gradient(45deg,#C084B8,#E8A8D8); }
+.hl3 { background:linear-gradient(45deg,#6B9FD4,#9DC0E8); }
+.hl4 { background:linear-gradient(45deg,#B8922A,#D4AC52); }
+.hl5 { background:linear-gradient(45deg,#3D8C40,#60B863); }
+.ig-hl-label { font-size:0.48rem; color:#262626; text-align:center; }
+.ig-tabs { display:flex; border-top:1px solid #dbdbdb; }
+.ig-tab { flex:1; padding:10px; text-align:center; font-size:0.9rem; cursor:pointer; border-bottom:2px solid transparent; transition:all 0.2s; }
+.ig-tab.ig-active { border-bottom-color:#262626; }
+.ig-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:2px; }
+.ig-post {
+  aspect-ratio:1; position:relative; cursor:pointer; overflow:hidden;
+  transition:transform 0.2s;
+}
+.ig-post:hover { transform:scale(0.97); }
+.ig-post-overlay { position:absolute; inset:0; background:rgba(0,0,0,0); display:flex; align-items:center; justify-content:center; gap:8px; transition:all 0.2s; opacity:0; }
+.ig-post:hover .ig-post-overlay { background:rgba(0,0,0,0.35); opacity:1; }
+.ig-post-stat { color:white; font-size:0.60rem; font-weight:700; display:flex; align-items:center; gap:3px; }
+
+/* Instagram post gradient themes */
+.ig1 { background:linear-gradient(145deg,#F5D5C0,#E8A870,#D4855A); }
+.ig2 { background:linear-gradient(145deg,#F0D5E8,#E8A0D0,#D070B8); }
+.ig3 { background:linear-gradient(145deg,#D5E8C0,#A8D070,#78B840); }
+.ig4 { background:linear-gradient(145deg,#F5E0C0,#E8C070,#D4A040); }
+.ig5 { background:linear-gradient(145deg,#F8D0D0,#E89090,#D46060); }
+.ig6 { background:linear-gradient(145deg,#D0E0F5,#90B8E8,#6090D4); }
+.ig7 { background:linear-gradient(145deg,#F5E8D0,#E8C898,#D4A860); }
+.ig8 { background:linear-gradient(145deg,#E8D0F5,#C090E8,#A060D4); }
+.ig9 { background:linear-gradient(145deg,#D0F5D8,#90E8A0,#60D470); }
+
+.ig-post-content { position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center; padding:6px; }
+.ig-post-emoji { font-size:1.4rem; margin-bottom:3px; }
+.ig-post-label { font-size:0.38rem; font-weight:700; color:rgba(0,0,0,0.5); text-align:center; letter-spacing:0.05em; text-transform:uppercase; }
+</style>
+
+<div class="showcase-header reveal rd1">
+  <div class="section-tag">Your Online Presence</div>
+  <h2 class="sec-title">How Jardin looks<br><em>to the world.</em></h2>
+</div>
+
+<!-- Device tabs -->
+<div style="max-width:1200px;width:100%;margin:0 auto;" class="reveal rd2">
+  <div class="device-tabs">
+    <button class="device-tab active" onclick="switchDevice('website',this)">
+      <span class="device-tab-icon">💻</span> Website
+    </button>
+    <button class="device-tab" onclick="switchDevice('google',this)">
+      <span class="device-tab-icon">📍</span> Google Profile
+    </button>
+    <button class="device-tab" onclick="switchDevice('instagram',this)">
+      <span class="device-tab-icon">📸</span> Instagram
+    </button>
+  </div>
+</div>
+
+<!-- WEBSITE PANEL -->
+<div class="device-panel active" id="dp-website" style="max-width:1200px;width:100%;margin:0 auto;">
+  <div class="showcase-info">
+    <span class="showcase-value-pill">💻 jardinlagos.com</span>
+    <div class="showcase-title">Your flagship<br><em>digital home.</em></div>
+    <p class="showcase-desc">One website, four complete experiences — each with its own visual world, booking flow, and content. Click the venue tabs inside the mockup to see how each section transforms.</p>
+    <div class="showcase-points">
+      <div class="showcase-point"><span class="sp-icon">🌸</span><div class="sp-text"><strong>Restaurant</strong> — Live reservations, digital menu, QR table ordering</div></div>
+      <div class="showcase-point"><span class="sp-icon">💆</span><div class="sp-text"><strong>Spa</strong> — Treatment catalogue, online appointment booking</div></div>
+      <div class="showcase-point"><span class="sp-icon">🎉</span><div class="sp-text"><strong>Events</strong> — Package tiers, capacity info, corporate enquiry flow</div></div>
+      <div class="showcase-point"><span class="sp-icon">🌅</span><div class="sp-text"><strong>Rooftop</strong> — Atmosphere-first showcase, sundowner reservations</div></div>
+    </div>
+  </div>
+  <div class="web-device">
+    <div class="web-bar">
+      <div class="web-dots">
+        <div class="web-dot" style="background:#FF5F57"></div>
+        <div class="web-dot" style="background:#FEBC2E"></div>
+        <div class="web-dot" style="background:#28C840"></div>
+      </div>
+      <div class="web-url">🔒 jardinlagos.com</div>
+    </div>
+    <div class="web-nav">
+      <div class="web-nav-links">
+        <span class="web-nav-link wactive" onclick="switchWebPage('rest',this)">MENU</span>
+        <span class="web-nav-link" onclick="switchWebPage('spa',this)">SPA</span>
+        <span class="web-nav-link" onclick="switchWebPage('events',this)">EVENTS</span>
+        <span class="web-nav-link" onclick="switchWebPage('roof',this)">ROOFTOP</span>
+      </div>
+      <div class="web-logo-text">Jardin</div>
+      <div class="web-reserve-btn">RESERVE</div>
+    </div>
+    <div class="web-content">
+      <!-- Restaurant -->
+      <div class="web-page wpage-active" id="wp-rest">
+        <div class="web-hero-rest">
+          <div class="web-hero-title">Where mornings bloom.</div>
+          <div class="web-hero-sub">BREAKFAST · LUNCH · JARDIN DINING · LAGOS</div>
+          <div class="web-hero-cta">RESERVE YOUR TABLE →</div>
+        </div>
+        <div class="web-venue-strip">
+          <div class="web-venue-item" onclick="switchWebPage('rest',document.querySelectorAll('.web-nav-link')[0])"><div class="web-venue-icon">🌸</div><div class="web-venue-name">JARDIN</div><div class="web-venue-sub">Floral dining</div></div>
+          <div class="web-venue-item" onclick="switchWebPage('spa',document.querySelectorAll('.web-nav-link')[1])"><div class="web-venue-icon">💆</div><div class="web-venue-name">THE SPA</div><div class="web-venue-sub">Book a treatment</div></div>
+          <div class="web-venue-item" onclick="switchWebPage('events',document.querySelectorAll('.web-nav-link')[2])"><div class="web-venue-icon">🎉</div><div class="web-venue-name">EVENTS</div><div class="web-venue-sub">300+ capacity</div></div>
+          <div class="web-venue-item" onclick="switchWebPage('roof',document.querySelectorAll('.web-nav-link')[3])"><div class="web-venue-icon">🌅</div><div class="web-venue-name">ROOFTOP</div><div class="web-venue-sub">Sundowners</div></div>
+        </div>
+        <div class="web-menu-strip">
+          <div class="web-dish"><div class="web-dish-color" style="background:linear-gradient(135deg,#E8A870,#D47050)"></div><div><div class="web-dish-name">Jardin Garden Eggs Benedict</div><div class="web-dish-price">₦8,500</div></div></div>
+          <div class="web-dish"><div class="web-dish-color" style="background:linear-gradient(135deg,#F5D5A0,#E8B060)"></div><div><div class="web-dish-name">Botanical French Toast</div><div class="web-dish-price">₦7,200</div></div></div>
+          <div class="web-dish"><div class="web-dish-color" style="background:linear-gradient(135deg,#C0E0A0,#80C060)"></div><div><div class="web-dish-name">Garden Avocado Plate</div><div class="web-dish-price">₦9,000</div></div></div>
+          <div class="web-dish"><div class="web-dish-color" style="background:linear-gradient(135deg,#F5C0C0,#E08080)"></div><div><div class="web-dish-name">Pink Hibiscus Smoothie Bowl</div><div class="web-dish-price">₦6,800</div></div></div>
+        </div>
+      </div>
+      <!-- Spa -->
+      <div class="web-page" id="wp-spa">
+        <div class="web-hero-spa">
+          <div class="web-spa-title">Restore. Renew. Bloom.</div>
+          <div class="web-spa-sub">THE JARDIN SPA · VICTORIA ISLAND</div>
+          <div class="web-spa-book">BOOK A TREATMENT →</div>
+        </div>
+        <div class="web-treatments">
+          <div class="web-treat"><span class="web-treat-name">🌸 Jardin Botanical Massage (90 min)</span><span class="web-treat-price">₦55,000</span><span class="web-treat-book">Book</span></div>
+          <div class="web-treat"><span class="web-treat-name">💆 Rose & Garden Facial (60 min)</span><span class="web-treat-price">₦45,000</span><span class="web-treat-book">Book</span></div>
+          <div class="web-treat"><span class="web-treat-name">✨ Full Day Wellness Package</span><span class="web-treat-price">₦120,000</span><span class="web-treat-book">Book</span></div>
+          <div class="web-treat"><span class="web-treat-name">💑 Couples Ritual (2 hrs)</span><span class="web-treat-price">₦95,000</span><span class="web-treat-book">Book</span></div>
+        </div>
+      </div>
+      <!-- Events -->
+      <div class="web-page" id="wp-events">
+        <div class="web-hero-events">
+          <div class="web-events-title">Make it unforgettable.</div>
+          <div class="web-events-sub">JARDIN EVENT CENTRE · LAGOS</div>
+          <div class="web-events-cap">📍 300-seat capacity · Full catering · AV ready</div>
+        </div>
+        <div class="web-event-types">
+          <div class="web-ev-type"><div class="web-ev-icon">💍</div><div class="web-ev-name">WEDDINGS</div><div class="web-ev-price">From ₦2.5M</div></div>
+          <div class="web-ev-type"><div class="web-ev-icon">🏆</div><div class="web-ev-name">CORPORATE</div><div class="web-ev-price">From ₦1.8M</div></div>
+          <div class="web-ev-type"><div class="web-ev-icon">🎂</div><div class="web-ev-name">PRIVATE</div><div class="web-ev-price">From ₦1.2M</div></div>
+        </div>
+      </div>
+      <!-- Rooftop -->
+      <div class="web-page" id="wp-roof">
+        <div class="web-hero-roof">
+          <div class="web-roof-title">Above the city.</div>
+          <div class="web-roof-sub">JARDIN ROOFTOP · OPEN FROM 4PM</div>
+          <div class="web-roof-times">Mon–Sun · 4PM – 11PM · Dress code applies</div>
+        </div>
+        <div class="web-roof-info">
+          <div class="web-roof-card"><div class="web-roof-card-title">🥂 Sundowner Hour</div><div class="web-roof-card-text">4PM – 7PM · Signature cocktails · Lagos skyline views</div></div>
+          <div class="web-roof-card"><div class="web-roof-card-title">🌙 Evening Experience</div><div class="web-roof-card-text">7PM onward · Light bites · Live music Fridays</div></div>
+          <div class="web-roof-card"><div class="web-roof-card-title">🎉 Private Hire</div><div class="web-roof-card-text">Exclusive rooftop events from ₦800K</div></div>
+          <div class="web-roof-card"><div class="web-roof-card-title">📍 Reservations</div><div class="web-roof-card-text">Book via website or WhatsApp · Walk-ins welcome</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- GOOGLE PROFILE PANEL -->
+<div class="device-panel" id="dp-google" style="max-width:1200px;width:100%;margin:0 auto;">
+  <div class="showcase-info">
+    <span class="showcase-value-pill">📍 Google Business Profile</span>
+    <div class="showcase-title">Top of Google.<br><em>Every search.</em></div>
+    <p class="showcase-desc">When someone searches "garden restaurant Lagos" or "breakfast Victoria Island" — this is what they see. A fully optimised profile that converts discovery into reservations before they visit any other website.</p>
+    <div class="showcase-points">
+      <div class="showcase-point"><span class="sp-icon">⭐</span><div class="sp-text"><strong>5-star reputation managed</strong> — every review monitored and responded to</div></div>
+      <div class="showcase-point"><span class="sp-icon">🛒</span><div class="sp-text"><strong>Google Food Ordering active</strong> — orders placed directly from search results</div></div>
+      <div class="showcase-point"><span class="sp-icon">📸</span><div class="sp-text"><strong>Photo strategy</strong> — botanical imagery that stops the scroll and drives clicks</div></div>
+      <div class="showcase-point"><span class="sp-icon">🗺️</span><div class="sp-text"><strong>4 separate listings</strong> — restaurant, spa, events, rooftop each rank independently</div></div>
+    </div>
+  </div>
+  <div class="phone-device">
+    <div class="phone-notch"><div class="phone-notch-bar"></div></div>
+    <div class="phone-screen">
+      <div class="g-search-bar">
+        <div class="g-logo"><span>G</span><span>o</span><span>o</span><span>g</span><span>l</span><span>e</span></div>
+        <div class="g-search-input">garden restaurant Lagos VI</div>
+      </div>
+      <div class="g-map-strip">
+        <div class="g-map-pin">📍</div>
+        <div class="g-map-label">Jardin · Victoria Island</div>
+      </div>
+      <div class="g-card">
+        <div class="g-badge">✅ Google Verified Business</div>
+        <div class="g-biz-name">Jardin Lagos</div>
+        <div class="g-biz-cat">Garden Restaurant · Breakfast & Brunch · Spa · Event Venue</div>
+        <div class="g-rating-row">
+          <span class="g-rating-num">4.9</span>
+          <span class="g-stars">★★★★★</span>
+          <span class="g-review-count">(247 reviews)</span>
+        </div>
+        <div class="g-status">✓ Open now · Closes 6PM</div>
+        <div class="g-actions">
+          <div class="g-action"><span class="g-action-icon">🗺️</span><span class="g-action-label">Directions</span></div>
+          <div class="g-action"><span class="g-action-icon">📞</span><span class="g-action-label">Call</span></div>
+          <div class="g-action"><span class="g-action-icon">🌐</span><span class="g-action-label">Website</span></div>
+          <div class="g-action"><span class="g-action-icon">📅</span><span class="g-action-label">Reserve</span></div>
+        </div>
+        <button class="g-order-btn">🛒 Order Food · Powered by Google</button>
+        <div class="g-photo-strip">
+          <div class="g-photo gp1"></div>
+          <div class="g-photo gp2"></div>
+          <div class="g-photo gp3"></div>
+          <div class="g-photo gp4"></div>
+          <div class="g-photo gp5"></div>
+          <div class="g-photo gp6"></div>
+        </div>
+        <div class="g-info-row"><span class="g-info-icon">📍</span><div class="g-info-text">12 Saka Tinubu Street, Victoria Island, Lagos</div></div>
+        <div class="g-info-row"><span class="g-info-icon">🕐</span><div class="g-info-text"><strong>Tue–Sun:</strong> 7AM – 6PM · <strong>Rooftop:</strong> 4PM – 11PM</div></div>
+        <div class="g-info-row"><span class="g-info-icon">🌐</span><div class="g-info-text"><a>jardinlagos.com</a></div></div>
+        <div class="g-review">
+          <div class="g-rev-header"><div class="g-rev-avatar">A</div><div><div class="g-rev-name">Adaeze O.</div><div class="g-rev-stars">★★★★★</div></div></div>
+          <div class="g-rev-text">"Absolutely stunning. The garden is unlike anything in Lagos. Breakfast here felt like a whole experience — we're already planning to come back for the spa."</div>
+        </div>
+        <div class="g-review">
+          <div class="g-rev-header"><div class="g-rev-avatar" style="background:linear-gradient(135deg,#6B9FD4,#9DC0E8)">T</div><div><div class="g-rev-name">Tolu M.</div><div class="g-rev-stars">★★★★★</div></div></div>
+          <div class="g-rev-text">"Booked our product launch at the event centre — seamless, beautiful, and the food was exceptional. Jardin is the new benchmark for Lagos events."</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- INSTAGRAM PANEL -->
+<div class="device-panel" id="dp-instagram" style="max-width:1200px;width:100%;margin:0 auto;">
+  <div class="showcase-info">
+    <span class="showcase-value-pill">📸 @jardinlagos</span>
+    <div class="showcase-title">A feed that<br><em>fills tables.</em></div>
+    <p class="showcase-desc">For Lagos' upscale dining market, Instagram is as important as Google. A curated botanical grid, strategic story highlights, and a consistent colour story that makes every post feel like an invitation. Tap a post in the mockup to see the detail.</p>
+    <div class="showcase-points">
+      <div class="showcase-point"><span class="sp-icon">🌸</span><div class="sp-text"><strong>Botanical colour story</strong> — warm pinks, oranges, and greens that own the scroll</div></div>
+      <div class="showcase-point"><span class="sp-icon">📖</span><div class="sp-text"><strong>Story highlights</strong> — Menu, Garden, Spa, Rooftop, Events, Press always visible</div></div>
+      <div class="showcase-point"><span class="sp-icon">📈</span><div class="sp-text"><strong>Content strategy</strong> — posting cadence, hashtag architecture, influencer tagging</div></div>
+      <div class="showcase-point"><span class="sp-icon">🔗</span><div class="sp-text"><strong>Link in bio</strong> — smart link routing to reservations, spa booking, events enquiry</div></div>
+    </div>
+  </div>
+  <div class="phone-device">
+    <div class="phone-notch"><div class="phone-notch-bar"></div></div>
+    <div class="ig-screen">
+      <div class="ig-topbar">
+        <div class="ig-topbar-logo">jardinlagos</div>
+        <div class="ig-topbar-icons">
+          <span class="ig-topbar-icon">＋</span>
+          <span class="ig-topbar-icon">☰</span>
+        </div>
+      </div>
+      <div class="ig-profile">
+        <div class="ig-profile-top">
+          <div class="ig-avatar"><div class="ig-avatar-inner">🌸</div></div>
+          <div class="ig-stats">
+            <div class="ig-stat"><span class="ig-stat-num">9</span><span class="ig-stat-lbl">posts</span></div>
+            <div class="ig-stat"><span class="ig-stat-num">4,218</span><span class="ig-stat-lbl">followers</span></div>
+            <div class="ig-stat"><span class="ig-stat-num">312</span><span class="ig-stat-lbl">following</span></div>
+          </div>
+        </div>
+        <div class="ig-name">Jardin Lagos 🌸</div>
+        <div class="ig-bio">Lagos' most beautiful indoor garden 🌺<br>Breakfast · Lunch · Spa · Rooftop · Events<br>📍 Victoria Island, Lagos</div>
+        <div class="ig-link">🔗 jardinlagos.com/reserve</div>
+        <button class="ig-follow-btn">Follow</button>
+        <div class="ig-highlights">
+          <div class="ig-highlight"><div class="ig-hl-ring hl1"><div class="ig-hl-inner">🌸</div></div><span class="ig-hl-label">Menu</span></div>
+          <div class="ig-highlight"><div class="ig-hl-ring hl2"><div class="ig-hl-inner">🌺</div></div><span class="ig-hl-label">Garden</span></div>
+          <div class="ig-highlight"><div class="ig-hl-ring hl3"><div class="ig-hl-inner">💆</div></div><span class="ig-hl-label">Spa</span></div>
+          <div class="ig-highlight"><div class="ig-hl-ring hl4"><div class="ig-hl-inner">🌅</div></div><span class="ig-hl-label">Rooftop</span></div>
+          <div class="ig-highlight"><div class="ig-hl-ring hl5"><div class="ig-hl-inner">🎉</div></div><span class="ig-hl-label">Events</span></div>
+        </div>
+      </div>
+      <div class="ig-tabs">
+        <div class="ig-tab ig-active">⊞</div>
+        <div class="ig-tab">☰</div>
+        <div class="ig-tab">🏷</div>
+      </div>
+      <div class="ig-grid">
+        <div class="ig-post ig1" onclick="igLike(this)"><div class="ig-post-content"><div class="ig-post-emoji">🍳</div><div class="ig-post-label">Eggs Benedict</div></div><div class="ig-post-overlay"><span class="ig-post-stat">❤️ 847</span><span class="ig-post-stat">💬 34</span></div></div>
+        <div class="ig-post ig2" onclick="igLike(this)"><div class="ig-post-content"><div class="ig-post-emoji">🌸</div><div class="ig-post-label">Floral Mural</div></div><div class="ig-post-overlay"><span class="ig-post-stat">❤️ 1.2K</span><span class="ig-post-stat">💬 89</span></div></div>
+        <div class="ig-post ig3" onclick="igLike(this)"><div class="ig-post-content"><div class="ig-post-emoji">🥗</div><div class="ig-post-label">Garden Salad</div></div><div class="ig-post-overlay"><span class="ig-post-stat">❤️ 623</span><span class="ig-post-stat">💬 21</span></div></div>
+        <div class="ig-post ig4" onclick="igLike(this)"><div class="ig-post-content"><div class="ig-post-emoji">☀️</div><div class="ig-post-label">Morning Light</div></div><div class="ig-post-overlay"><span class="ig-post-stat">❤️ 934</span><span class="ig-post-stat">💬 47</span></div></div>
+        <div class="ig-post ig5" onclick="igLike(this)"><div class="ig-post-content"><div class="ig-post-emoji">🍓</div><div class="ig-post-label">Açai Bowl</div></div><div class="ig-post-overlay"><span class="ig-post-stat">❤️ 756</span><span class="ig-post-stat">💬 29</span></div></div>
+        <div class="ig-post ig6" onclick="igLike(this)"><div class="ig-post-content"><div class="ig-post-emoji">🌅</div><div class="ig-post-label">Rooftop Sunset</div></div><div class="ig-post-overlay"><span class="ig-post-stat">❤️ 1.8K</span><span class="ig-post-stat">💬 112</span></div></div>
+        <div class="ig-post ig7" onclick="igLike(this)"><div class="ig-post-content"><div class="ig-post-emoji">💆</div><div class="ig-post-label">Spa Day</div></div><div class="ig-post-overlay"><span class="ig-post-stat">❤️ 689</span><span class="ig-post-stat">💬 38</span></div></div>
+        <div class="ig-post ig8" onclick="igLike(this)"><div class="ig-post-content"><div class="ig-post-emoji">🌺</div><div class="ig-post-label">Garden Swing</div></div><div class="ig-post-overlay"><span class="ig-post-stat">❤️ 2.1K</span><span class="ig-post-stat">💬 156</span></div></div>
+        <div class="ig-post ig9" onclick="igLike(this)"><div class="ig-post-content"><div class="ig-post-emoji">🎉</div><div class="ig-post-label">Events Space</div></div><div class="ig-post-overlay"><span class="ig-post-stat">❤️ 543</span><span class="ig-post-stat">💬 19</span></div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+// Device switcher
+function switchDevice(device, btn) {
+  document.querySelectorAll('.device-tab').forEach(function(t){ t.classList.remove('active'); });
+  document.querySelectorAll('.device-panel').forEach(function(p){ p.classList.remove('active'); });
+  btn.classList.add('active');
+  var panel = document.getElementById('dp-' + device);
+  if(panel) panel.classList.add('active');
+}
+
+// Website page switcher
+function switchWebPage(page, linkEl) {
+  document.querySelectorAll('.web-page').forEach(function(p){ p.classList.remove('wpage-active'); });
+  document.querySelectorAll('.web-nav-link').forEach(function(l){ l.classList.remove('wactive'); });
+  var el = document.getElementById('wp-' + page);
+  if(el) el.classList.add('wpage-active');
+  if(linkEl) linkEl.classList.add('wactive');
+}
+
+// Instagram like animation
+function igLike(el) {
+  var overlay = el.querySelector('.ig-post-overlay');
+  var statEl = el.querySelector('.ig-post-stat');
+  // Quick heart pulse
+  var heart = document.createElement('div');
+  heart.style.cssText = 'position:absolute;font-size:2.5rem;top:50%;left:50%;transform:translate(-50%,-50%) scale(0);transition:all 0.3s;z-index:10;pointer-events:none;';
+  heart.textContent = '❤️';
+  el.appendChild(heart);
+  setTimeout(function(){ heart.style.transform = 'translate(-50%,-50%) scale(1.2)'; }, 10);
+  setTimeout(function(){ heart.style.transform = 'translate(-50%,-50%) scale(0)'; heart.style.opacity='0'; }, 400);
+  setTimeout(function(){ if(heart.parentNode) heart.parentNode.removeChild(heart); }, 700);
+}
+</script>
+</section>
 
 <!-- S6: ECOSYSTEM (LIGHT) -->
 <section class="slide light" id="s6">
@@ -1343,92 +1922,6 @@ h2.sec-title {
 </section>
 
 <!-- S11: WEBSITE MOCKUP (DARK) -->
-<section class="slide dark" id="s11">
-  <div class="mockup-wrap">
-    <div class="mockup-header">
-      <div>
-        <div class="section-tag">What It Could Look Like</div>
-        <h2 class="sec-title">Your website,<br><em>imagined.</em></h2>
-      </div>
-      <p class="body-serif">This is a first glimpse — a feel for the visual direction. Warm, botanical, luminous. Jardin brings the brand to life online just as powerfully as it does in person.</p>
-    </div>
-
-    <div class="full-browser">
-      <div class="fb-bar">
-        <div class="fb-dots">
-          <div class="fb-dot" style="background:#FF5F57"></div>
-          <div class="fb-dot" style="background:#FEBC2E"></div>
-          <div class="fb-dot" style="background:#28C840"></div>
-        </div>
-        <div class="fb-url">jardinlagos.com</div>
-      </div>
-      <div class="fb-nav-strip">
-        <div class="fb-nav-links">
-          <span>JARDIN</span>
-          <span>MENU</span>
-          <span>SPA</span>
-          <span>EVENTS</span>
-          <span>ROOFTOP</span>
-        </div>
-        <div class="fb-logo">Jardin</div>
-        <div class="fb-nav-cta">RESERVE</div>
-      </div>
-      <div class="fb-hero">
-        <div class="fb-flower-strip"></div>
-        <div class="fb-hero-title">Where mornings bloom.</div>
-        <div class="fb-hero-sub">BREAKFAST · LUNCH · JARDIN DINING · LAGOS</div>
-        <div class="fb-hero-tag">Open daily 7am – 6pm</div>
-        <div class="fb-cta-btn">RESERVE YOUR TABLE</div>
-      </div>
-      <div class="fb-sections">
-        <div class="fb-sec">
-          <div class="fb-sec-icon">🌸</div>
-          <div class="fb-sec-title">JARDIN</div>
-          <div class="fb-sec-sub">Immersive floral dining</div>
-        </div>
-        <div class="fb-sec">
-          <div class="fb-sec-icon">💆</div>
-          <div class="fb-sec-title">THE SPA</div>
-          <div class="fb-sec-sub">Book a treatment</div>
-        </div>
-        <div class="fb-sec">
-          <div class="fb-sec-icon">🎉</div>
-          <div class="fb-sec-title">EVENTS</div>
-          <div class="fb-sec-sub">300+ capacity venue</div>
-        </div>
-        <div class="fb-sec">
-          <div class="fb-sec-icon">🌅</div>
-          <div class="fb-sec-title">ROOFTOP</div>
-          <div class="fb-sec-sub">Afternoon & evening</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="mockup-callouts">
-      <div class="m-callout">
-        <div class="mc-icon">🌸</div>
-        <div class="mc-title">Botanical Visual Language</div>
-        <div class="mc-desc">Pink & orange floral palette carried from the garden into every page of the website</div>
-      </div>
-      <div class="m-callout">
-        <div class="mc-icon">☀️</div>
-        <div class="mc-title">Daytime Brand Positioning</div>
-        <div class="mc-desc">Warm, luminous aesthetic that communicates the magic of morning and midday dining</div>
-      </div>
-      <div class="m-callout">
-        <div class="mc-icon">📱</div>
-        <div class="mc-title">Instagram-First Design</div>
-        <div class="mc-desc">Every section designed to be screenshot-worthy — guests become brand ambassadors</div>
-      </div>
-      <div class="m-callout">
-        <div class="mc-icon">🔗</div>
-        <div class="mc-title">One Link, Four Experiences</div>
-        <div class="mc-desc">Restaurant, spa, events and rooftop — all discoverable from a single unforgettable domain</div>
-      </div>
-    </div>
-  </div>
-</section>
-
 
 <!-- S14: LAUNCH TIMELINE (LIGHT) -->
 <section class="slide light" id="s14">
