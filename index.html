@@ -1121,31 +1121,275 @@ h2.sec-title {
 </section>
 
 
-<!-- S7b: ROI BRIDGE (LIGHT) -->
-<section class="slide light" id="s7b">
-  <div class="roi-wrap">
-    <div class="reveal rd1">
-      <div class="section-tag">The Business Case</div>
-      <h2 class="sec-title">What 20 extra covers<br><em>actually means.</em></h2>
+<!-- S7b: INTERACTIVE ROI CALCULATOR (LIGHT) -->
+<section class="slide light" id="s7b" style="height:auto;min-height:100vh;padding:80px 40px;justify-content:center;">
+<style>
+/* ── ROI CALCULATOR ── */
+.roi-calc-wrap { max-width:1000px; width:100%; display:flex; flex-direction:column; gap:48px; }
+
+/* Venue selector */
+.roi-venues { display:grid; grid-template-columns:repeat(4,1fr); gap:12px; }
+.roi-venue-btn {
+  display:flex; flex-direction:column; align-items:center; gap:8px;
+  padding:20px 12px; border-radius:12px; cursor:pointer;
+  border:2px solid rgba(58,48,40,0.1);
+  background:rgba(58,48,40,0.04);
+  transition:all 0.3s; position:relative; overflow:hidden;
+}
+.roi-venue-btn::before {
+  content:''; position:absolute; inset:0; opacity:0; transition:opacity 0.3s;
+}
+.roi-venue-btn.rva::before { background:linear-gradient(135deg,rgba(232,133,74,0.12),rgba(184,146,42,0.08)); }
+.roi-venue-btn.rvb::before { background:linear-gradient(135deg,rgba(192,100,180,0.12),rgba(150,80,160,0.08)); }
+.roi-venue-btn.rvc::before { background:linear-gradient(135deg,rgba(80,120,220,0.12),rgba(60,100,200,0.08)); }
+.roi-venue-btn.rvd::before { background:linear-gradient(135deg,rgba(184,146,42,0.12),rgba(160,120,30,0.08)); }
+.roi-venue-btn.roi-active { border-color:var(--gold); box-shadow:0 4px 20px rgba(184,146,42,0.15); }
+.roi-venue-btn.roi-active::before { opacity:1; }
+.roi-venue-btn:hover:not(.roi-active) { border-color:rgba(58,48,40,0.25); transform:translateY(-2px); }
+.rvb-icon { font-size:1.6rem; position:relative; z-index:1; }
+.rvb-name { font-family:'DM Mono',monospace; font-size:0.62rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--stone); position:relative; z-index:1; transition:color 0.3s; }
+.roi-venue-btn.roi-active .rvb-name { color:var(--gold); }
+.rvb-rev { font-family:'Cormorant Garamond',serif; font-size:1.1rem; font-weight:600; color:var(--ink); position:relative; z-index:1; }
+
+/* Calculator panel */
+.roi-panel { display:grid; grid-template-columns:1fr 1fr; gap:24px; }
+@media(max-width:640px){ .roi-panel{ grid-template-columns:1fr; } }
+
+/* Left: math card */
+.roi-math-card {
+  border-radius:16px; padding:36px; position:relative; overflow:hidden;
+  border:1px solid rgba(184,146,42,0.2);
+  background:linear-gradient(135deg,rgba(184,146,42,0.06),rgba(232,133,74,0.04));
+  transition:all 0.4s;
+}
+.roi-math-card::after {
+  content:''; position:absolute; top:-40px; right:-40px;
+  width:160px; height:160px; border-radius:50%;
+  background:radial-gradient(circle,rgba(184,146,42,0.08),transparent 70%);
+}
+.roi-scenario-tag {
+  font-family:'DM Mono',monospace; font-size:0.66rem; letter-spacing:0.14em;
+  text-transform:uppercase; color:var(--gold); margin-bottom:24px;
+  display:flex; align-items:center; gap:8px;
+}
+.roi-scenario-tag::before { content:''; display:inline-block; width:20px; height:1px; background:var(--gold); }
+.roi-equation { display:flex; flex-direction:column; gap:14px; margin-bottom:28px; }
+.roi-eq-row { display:flex; align-items:center; justify-content:space-between; }
+.roi-eq-label { font-size:0.80rem; color:var(--stone); }
+.roi-eq-value { font-family:'DM Mono',monospace; font-size:0.84rem; font-weight:600; color:var(--ink); }
+.roi-eq-divider { height:1px; background:rgba(184,146,42,0.2); margin:4px 0; }
+.roi-big-result { text-align:center; padding:20px; background:rgba(184,146,42,0.06); border-radius:10px; border:1px solid rgba(184,146,42,0.15); }
+.roi-big-label { font-family:'DM Mono',monospace; font-size:0.60rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--stone); margin-bottom:8px; }
+.roi-big-num { font-family:'Cormorant Garamond',serif; font-size:2.8rem; font-weight:600; color:var(--ink); line-height:1; transition:all 0.4s; }
+.roi-big-annual { font-size:0.80rem; color:var(--stone); margin-top:6px; }
+.roi-big-annual strong { color:var(--ink); }
+
+/* Right: retainer comparison */
+.roi-compare-card {
+  border-radius:16px; padding:36px;
+  border:1px solid rgba(58,48,40,0.1);
+  background:rgba(58,48,40,0.03);
+  display:flex; flex-direction:column; gap:20px;
+}
+.roi-compare-title {
+  font-family:'DM Mono',monospace; font-size:0.66rem; letter-spacing:0.14em;
+  text-transform:uppercase; color:var(--stone);
+  display:flex; align-items:center; gap:8px;
+}
+.roi-compare-title::before { content:''; display:inline-block; width:20px; height:1px; background:var(--stone); opacity:0.4; }
+
+/* Bar comparison */
+.roi-bar-wrap { display:flex; flex-direction:column; gap:12px; }
+.roi-bar-row { display:flex; flex-direction:column; gap:6px; }
+.roi-bar-meta { display:flex; justify-content:space-between; align-items:center; }
+.roi-bar-name { font-size:0.76rem; color:var(--ink); font-weight:600; }
+.roi-bar-val { font-family:'DM Mono',monospace; font-size:0.76rem; color:var(--ink); }
+.roi-bar-track { height:10px; background:rgba(58,48,40,0.08); border-radius:6px; overflow:hidden; }
+.roi-bar-fill { height:100%; border-radius:6px; transition:width 0.6s cubic-bezier(0.4,0,0.2,1); }
+.roi-bar-fill.rbf-rev { background:linear-gradient(90deg,var(--gold),#E8854A); }
+.roi-bar-fill.rbf-ret { background:rgba(58,48,40,0.2); width:9% !important; }
+
+.roi-ratio-box {
+  background:linear-gradient(135deg,rgba(184,146,42,0.08),rgba(232,133,74,0.05));
+  border:1px solid rgba(184,146,42,0.2); border-radius:10px;
+  padding:18px; text-align:center;
+}
+.roi-ratio-num { font-family:'Cormorant Garamond',serif; font-size:2.4rem; font-weight:600; color:var(--gold); line-height:1; transition:all 0.4s; }
+.roi-ratio-label { font-size:0.76rem; color:var(--stone); margin-top:6px; line-height:1.5; }
+.roi-insight-text { font-size:0.82rem; color:var(--stone); line-height:1.7; font-style:italic; border-left:3px solid rgba(184,146,42,0.3); padding-left:14px; transition:all 0.4s; }
+.roi-insight-text em { color:var(--ink); font-style:normal; font-weight:600; }
+
+/* Source note */
+.roi-source { font-size:0.66rem; color:var(--stone); opacity:0.6; text-align:center; }
+
+@media(max-width:700px){
+  .roi-venues { grid-template-columns:repeat(2,1fr); }
+  .roi-big-num { font-size:2rem; }
+}
+</style>
+
+<div class="roi-calc-wrap">
+  <div class="reveal rd1">
+    <div class="section-tag">The Business Case</div>
+    <h2 class="sec-title">Pick a venue.<br><em>See the numbers.</em></h2>
+  </div>
+
+  <!-- Venue selector -->
+  <div class="roi-venues reveal rd2">
+    <button class="roi-venue-btn rva roi-active" onclick="roiSwitch(0,this)">
+      <span class="rvb-icon">🌸</span>
+      <span class="rvb-name">Restaurant</span>
+      <span class="rvb-rev">₦21M/mo</span>
+    </button>
+    <button class="roi-venue-btn rvb" onclick="roiSwitch(1,this)">
+      <span class="rvb-icon">💆</span>
+      <span class="rvb-name">Spa</span>
+      <span class="rvb-rev">₦18M/mo</span>
+    </button>
+    <button class="roi-venue-btn rvc" onclick="roiSwitch(2,this)">
+      <span class="rvb-icon">🎉</span>
+      <span class="rvb-name">Events</span>
+      <span class="rvb-rev">₦12M/mo</span>
+    </button>
+    <button class="roi-venue-btn rvd" onclick="roiSwitch(3,this)">
+      <span class="rvb-icon">🌅</span>
+      <span class="rvb-name">Rooftop</span>
+      <span class="rvb-rev">₦10.5M/mo</span>
+    </button>
+  </div>
+
+  <!-- Calculator panel -->
+  <div class="roi-panel reveal rd3">
+
+    <!-- Left: math -->
+    <div class="roi-math-card">
+      <div class="roi-scenario-tag" id="roi-tag">Conservative scenario · Restaurant</div>
+      <div class="roi-equation">
+        <div class="roi-eq-row"><span class="roi-eq-label" id="roi-line1-label">Extra covers / week</span><span class="roi-eq-value" id="roi-line1-val">+20 covers</span></div>
+        <div class="roi-eq-row"><span class="roi-eq-label" id="roi-line2-label">Average spend per cover</span><span class="roi-eq-value" id="roi-line2-val">₦25,000</span></div>
+        <div class="roi-eq-row"><span class="roi-eq-label" id="roi-line3-label">Weeks per month</span><span class="roi-eq-value" id="roi-line3-val">× 4 weeks</span></div>
+        <div class="roi-eq-divider"></div>
+        <div class="roi-eq-row"><span class="roi-eq-label">Additional monthly revenue</span><span class="roi-eq-value" id="roi-line4-val">₦2,000,000</span></div>
+      </div>
+      <div class="roi-big-result">
+        <div class="roi-big-label">Monthly revenue protected</div>
+        <div class="roi-big-num" id="roi-monthly">₦21M</div>
+        <div class="roi-big-annual" id="roi-annual">Full capacity · <strong>₦252M/year</strong></div>
+      </div>
     </div>
-    <div class="roi-grid reveal rd2">
-      <div class="roi-card roi-card--accent">
-        <div class="roi-label">Conservative scenario — restaurant only</div>
-        <div class="roi-math">
-          <div class="roi-row"><span class="roi-item">20 extra covers/week</span><span class="roi-op">×</span><span class="roi-item">₦25,000 avg spend</span></div>
-          <div class="roi-equals">=</div>
-          <div class="roi-result">₦500,000 / week</div>
-          <div class="roi-sub">₦2,000,000 / month &nbsp;·&nbsp; <strong>₦24M+ / year</strong></div>
+
+    <!-- Right: retainer comparison -->
+    <div class="roi-compare-card">
+      <div class="roi-compare-title">Retainer vs. Revenue</div>
+      <div class="roi-bar-wrap">
+        <div class="roi-bar-row">
+          <div class="roi-bar-meta">
+            <span class="roi-bar-name" id="cmp-rev-name">Restaurant revenue</span>
+            <span class="roi-bar-val" id="cmp-rev-val">₦21M/mo</span>
+          </div>
+          <div class="roi-bar-track"><div class="roi-bar-fill rbf-rev" id="roi-rev-bar" style="width:100%"></div></div>
+        </div>
+        <div class="roi-bar-row">
+          <div class="roi-bar-meta">
+            <span class="roi-bar-name">Monthly retainer</span>
+            <span class="roi-bar-val">₦5.4M/mo</span>
+          </div>
+          <div class="roi-bar-track"><div class="roi-bar-fill rbf-ret"></div></div>
         </div>
       </div>
-      <div class="roi-card">
-        <div class="roi-label">Your Year 1 investment</div>
-        <div class="roi-figure">~$54,000 <span class="roi-note">total (setup + 12 months retainer)</span></div>
-        <div class="roi-divider"></div>
-        <div class="roi-insight">If digital marketing fills just <em>20 extra seats per week</em>, the entire investment pays for itself — from the restaurant alone, before the spa, events, or rooftop contribute a single naira.</div>
+      <div class="roi-ratio-box">
+        <div class="roi-ratio-num" id="roi-ratio">3.9×</div>
+        <div class="roi-ratio-label">revenue covered<br>for every ₦1 spent on marketing</div>
+      </div>
+      <div class="roi-insight-text" id="roi-insight">
+        The retainer is ₦5.4M/month. The restaurant alone generates <em>₦21M</em> at capacity. Marketing costs less than one week of restaurant revenue — and protects all four venues.
       </div>
     </div>
   </div>
+
+  <div class="roi-source reveal rd3">Market data: Praia Lagos · Oxid Luxury Spa · Oriental Hotel VI · Sky Restaurant Lagos</div>
+</div>
+
+<script>
+var roiData = [
+  {
+    name: "Restaurant", icon: "🌸", tag: "Conservative scenario · Restaurant",
+    line1l: "Extra covers / week", line1v: "+20 covers",
+    line2l: "Average spend per cover", line2v: "₦25,000",
+    line3l: "Weeks per month", line3v: "× 4 weeks",
+    line4v: "₦2,000,000",
+    monthly: "₦21M", monthlyN: 21,
+    annual: "Full capacity · <strong>₦252M/year</strong>",
+    ratio: "3.9×",
+    insight: "The retainer is ₦5.4M/month. The restaurant alone generates <em>₦21M</em> at capacity. Marketing costs less than one week of restaurant revenue — and protects all four venues."
+  },
+  {
+    name: "Spa", icon: "💆", tag: "Conservative scenario · The Spa",
+    line1l: "Extra treatments / week", line1v: "+8 treatments",
+    line2l: "Average treatment value", line2v: "₦50,000",
+    line3l: "Operating days / month", line3v: "× 24 days",
+    line4v: "₦9,600,000",
+    monthly: "₦18M", monthlyN: 18,
+    annual: "Full capacity · <strong>₦216M/year</strong>",
+    ratio: "3.3×",
+    insight: "At ₦50k per treatment, the spa generates <em>₦18M/month</em> at capacity. The entire retainer is covered by fewer than 2 days of spa bookings."
+  },
+  {
+    name: "Events", icon: "🎉", tag: "Conservative scenario · Event Centre",
+    line1l: "Extra events / month", line1v: "+2 events",
+    line2l: "Average booking value", line2v: "₦2,500,000",
+    line3l: "Additional revenue", line3v: "direct",
+    line4v: "₦5,000,000",
+    monthly: "₦12M", monthlyN: 12,
+    annual: "Full capacity · <strong>₦144M/year</strong>",
+    ratio: "2.2×",
+    insight: "Just <em>2 extra events per month</em> from digital enquiries covers the retainer entirely. At full capacity the event centre generates ₦12M/month — one booking pays for 6 months of marketing."
+  },
+  {
+    name: "Rooftop", icon: "🌅", tag: "Conservative scenario · Rooftop",
+    line1l: "Extra covers / evening", line1v: "+15 covers",
+    line2l: "Average spend per cover", line2v: "₦15,000",
+    line3l: "Operating evenings / month", line3v: "× 20 eve",
+    line4v: "₦4,500,000",
+    monthly: "₦10.5M", monthlyN: 10.5,
+    annual: "Full capacity · <strong>₦126M/year</strong>",
+    ratio: "1.9×",
+    insight: "The rooftop at capacity generates <em>₦10.5M/month</em>. Adding just 15 covers per evening through Instagram and Google covers the full retainer cost twice over."
+  }
+];
+
+function roiSwitch(idx, btn) {
+  document.querySelectorAll('.roi-venue-btn').forEach(function(b){ b.classList.remove('roi-active'); });
+  btn.classList.add('roi-active');
+  var d = roiData[idx];
+  // Animate number change
+  var fields = {
+    'roi-tag': d.tag, 'roi-line1-label': d.line1l, 'roi-line1-val': d.line1v,
+    'roi-line2-label': d.line2l, 'roi-line2-val': d.line2v,
+    'roi-line3-label': d.line3l, 'roi-line3-val': d.line3v,
+    'roi-line4-val': d.line4v, 'roi-ratio': d.ratio,
+    'cmp-rev-name': d.name + ' revenue', 'cmp-rev-val': d.monthly + '/mo'
+  };
+  Object.keys(fields).forEach(function(id){
+    var el = document.getElementById(id);
+    if(el){ el.style.opacity='0'; el.style.transform='translateY(6px)';
+      setTimeout(function(){ el.textContent=fields[id]; el.style.opacity='1'; el.style.transform='translateY(0)'; el.style.transition='all 0.3s'; }, 150);
+    }
+  });
+  // innerHTML fields
+  setTimeout(function(){
+    var mn = document.getElementById('roi-monthly');
+    if(mn){ mn.style.opacity='0'; setTimeout(function(){ mn.textContent=d.monthly; mn.style.opacity='1'; mn.style.transition='opacity 0.3s'; },150); }
+    var an = document.getElementById('roi-annual');
+    if(an){ an.style.opacity='0'; setTimeout(function(){ an.innerHTML=d.annual; an.style.opacity='1'; an.style.transition='opacity 0.3s'; },150); }
+    var ins = document.getElementById('roi-insight');
+    if(ins){ ins.style.opacity='0'; setTimeout(function(){ ins.innerHTML=d.insight; ins.style.opacity='1'; ins.style.transition='opacity 0.3s'; },150); }
+    // Bar width
+    var bar = document.getElementById('roi-rev-bar');
+    if(bar){ bar.style.width = Math.min(100, Math.round((d.monthlyN / 21)*100)) + '%'; }
+  }, 0);
+}
+</script>
 </section>
 
 <!-- S7c: MONTHLY GROWTH ENGINE (DARK) -->
