@@ -27,7 +27,7 @@
   --bloom-amber: #C9A05A;
 }
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; -webkit-overflow-scrolling: touch; }
 body { font-family: 'Jost', sans-serif; overflow-x: hidden; }
 
 /* NAV */
@@ -36,6 +36,9 @@ nav {
   display: flex; align-items: center; justify-content: space-between;
   padding: 22px 48px;
   transition: background 0.4s, border-color 0.4s;
+  will-change: transform;
+  transform: translateZ(0);
+  backface-visibility: hidden;
 }
 nav.light-nav { background: rgba(242,237,228,0.95); border-bottom: 1px solid rgba(168,184,124,0.15); }
 nav.dark-nav  { background: rgba(15,13,10,0.95); border-bottom: 1px solid rgba(168,184,124,0.1); }
@@ -55,6 +58,7 @@ nav.dark-nav  { background: rgba(15,13,10,0.95); border-bottom: 1px solid rgba(1
   min-height: 100vh; width: 100%;
   display: flex; align-items: center; justify-content: center;
   padding: 100px 64px 80px; position: relative; overflow: hidden;
+  contain: layout style;
 }
 .slide.dark  { background: var(--dark-bg); color: var(--cream); }
 .slide.light { background: var(--cream); color: var(--ink); }
@@ -1446,16 +1450,16 @@ function roiSwitch(idx, btn) {
 <!-- S8: UGC JARDIN MOMENT (DARK) -->
 <section class="slide dark" id="s8">
   <div class="ugc-wrap">
-    <div class="section-tag">The Jardin Moment</div>
+    <div class="section-tag">The Jardin Délices Moment</div>
     <h2 class="sec-title">Design the space to<br><em>market itself.</em></h2>
-    <p class="ugc-intro">The most powerful marketing tool isn't an ad — it's a photo your guest takes and shares with thousands of followers. Every upscale venue that wins on Instagram did it on purpose. We help you design those moments into Jardin from day one.</p>
+    <p class="ugc-intro">The most powerful marketing tool isn't an ad — it's a photo your guest takes and shares with thousands of followers. Every upscale venue that wins on Instagram did it on purpose. We help you design those moments into Jardin Délices from day one.</p>
     <div class="ugc-grid">
       <div class="ugc-card">
         <div class="ugc-vis ugc1"><div class="ugc-glow"></div><div class="ugc-emoji">🌺</div></div>
         <div class="ugc-body">
           <div class="ugc-type">Statement Wall</div>
           <div class="ugc-name">The Floral Mural</div>
-          <div class="ugc-desc">A floor-to-ceiling mural in your signature pink and orange — with the Jardin name subtly woven into the design. Every guest photographs it. Every post tags the location. Every share is free advertising to their entire network.</div>
+          <div class="ugc-desc">A floor-to-ceiling mural in your signature pink and orange — with the Jardin Délices name subtly woven into the design. Every guest photographs it. Every post tags the location. Every share is free advertising to their entire network.</div>
           <div class="ugc-impact">📸 The most-photographed feature in Lagos</div>
         </div>
       </div>
@@ -1472,7 +1476,7 @@ function roiSwitch(idx, btn) {
         <div class="ugc-vis ugc3"><div class="ugc-glow"></div><div class="ugc-emoji">☀️</div></div>
         <div class="ugc-body">
           <div class="ugc-type">Signature Setup</div>
-          <div class="ugc-name">The Jardin Table</div>
+          <div class="ugc-name">The Jardin Délices Table</div>
           <div class="ugc-desc">One table. Best light in the house. Styled every morning with signature flowers, beautiful crockery, and natural garden light. The breakfast shot that makes thousands wish they were there — and then make a booking.</div>
           <div class="ugc-impact">📸 Your most-shared content, created by guests</div>
         </div>
@@ -1541,7 +1545,7 @@ function roiSwitch(idx, btn) {
         <div class="section-tag">What It Could Look Like</div>
         <h2 class="sec-title">Your website,<br><em>imagined.</em></h2>
       </div>
-      <p class="body-serif">This is a first glimpse — a feel for the visual direction. Warm, botanical, luminous. Jardin brings the brand to life online just as powerfully as it does in person.</p>
+      <p class="body-serif">This is a first glimpse — a feel for the visual direction. Warm, botanical, luminous. Jardin Délices brings the brand to life online just as powerfully as it does in person.</p>
     </div>
 
     <div class="full-browser">
@@ -1561,7 +1565,7 @@ function roiSwitch(idx, btn) {
           <span>EVENTS</span>
           <span>ROOFTOP</span>
         </div>
-        <div class="fb-logo">Jardin</div>
+        <div class="fb-logo">Jardin Délices</div>
         <div class="fb-nav-cta">RESERVE</div>
       </div>
       <div class="fb-hero">
@@ -1639,7 +1643,7 @@ function roiSwitch(idx, btn) {
         </div>
         <div class="phase-name"><em>Roots</em></div>
         <div class="phase-items">
-          <div class="ph-item"><strong>Brand Identity</strong>Logo, palette, typography — Jardin comes to life visually</div>
+          <div class="ph-item"><strong>Brand Identity</strong>Logo, palette, typography — Jardin Délices comes to life visually</div>
           <div class="ph-item"><strong>Website Design</strong>All four sections designed — restaurant, spa, events, rooftop</div>
           <div class="ph-item"><strong>SEO Architecture</strong>Four GBP listings created, keywords mapped, schema built</div>
           <div class="ph-item"><strong>Hype Page Live</strong>jardinlagos.com goes live — email capture begins</div>
@@ -1690,7 +1694,7 @@ function roiSwitch(idx, btn) {
         </div>
         <div class="phase-name"><em>Open</em></div>
         <div class="phase-items">
-          <div class="ph-item"><strong>Grand Opening</strong>Doors open to an audience that already knows and loves Jardin</div>
+          <div class="ph-item"><strong>Grand Opening</strong>Doors open to an audience that already knows and loves Jardin Délices</div>
           <div class="ph-item"><strong>Full Digital Presence</strong>Ranking across all four categories on Google Lagos</div>
           <div class="ph-item"><strong>Monthly Retainer Active</strong>Ongoing SEO, social, content, and review management</div>
           <div class="ph-item"><strong>Review Generation Begins</strong>Every happy guest becomes a five-star review</div>
@@ -1724,7 +1728,7 @@ function roiSwitch(idx, btn) {
       <div class="tf-divider"></div>
       <div class="tf-item">
         <div class="tf-num">June</div>
-        <div class="tf-lbl">Grand Opening — Jardin Lagos</div>
+        <div class="tf-lbl">Grand Opening — Jardin Délices Lagos</div>
       </div>
     </div>
 
@@ -1894,7 +1898,7 @@ function roiSwitch(idx, btn) {
     <div class="next-contact" style="justify-content:center; text-align:center;">
       <div class="nc-text">
         <strong>David Ajai</strong> — Founder, DOTxLabs &nbsp;·&nbsp;
-        <strong><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="f79396819e93b79398838f9b969584d994989a">[email&#160;protected]</a></strong> &nbsp;·&nbsp;
+        <strong><a href="mailto:david@dotxlabs.com">david@dotxlabs.com</a></strong> &nbsp;·&nbsp;
         <strong>647-460-3641</strong> &nbsp;·&nbsp;
         <strong>www.dotxlabs.com</strong>
       </div>
@@ -1902,7 +1906,7 @@ function roiSwitch(idx, btn) {
   </div>
 </section>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+
 <script>
 (function() {
 
@@ -2039,9 +2043,9 @@ function roiSwitch(idx, btn) {
     selected.forEach(function(el) { lines.push('  - ' + el.dataset.label); });
     var totalEl = document.getElementById('our-total');
     var total   = totalEl ? totalEl.textContent : '';
-    var subj    = 'Jardin - Phase 1 Package Selection';
+    var subj    = 'Jardin Délices - Phase 1 Package Selection';
     var body    = 'Hi David,' +
-      '\n\nHere is my Phase 1 selection for Jardin:' +
+      '\n\nHere is my Phase 1 selection for Jardin Délices:' +
       '\n\n' + lines.join('\n') +
       '\n\nTotal: ' + total +
       '\n\nLooking forward to moving forward.';
@@ -2051,7 +2055,7 @@ function roiSwitch(idx, btn) {
   // ── EMAIL: PHASE 2 ──
   window.sendRetainerEmail = function(e) {
     e.preventDefault();
-    var subj = 'Jardin - Phase 2 Retainer Selection';
+    var subj = 'Jardin Délices - Phase 2 Retainer Selection';
     var body = 'Hi David,' +
       '\n\nHere is my Phase 2 retainer selection:' +
       '\n\n  - Plan: ' + selectedRetainerName +
@@ -2074,7 +2078,7 @@ function roiSwitch(idx, btn) {
     if (!checked.length) { alert('Please check at least one item you can share.'); return; }
     var lines = [];
     checked.forEach(function(el) { lines.push('  - ' + el.dataset.label); });
-    var subj = 'Jardin - Restaurant Information and Assets';
+    var subj = 'Jardin Délices - Restaurant Information and Assets';
     var body = 'Hi David,' +
       '\n\nHere is what I can share about the restaurant:' +
       '\n\n' + lines.join('\n') +
