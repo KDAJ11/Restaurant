@@ -753,8 +753,11 @@ h2.sec-title {
              var(--dark-bg);
 }
 .ugc-wrap { max-width:1100px; width:100%; }
-.ugc-intro { font-family:'Cormorant Garamond',serif; font-size:1.1rem; color:rgba(242,237,228,0.7); max-width:620px; line-height:1.75; margin:18px 0 44px; font-weight:300; }
-.ugc-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; margin-bottom:28px; }
+.ugc-intro { font-family:'Cormorant Garamond',serif; font-size:1.1rem; color:rgba(242,237,228,0.7); max-width:620px; line-height:1.75; margin:18px auto 44px; font-weight:300; text-align:center; }
+.ugc-featured { border-radius:8px; overflow:hidden; border:1px solid rgba(232,149,106,0.2); background:rgba(255,255,255,0.03); transition:transform 0.35s, box-shadow 0.35s; margin-bottom:12px; }
+.ugc-featured:hover { transform:translateY(-5px); box-shadow:0 20px 48px rgba(232,149,106,0.15); }
+.ugc-featured .ugc-vis img { width:100%; height:auto; display:block; object-fit:cover; }
+.ugc-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:12px; margin-bottom:28px; }
 .ugc-card { border-radius:8px; overflow:hidden; border:1px solid rgba(232,149,106,0.2); background:rgba(255,255,255,0.03); transition:transform 0.35s, box-shadow 0.35s; }
 .ugc-card:hover { transform:translateY(-5px); box-shadow:0 20px 48px rgba(232,149,106,0.15); }
 .ugc-vis { position:relative; overflow:hidden; }
@@ -1450,16 +1453,16 @@ function roiSwitch(idx, btn) {
     <div class="section-tag">The Jardin Délices Moment</div>
     <h2 class="sec-title">Design the space to<br><em>market itself.</em></h2>
     <p class="ugc-intro">The most powerful marketing tool isn't an ad — it's a photo your guest takes and shares with thousands of followers. Every upscale venue that wins on Instagram did it on purpose. We help you design those moments into Jardin Délices from day one.</p>
-    <div class="ugc-grid">
-      <div class="ugc-card">
-        <div class="ugc-vis ugc1"><img src="JDMural.jpg" alt="The Floral Mural — Jardin Délices signature wall"></div>
-        <div class="ugc-body">
-          <div class="ugc-type">Statement Wall</div>
-          <div class="ugc-name">The Floral Mural</div>
-          <div class="ugc-desc">A floor-to-ceiling mural in your signature pink and orange — with the Jardin Délices name subtly woven into the design. Every guest photographs it. Every post tags the location. Every share is free advertising to their entire network.</div>
-          <div class="ugc-impact">📸 The most-photographed feature in Lagos</div>
-        </div>
+    <div class="ugc-featured">
+      <div class="ugc-vis ugc1"><img src="FloralMural.jpeg" alt="The Floral Mural — Jardin Délices signature wall"></div>
+      <div class="ugc-body">
+        <div class="ugc-type">Statement Wall</div>
+        <div class="ugc-name">The Floral Mural</div>
+        <div class="ugc-desc">A floor-to-ceiling mural in your signature pink and orange — with the Jardin Délices name subtly woven into the design. Every guest photographs it. Every post tags the location. Every share is free advertising to their entire network.</div>
+        <div class="ugc-impact">📸 The most-photographed feature in Lagos</div>
       </div>
+    </div>
+    <div class="ugc-grid">
       <div class="ugc-card">
         <div class="ugc-vis ugc2"><img src="JDSwing.jpg" alt="The Garden Swing — flower-draped swing seat"></div>
         <div class="ugc-body">
