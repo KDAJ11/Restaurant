@@ -757,15 +757,12 @@ h2.sec-title {
 .ugc-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; margin-bottom:28px; }
 .ugc-card { border-radius:8px; overflow:hidden; border:1px solid rgba(232,149,106,0.2); background:rgba(255,255,255,0.03); transition:transform 0.35s, box-shadow 0.35s; }
 .ugc-card:hover { transform:translateY(-5px); box-shadow:0 20px 48px rgba(232,149,106,0.15); }
-.ugc-vis { height:170px; display:flex; align-items:center; justify-content:center; position:relative; overflow:hidden; }
-.ugc1 { background:linear-gradient(145deg,#0E2A08,#2A6B0A,#0E2A08); }
-.ugc2 { background:linear-gradient(145deg,#0A1A2A,#1A3D5C,#0A1A3D); }
-.ugc3 { background:linear-gradient(145deg,#1A2A0A,#3D5C1A,#2A3D0A); }
-.ugc-emoji { font-size:2.8rem; position:relative; z-index:1; }
-.ugc-glow { position:absolute; width:120px; height:120px; border-radius:50%; }
-.ugc1 .ugc-glow { background:radial-gradient(circle, rgba(168,200,120,0.3), transparent 70%); }
-.ugc2 .ugc-glow { background:radial-gradient(circle, rgba(255,100,160,0.25), transparent 70%); }
-.ugc3 .ugc-glow { background:radial-gradient(circle, rgba(100,200,80,0.2), transparent 70%); }
+.ugc-vis { height:280px; display:flex; align-items:center; justify-content:center; position:relative; overflow:hidden; }
+.ugc-vis img { width:100%; height:100%; object-fit:cover; object-position:center; display:block; }
+.ugc1 { background:#1a1a1a; }
+.ugc2 { background:#1a1a1a; }
+.ugc3 { background:#1a1a1a; }
+.ugc-glow { display:none; }
 .ugc-body { padding:18px 20px 22px; }
 .ugc-type { font-family:'DM Mono',monospace; font-size:0.57rem; letter-spacing:0.2em; color:rgba(232,149,106,0.85); margin-bottom:7px; text-transform:uppercase; }
 .ugc-name { font-family:'Cormorant Garamond',serif; font-size:1.2rem; color:var(--cream); margin-bottom:7px; font-weight:400; }
@@ -1455,7 +1452,7 @@ function roiSwitch(idx, btn) {
     <p class="ugc-intro">The most powerful marketing tool isn't an ad — it's a photo your guest takes and shares with thousands of followers. Every upscale venue that wins on Instagram did it on purpose. We help you design those moments into Jardin Délices from day one.</p>
     <div class="ugc-grid">
       <div class="ugc-card">
-        <div class="ugc-vis ugc1"><div class="ugc-glow"></div><div class="ugc-emoji">🌺</div></div>
+        <div class="ugc-vis ugc1"><img src="JDMural.jpg" alt="The Floral Mural — Jardin Délices signature wall"></div>
         <div class="ugc-body">
           <div class="ugc-type">Statement Wall</div>
           <div class="ugc-name">The Floral Mural</div>
@@ -1464,7 +1461,7 @@ function roiSwitch(idx, btn) {
         </div>
       </div>
       <div class="ugc-card">
-        <div class="ugc-vis ugc2"><div class="ugc-glow"></div><div class="ugc-emoji">🌸</div></div>
+        <div class="ugc-vis ugc2"><img src="JDSwing.jpg" alt="The Garden Swing — flower-draped swing seat"></div>
         <div class="ugc-body">
           <div class="ugc-type">Interactive Feature</div>
           <div class="ugc-name">The Garden Swing</div>
@@ -1473,7 +1470,7 @@ function roiSwitch(idx, btn) {
         </div>
       </div>
       <div class="ugc-card">
-        <div class="ugc-vis ugc3"><div class="ugc-glow"></div><div class="ugc-emoji">☀️</div></div>
+        <div class="ugc-vis ugc3"><img src="JDTable.jpg" alt="The Jardin Délices Table — signature styled breakfast setup"></div>
         <div class="ugc-body">
           <div class="ugc-type">Signature Setup</div>
           <div class="ugc-name">The Jardin Délices Table</div>
