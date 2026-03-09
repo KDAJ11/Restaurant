@@ -1139,6 +1139,204 @@ h2.sec-title {
   text-transform: uppercase;
 }
 
+/* ── PRICING REVISION: STATIC DELIVERABLE CARDS ── */
+.phase-intro-line {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 0.95rem;
+  color: var(--muted-light);
+  margin-bottom: 28px;
+  line-height: 1.65;
+}
+.deliverable-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 32px;
+}
+.d-card {
+  background: white;
+  border: 1px solid rgba(168,184,124,0.2);
+  border-left: 3px solid var(--gold);
+  border-radius: 4px;
+  padding: 18px 22px;
+}
+.d-card-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+.d-icon { font-size: 1.1rem; flex-shrink: 0; }
+.d-title { font-size: 0.88rem; font-weight: 700; color: var(--ink); letter-spacing: 0.01em; }
+.d-outcome {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 0.98rem;
+  font-style: italic;
+  color: var(--ink-soft);
+  line-height: 1.65;
+  margin-bottom: 12px;
+}
+.d-pricing { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+.d-our {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.78rem;
+  color: var(--gold);
+  font-weight: 600;
+}
+.d-market {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.68rem;
+  color: var(--muted-light);
+}
+
+/* Total investment block */
+.total-investment-block {
+  background: var(--ink);
+  border-radius: 8px;
+  padding: 36px 40px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.tib-headline {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.5rem;
+  font-weight: 300;
+  color: var(--gold-light);
+  line-height: 1;
+  margin-bottom: 18px;
+}
+.tib-market {
+  font-size: 0.78rem;
+  color: rgba(242,237,228,0.55);
+  line-height: 1.75;
+  max-width: 580px;
+  margin: 0 auto 24px;
+}
+.tib-payment {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.9rem;
+  color: var(--cream);
+  letter-spacing: 0.04em;
+  line-height: 1.7;
+  display: inline-block;
+  padding: 18px 32px;
+  border-top: 1px solid rgba(168,184,124,0.25);
+  border-bottom: 1px solid rgba(168,184,124,0.25);
+  margin-bottom: 24px;
+}
+.tib-bridge {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.1rem;
+  font-style: italic;
+  color: var(--gold-light);
+  line-height: 1.7;
+  max-width: 560px;
+  margin: 0 auto;
+}
+
+/* Phase 2 recommended badge + card wrap */
+.r-card-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.r-recommended-label {
+  background: var(--gold);
+  color: white;
+  font-family: 'DM Mono', monospace;
+  font-size: 0.55rem;
+  font-weight: 400;
+  letter-spacing: 0.2em;
+  padding: 5px 18px;
+  border-radius: 20px;
+  margin-bottom: -1px;
+  position: relative;
+  z-index: 2;
+}
+.r-card-wrap .r-card {
+  width: 100%;
+}
+.r-tier-note {
+  font-size: 0.65rem;
+  color: var(--muted-light);
+  margin-top: 12px;
+  line-height: 1.55;
+}
+.r-tier-note-featured {
+  font-size: 0.72rem;
+  font-style: italic;
+  color: var(--ink-soft);
+  margin-top: 10px;
+  line-height: 1.55;
+  border-top: 1px solid rgba(168,184,124,0.2);
+  padding-top: 10px;
+}
+
+/* Tier comparison table */
+.tier-comparison {
+  margin-top: 24px;
+  border: 1px solid var(--light-border);
+  border-radius: 8px;
+  overflow: hidden;
+  background: white;
+}
+.tier-comparison table { width: 100%; border-collapse: collapse; }
+.tier-comparison thead tr { background: var(--ink); }
+.tier-comparison thead th {
+  padding: 12px 16px;
+  font-family: 'DM Mono', monospace;
+  font-size: 0.6rem;
+  letter-spacing: 0.15em;
+  color: var(--gold-light);
+  text-align: center;
+  text-transform: uppercase;
+}
+.tier-comparison thead th:first-child {
+  text-align: left;
+  color: rgba(242,237,228,0.45);
+}
+.tier-comparison tbody tr { border-bottom: 1px solid rgba(168,184,124,0.1); }
+.tier-comparison tbody tr:last-child { border-bottom: none; }
+.tier-comparison tbody tr:nth-child(even) { background: rgba(168,184,124,0.03); }
+.tier-comparison tbody td { padding: 11px 16px; font-size: 0.72rem; color: var(--ink-soft); }
+.tier-comparison tbody td:first-child { font-size: 0.7rem; color: var(--ink); }
+.tier-comparison tbody td:not(:first-child) { text-align: center; font-size: 1rem; }
+.tc-check { color: var(--gold); font-weight: 700; }
+.tc-dash { color: rgba(26,26,24,0.18); }
+
+/* Phase 2 closing + primary CTA */
+.phase2-closing { margin-top: 28px; text-align: center; }
+.phase2-closing > p {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.68rem;
+  color: var(--muted-light);
+  letter-spacing: 0.05em;
+  margin-bottom: 24px;
+  line-height: 1.7;
+}
+.speak-david-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 18px 44px;
+  background: var(--gold);
+  color: white;
+  border-radius: 4px;
+  font-family: 'Jost', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-decoration: none;
+  box-shadow: 0 6px 24px rgba(168,184,124,0.35);
+  transition: background 0.25s, box-shadow 0.25s, transform 0.2s;
+}
+.speak-david-btn:hover {
+  background: #8fa665;
+  box-shadow: 0 8px 32px rgba(168,184,124,0.5);
+  transform: translateY(-1px);
+}
+
 </style>
 </head>
 <body>
@@ -1934,66 +2132,113 @@ function roiSwitch(idx, btn) {
     <div class="roi-bridge reveal rd1">
       <p>You've seen what this operation is worth at full capacity — <strong>₦61.5M every month</strong>, across four venues, each generating revenue independently. The Phase 1 investment is the foundation that makes that number possible. It builds your digital infrastructure before the doors open, plants your flag on every platform your guests will search, and protects the full revenue potential of Jardin Délices from day one. What follows is what that foundation costs.</p>
     </div>
-    <div class="section-tag">Your Investment</div>
+    <div class="section-tag">What This Builds</div>
     <h2 class="sec-title">Transparent pricing.<br><em>Exceptional value.</em></h2>
-    <p class="price-intro">Click any item to include or remove it. When you're happy with your selection, send it to David directly.</p>
+    <p class="price-intro">One partner. One invoice. Everything Jardin Délices needs to open to a full house — and stay that way.</p>
 
     <div class="price-tabs">
-      <button class="p-tab active" onclick="switchTab('phase1',this)">Phase 1 — Foundation</button>
-      <button class="p-tab" onclick="switchTab('phase2',this)">Phase 2 — Monthly Growth</button>
+      <button class="p-tab active" onclick="switchTab('phase1',this)">Phase 1 — The Foundation</button>
+      <button class="p-tab" onclick="switchTab('phase2',this)">Phase 2 — Ongoing Growth</button>
     </div>
 
     <div class="price-panel active" id="panel-phase1">
-      <div class="price-items" id="item-list">
+      <p class="phase-intro-line">Everything below is included. This is the complete package — nothing optional, nothing missing.</p>
 
-        <div class="p-item selected" data-price="4500" data-market="14000" data-label="Destination Website — 4 Venues ($4,500)" onclick="toggleItem(this)">
-          <div class="pi-left"><div class="pi-name">💻 Destination Website — 4 Venues</div><div class="pi-desc">One flagship site covering restaurant, spa, event centre &amp; rooftop. Each with its own booking flow, service pages, and mobile-first design.</div></div>
-          <div class="pi-market">Market: $14,000</div><div class="pi-our">$4,500</div><div class="pi-check"></div>
+      <div class="deliverable-cards">
+
+        <div class="d-card">
+          <div class="d-card-header">
+            <span class="d-icon">💻</span>
+            <span class="d-title">Destination Website — 4 Venues</span>
+          </div>
+          <div class="d-outcome">"Your guests book a table, reserve a spa treatment, enquire about an event, and discover the rooftop — all from one address. Available 24/7, on every device, before your doors open."</div>
+          <div class="d-pricing">
+            <span class="d-our">DOTxLabs: $4,500</span>
+            <span class="d-market">Market: <s>$14,000</s></span>
+          </div>
         </div>
 
-        <div class="p-item selected" data-price="1800" data-market="3700" data-label="Brand Identity + Pre-Launch Hype Page ($1,800)" onclick="toggleItem(this)">
-          <div class="pi-left"><div class="pi-name">🎨 Brand Identity + Pre-Launch Hype Page</div><div class="pi-desc">Logo (3 concepts), brand guidelines, colour palette, typography, and social media kit — plus a coming-soon page with email capture and countdown to build your audience before opening.</div></div>
-          <div class="pi-market">Market: $3,700</div><div class="pi-our">$1,800</div><div class="pi-check"></div>
+        <div class="d-card">
+          <div class="d-card-header">
+            <span class="d-icon">🎨</span>
+            <span class="d-title">Brand Identity + Pre-Launch Hype Page</span>
+          </div>
+          <div class="d-outcome">"Jardin Délices has a visual identity — logo, colours, typography — before the first guest walks in. The coming-soon page starts building your audience the moment it goes live."</div>
+          <div class="d-pricing">
+            <span class="d-our">DOTxLabs: $1,800</span>
+            <span class="d-market">Market: <s>$3,700</s></span>
+          </div>
         </div>
 
-        <div class="p-item selected" data-price="1500" data-market="3200" data-label="Google Presence — 4 Venue Listings + Review Platforms ($1,500)" onclick="toggleItem(this)">
-          <div class="pi-left"><div class="pi-name">📍 Google Presence — 4 Listings + Review Platforms</div><div class="pi-desc">Four separate Google Business Profiles, Google Food Ordering integration, plus TripAdvisor, Zomato, and Yelp — all fully optimised and live from day one.</div></div>
-          <div class="pi-market">Market: $3,200</div><div class="pi-our">$1,500</div><div class="pi-check"></div>
+        <div class="d-card">
+          <div class="d-card-header">
+            <span class="d-icon">📍</span>
+            <span class="d-title">Google Presence — 4 Listings + Review Platforms</span>
+          </div>
+          <div class="d-outcome">"You appear in four separate Google search categories — restaurant, spa, events, rooftop — instead of one. Plus TripAdvisor, Zomato, and Yelp, fully optimised for the expats, tourists, and corporates who rely on them."</div>
+          <div class="d-pricing">
+            <span class="d-our">DOTxLabs: $1,500</span>
+            <span class="d-market">Market: <s>$3,200</s></span>
+          </div>
         </div>
 
-        <div class="p-item selected" data-price="400" data-market="800" data-label="QR Code Menu System ($400)" onclick="toggleItem(this)">
-          <div class="pi-left"><div class="pi-name">📲 QR Code Menu System</div><div class="pi-desc">Scannable table menus that update instantly — no reprinting costs. Tracks which dishes customers view most, giving you live menu intelligence.</div></div>
-          <div class="pi-market">Market: $800</div><div class="pi-our">$400</div><div class="pi-check"></div>
+        <div class="d-card">
+          <div class="d-card-header">
+            <span class="d-icon">📲</span>
+            <span class="d-title">QR Code Menu System</span>
+          </div>
+          <div class="d-outcome">"Guests scan their table and see your full menu instantly. No reprinting costs when you update dishes or pricing. Every scan tells you what your customers are most interested in."</div>
+          <div class="d-pricing">
+            <span class="d-our">DOTxLabs: $400</span>
+            <span class="d-market">Market: <s>$800</s></span>
+          </div>
         </div>
 
-        <div class="p-item selected" data-price="1800" data-market="4000" data-label="Spa + Event Centre Booking Systems ($1,800)" onclick="toggleItem(this)">
-          <div class="pi-left"><div class="pi-name">💆 Spa + Event Centre Booking Systems</div><div class="pi-desc">Full spa service menu with online appointment calendar, plus event centre package tiers, availability calendar, and corporate/private enquiry flow — every booking captured automatically.</div></div>
-          <div class="pi-market">Market: $4,000</div><div class="pi-our">$1,800</div><div class="pi-check"></div>
+        <div class="d-card">
+          <div class="d-card-header">
+            <span class="d-icon">💆</span>
+            <span class="d-title">Spa + Event Centre Booking Systems</span>
+          </div>
+          <div class="d-outcome">"Treatments and events get booked without a single phone call. Your team focuses on delivering the experience — the system handles the enquiries, availability, and confirmations."</div>
+          <div class="d-pricing">
+            <span class="d-our">DOTxLabs: $1,800</span>
+            <span class="d-market">Market: <s>$4,000</s></span>
+          </div>
         </div>
 
-        <div class="p-item selected" data-price="600" data-market="1200" data-label="Rooftop Experience Page ($600)" onclick="toggleItem(this)">
-          <div class="pi-left"><div class="pi-name">🌅 Rooftop Experience Page</div><div class="pi-desc">An atmosphere-first showcase — stunning visuals, opening hours, dress code, and reservation access. Designed to make people feel it before they arrive.</div></div>
-          <div class="pi-market">Market: $1,200</div><div class="pi-our">$600</div><div class="pi-check"></div>
+        <div class="d-card">
+          <div class="d-card-header">
+            <span class="d-icon">🌅</span>
+            <span class="d-title">Rooftop Experience Page</span>
+          </div>
+          <div class="d-outcome">"Before anyone visits, they feel it. A dedicated page built to make people want to be there — driving reservations and walk-ins from the first week."</div>
+          <div class="d-pricing">
+            <span class="d-our">DOTxLabs: $600</span>
+            <span class="d-market">Market: <s>$1,200</s></span>
+          </div>
         </div>
 
-        <div class="p-item selected" data-price="1400" data-market="4000" data-label="Photography Direction + Influencer Strategy + SEO Architecture ($1,400)" onclick="toggleItem(this)">
-          <div class="pi-left"><div class="pi-name">📸 Photography + Influencer Strategy + SEO Architecture</div><div class="pi-desc">Full property shoot coordination across all four spaces, strategic image distribution, curated Lagos influencer shortlist, and multi-venue keyword and schema architecture for day-one rankings.</div></div>
-          <div class="pi-market">Market: $4,000</div><div class="pi-our">$1,400</div><div class="pi-check"></div>
+        <div class="d-card">
+          <div class="d-card-header">
+            <span class="d-icon">📸</span>
+            <span class="d-title">Photography Direction + Influencer Strategy + SEO Architecture</span>
+          </div>
+          <div class="d-outcome">"One coordinated shoot across all four spaces, distributed everywhere your guests are looking. A curated list of Lagos influencers ready to tell your story. And an SEO structure that starts ranking before you open."</div>
+          <div class="d-pricing">
+            <span class="d-our">DOTxLabs: $1,400</span>
+            <span class="d-market">Market: <s>$4,000</s></span>
+          </div>
         </div>
 
       </div>
 
-      <div class="price-summary">
-        <div class="ps-left">
-          <div class="ps-label">Your Investment</div>
-          <div class="ps-total" id="our-total">$12,000 CAD</div>
-          <div class="ps-saving">Market value: <span id="market-total">$30,900</span> — you save <span id="saving-amt">$18,900</span></div>
-        </div>
-        <div class="ps-right">
-          <div class="ps-items-count" id="items-count">7 deliverables selected</div>
-          <div class="ps-note">50% to begin · 50% on delivery<br>Brand direction within 7 days</div>
-        </div>
+      <div class="total-investment-block">
+        <div class="tib-headline">Total Phase 1: $12,000 CAD</div>
+        <p class="tib-market">Market value for this scope: $30,900 CAD. We're pricing this as a founding client relationship — not a standard project rate. This is what it costs to build it right, with an agency that's as invested in your opening as you are.</p>
+        <div class="tib-payment">50% to begin. 50% on delivery.<br>You don't pay in full until it's built.</div>
+        <p class="tib-bridge">At 60% capacity by month three, the restaurant alone covers this entire investment in under 45 days of operation — before the spa, events centre, or rooftop contribute a single naira.</p>
       </div>
+
       <div style="margin-top:16px; text-align:center;">
         <a href="#contact-section" style="display:inline-flex;align-items:center;gap:10px;padding:13px 28px;background:var(--ink);color:var(--cream);border-radius:4px;font-family:'Jost',sans-serif;font-size:0.75rem;font-weight:700;letter-spacing:0.06em;text-decoration:none;box-shadow:0 4px 16px rgba(26,26,24,0.15);">
           🌿 &nbsp;Speak with David
@@ -2002,6 +2247,8 @@ function roiSwitch(idx, btn) {
     </div>
 
     <div class="price-panel" id="panel-phase2">
+      <p class="phase-intro-line">Once the foundation is live, this is what keeps Jardin Délices at the top — in search, on social, and in the minds of every potential guest in Lagos.</p>
+
       <div class="retainer-grid">
 
         <div class="r-card" onclick="selectRetainer(this,'2000','starter')">
@@ -2013,18 +2260,23 @@ function roiSwitch(idx, btn) {
             <li>Website hosting &amp; maintenance</li>
             <li>Social media &amp; content</li>
           </ul>
+          <p class="r-tier-note">Best for: maintenance after strong organic growth is established.</p>
         </div>
 
-        <div class="r-card recommended selected" onclick="selectRetainer(this,'3500','growth')">
-          <div class="r-name">Growth</div>
-          <div class="r-price">$3,500 <span>/ month</span></div>
-          <div class="r-market">Market rate: ~$7,000/mo</div>
-          <ul class="r-ul">
-            <li>SEO — all 4 venues</li>
-            <li>Social media, content &amp; influencer</li>
-            <li>Paid advertising</li>
-            <li>Website hosting &amp; maintenance</li>
-          </ul>
+        <div class="r-card-wrap">
+          <div class="r-recommended-label">RECOMMENDED</div>
+          <div class="r-card recommended selected" onclick="selectRetainer(this,'3500','growth')">
+            <div class="r-name">Growth</div>
+            <div class="r-price">$3,500 <span>/ month</span></div>
+            <div class="r-market">Market rate: ~$7,000/mo</div>
+            <ul class="r-ul">
+              <li>SEO — all 4 venues</li>
+              <li>Social media, content &amp; influencer</li>
+              <li>Paid advertising</li>
+              <li>Website hosting &amp; maintenance</li>
+            </ul>
+            <p class="r-tier-note-featured">This is the tier built for Jardin Délices — covering all four venues, all channels, and the influencer strategy that fills every space.</p>
+          </div>
         </div>
 
         <div class="r-card" onclick="selectRetainer(this,'5000','fullscale')">
@@ -2038,24 +2290,72 @@ function roiSwitch(idx, btn) {
             <li>Website hosting &amp; maintenance</li>
             <li>Photography &amp; content production</li>
           </ul>
+          <p class="r-tier-note">Best for: aggressive expansion or when paid advertising is the primary growth driver.</p>
         </div>
 
       </div>
 
-      <!-- BUDGET BREAKDOWN -->
-      <div class="budget-breakdown" id="budget-breakdown">
-        <div class="bb-header">
-          <div class="bb-title">Where Your Budget Goes</div>
-          <div class="bb-total" id="bb-total-display">$3,500 <span>/ month</span></div>
-        </div>
-        <div class="bb-tagline">ONE INVOICE. EVERYTHING INCLUDED. NO HIDDEN EXTRAS.</div>
-        <div class="bb-rows" id="bb-rows"></div>
+      <!-- TIER COMPARISON TABLE -->
+      <div class="tier-comparison">
+        <table>
+          <thead>
+            <tr>
+              <th></th>
+              <th>Starter</th>
+              <th>Growth</th>
+              <th>Full Scale</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>SEO — all 4 venues</td>
+              <td><span class="tc-check">✓</span></td>
+              <td><span class="tc-check">✓</span></td>
+              <td><span class="tc-check">✓</span></td>
+            </tr>
+            <tr>
+              <td>Website hosting &amp; maintenance</td>
+              <td><span class="tc-check">✓</span></td>
+              <td><span class="tc-check">✓</span></td>
+              <td><span class="tc-check">✓</span></td>
+            </tr>
+            <tr>
+              <td>Social media &amp; content</td>
+              <td><span class="tc-check">✓</span></td>
+              <td><span class="tc-check">✓</span></td>
+              <td><span class="tc-check">✓</span></td>
+            </tr>
+            <tr>
+              <td>Influencer management</td>
+              <td><span class="tc-dash">—</span></td>
+              <td><span class="tc-check">✓</span></td>
+              <td><span class="tc-check">✓</span></td>
+            </tr>
+            <tr>
+              <td>Paid advertising</td>
+              <td><span class="tc-dash">—</span></td>
+              <td><span class="tc-check">✓</span></td>
+              <td><span class="tc-check">✓</span></td>
+            </tr>
+            <tr>
+              <td>Photography &amp; content production</td>
+              <td><span class="tc-dash">—</span></td>
+              <td><span class="tc-dash">—</span></td>
+              <td><span class="tc-check">✓</span></td>
+            </tr>
+            <tr>
+              <td>Scaled paid advertising</td>
+              <td><span class="tc-dash">—</span></td>
+              <td><span class="tc-dash">—</span></td>
+              <td><span class="tc-check">✓</span></td>
+            </tr>
+          </tbody>
+        </table>
       </div>
 
-      <div style="margin-top:20px; text-align:center;">
-        <a href="#contact-section" style="display:inline-flex;align-items:center;gap:10px;padding:13px 28px;background:var(--ink);color:var(--cream);border-radius:4px;font-family:'Jost',sans-serif;font-size:0.75rem;font-weight:700;letter-spacing:0.06em;text-decoration:none;box-shadow:0 4px 16px rgba(26,26,24,0.15);">
-          🌿 &nbsp;Speak with David
-        </a>
+      <div class="phase2-closing">
+        <p>One invoice. No hidden extras. No surprises. Cancel anytime after the first three months.</p>
+        <a href="#contact-section" class="speak-david-btn">🌿 &nbsp;Speak with David — Let's Begin</a>
       </div>
     </div>
 
@@ -2114,34 +2414,6 @@ function roiSwitch(idx, btn) {
 <script>
 (function() {
 
-  // ── BUDGET BREAKDOWN DATA ──
-  var budgetPlans = {
-    starter:   [{"icon":"\ud83d\udccd","label":"SEO & Local Search","amt":1000,"color":"#A8B87C"},{"icon":"\ud83c\udf10","label":"Website Hosting & Maintenance","amt":500,"color":"#C8D4A0"},{"icon":"\ud83d\udcf1","label":"Social Media & Content","amt":500,"color":"#8B6E2A"}],
-    growth:    [{"icon":"\ud83d\udccd","label":"SEO & Local Search","amt":1200,"color":"#A8B87C"},{"icon":"\ud83d\udcf1","label":"Social Media, Content & Influencer","amt":1100,"color":"#8B6E2A"},{"icon":"\ud83d\udcb0","label":"Paid Advertising","amt":700,"color":"#E8956A"},{"icon":"\ud83c\udf10","label":"Website Hosting & Maintenance","amt":500,"color":"#C8D4A0"}],
-    fullscale: [{"icon":"\ud83d\udccd","label":"SEO & Local Search","amt":1500,"color":"#A8B87C"},{"icon":"\ud83d\udcf1","label":"Social Media, Content & Influencer","amt":1500,"color":"#8B6E2A"},{"icon":"\ud83d\udcb0","label":"Paid Advertising","amt":1000,"color":"#E8956A"},{"icon":"\ud83c\udf10","label":"Website Hosting & Maintenance","amt":500,"color":"#C8D4A0"},{"icon":"\ud83d\udcf8","label":"Photography & Content Production","amt":500,"color":"#C87840"}]
-  };
-
-  function renderBreakdown(planKey, total) {
-    var rows = document.getElementById('bb-rows');
-    var totalDisplay = document.getElementById('bb-total-display');
-    if (!rows) return;
-    var plan = budgetPlans[planKey];
-    if (!plan) return;
-    if (totalDisplay) totalDisplay.innerHTML = '$' + parseInt(total).toLocaleString() + ' <span>/ month</span>';
-    var html = '';
-    plan.forEach(function(item) {
-      var pct = Math.round((item.amt / total) * 100);
-      var barW = Math.round((item.amt / total) * 100);
-      html += '<div class="bb-row">' +
-        '<div class="bb-cat"><span class="bb-cat-icon">' + item.icon + '</span>' + item.label + '</div>' +
-        '<div class="bb-bar-wrap"><div class="bb-bar" style="width:' + barW + '%;background:' + item.color + '"></div></div>' +
-        '<div class="bb-amount">$' + item.amt.toLocaleString() + '</div>' +
-        '<div class="bb-pct">' + pct + '%</div>' +
-        '</div>';
-    });
-    rows.innerHTML = html;
-  }
-
   // ── REVEALS ──
   var revEls = document.querySelectorAll('.reveal');
   var revObs = new IntersectionObserver(function(entries) {
@@ -2190,82 +2462,13 @@ function roiSwitch(idx, btn) {
     btn.classList.add('active');
   };
 
-  // ── PHASE 1: TOGGLE ITEMS ──
-  window.toggleItem = function(el) {
-    el.classList.toggle('selected');
-    updateSummary();
-  };
-
-  function updateSummary() {
-    var our = 0, mkt = 0, cnt = 0;
-    document.querySelectorAll('#item-list .p-item').forEach(function(item) {
-      if (item.classList.contains('selected')) {
-        our += parseInt(item.dataset.price,  10);
-        mkt += parseInt(item.dataset.market, 10);
-        cnt++;
-      }
-    });
-    var saving = mkt - our;
-    document.getElementById('our-total').textContent    = '$' + our.toLocaleString() + ' CAD';
-    document.getElementById('market-total').textContent = '$' + mkt.toLocaleString();
-    document.getElementById('saving-amt').textContent   = '$' + saving.toLocaleString();
-    document.getElementById('items-count').textContent  = cnt + ' deliverable' + (cnt !== 1 ? 's' : '') + ' selected';
-    var p1el = document.getElementById('phase1-display');
-    if (p1el) p1el.textContent = '$' + our.toLocaleString();
-    updateYear1(our);
-  }
-
-  function getPhase1Total() {
-    var t = 0;
-    document.querySelectorAll('#item-list .p-item.selected').forEach(function(i) {
-      t += parseInt(i.dataset.price, 10);
-    });
-    return t;
-  }
-
-  function updateYear1(p1) {
-    var el = document.getElementById('year1-total');
-    if (el) el.textContent = '$' + (p1 + selectedRetainer * 12).toLocaleString();
-  }
-
   // ── PHASE 2: SELECT RETAINER ──
-  window.selectRetainer = function(el, price, planKey) {
+  window.selectRetainer = function(el, price) {
     document.querySelectorAll('.r-card').forEach(function(c) { c.classList.remove('selected'); });
     el.classList.add('selected');
     selectedRetainer     = parseInt(price, 10);
     var nameEl           = el.querySelector('.r-name');
     selectedRetainerName = (nameEl ? nameEl.textContent : 'Plan') + ' - $' + selectedRetainer.toLocaleString() + '/month';
-    renderBreakdown(planKey || 'growth', selectedRetainer);
-  };
-
-  // ── EMAIL: PHASE 1 ──
-  window.sendPricingEmail = function(e) {
-    e.preventDefault();
-    var selected = document.querySelectorAll('#item-list .p-item.selected');
-    if (!selected.length) { alert('Please select at least one deliverable.'); return; }
-    var lines = [];
-    selected.forEach(function(el) { lines.push('  - ' + el.dataset.label); });
-    var totalEl = document.getElementById('our-total');
-    var total   = totalEl ? totalEl.textContent : '';
-    var subj    = 'Jardin Délices - Phase 1 Package Selection';
-    var body    = 'Hi David,' +
-      '\n\nHere is my Phase 1 selection for Jardin Délices:' +
-      '\n\n' + lines.join('\n') +
-      '\n\nTotal: ' + total +
-      '\n\nLooking forward to moving forward.';
-    window.location.href = 'mailto:david@dotxlabs.com?subject=' + encodeURIComponent(subj) + '&body=' + encodeURIComponent(body);
-  };
-
-  // ── EMAIL: PHASE 2 ──
-  window.sendRetainerEmail = function(e) {
-    e.preventDefault();
-    var subj = 'Jardin Délices - Phase 2 Retainer Selection';
-    var body = 'Hi David,' +
-      '\n\nHere is my Phase 2 retainer selection:' +
-      '\n\n  - Plan: ' + selectedRetainerName +
-      '\n  - Monthly investment: $' + selectedRetainer.toLocaleString() +
-      '\n\nLooking forward to moving forward.';
-    window.location.href = 'mailto:david@dotxlabs.com?subject=' + encodeURIComponent(subj) + '&body=' + encodeURIComponent(body);
   };
 
   // ── TELL ME CHECKLIST ──
@@ -2289,9 +2492,6 @@ function roiSwitch(idx, btn) {
       '\n\nI will follow up with the details soon.';
     window.location.href = 'mailto:david@dotxlabs.com?subject=' + encodeURIComponent(subj) + '&body=' + encodeURIComponent(body);
   };
-
-  // Init breakdown on load
-  renderBreakdown('growth', 3500);
 
 })();
 </script>
