@@ -1408,6 +1408,26 @@ h2.sec-title {
 /* Source note */
 .roi-source { font-size:0.66rem; color:var(--stone); opacity:0.6; text-align:center; }
 
+/* Intro paragraph */
+.roi-intro-para { font-family:'Cormorant Garamond',serif; font-size:1.05rem; color:var(--stone); line-height:1.75; text-align:center; max-width:680px; margin:0 auto; font-weight:300; }
+
+/* Ramp scenario card */
+.ramp-card { background:rgba(74,69,64,0.04); border:1px solid rgba(74,69,64,0.1); border-radius:10px; padding:20px 22px; margin-top:18px; }
+.ramp-label { font-family:'DM Mono',monospace; font-size:0.65rem; letter-spacing:0.08em; color:var(--stone); text-transform:uppercase; margin-bottom:14px; opacity:0.75; }
+.ramp-row { display:flex; justify-content:space-between; align-items:baseline; padding:4px 0; }
+.ramp-key { font-size:0.76rem; color:var(--stone); }
+.ramp-val { font-size:0.76rem; color:var(--ink); font-weight:500; }
+.ramp-divider { height:1px; background:rgba(74,69,64,0.12); margin:10px 0; }
+.ramp-total .ramp-key { font-weight:600; color:var(--ink); font-size:0.8rem; }
+.ramp-total-val { font-family:'Cormorant Garamond',serif; font-size:1.15rem; font-weight:600; color:var(--gold); }
+.ramp-note { font-size:0.74rem; color:var(--stone); line-height:1.65; font-style:italic; margin-top:12px; border-top:1px solid rgba(74,69,64,0.08); padding-top:10px; }
+
+/* Ramp ratio line */
+.ramp-ratio-line { font-size:0.74rem; color:var(--stone); text-align:center; margin-top:10px; opacity:0.72; font-style:italic; }
+
+/* Footnote */
+.roi-footnote { font-size:0.62rem; color:var(--stone); opacity:0.5; text-align:center; line-height:1.6; max-width:620px; margin:0 auto; }
+
 @media(max-width:700px){
   .roi-venues { grid-template-columns:repeat(2,1fr); }
   .roi-big-num { font-size:2rem; }
@@ -1419,6 +1439,9 @@ h2.sec-title {
     <div class="section-tag">The Business Case</div>
     <h2 class="sec-title">Pick a venue.<br><em>See the numbers.</em></h2>
   </div>
+
+  <!-- Section intro -->
+  <p class="roi-intro-para reveal rd2">These are ceiling numbers — what this operation is worth when it's running. A new venue rarely opens at full capacity, and it doesn't need to. What digital does is compress the timeline from quiet opening to full house. The numbers below show what we're protecting. The ramp scenario shows what month three looks like on the way there.</p>
 
   <!-- Venue selector -->
   <div class="roi-venues reveal rd2">
@@ -1449,13 +1472,22 @@ h2.sec-title {
 
     <!-- Left: math -->
     <div class="roi-math-card">
-      <div class="roi-scenario-tag" id="roi-tag">Conservative scenario · Restaurant</div>
+      <div class="roi-scenario-tag" id="roi-tag">Full capacity scenario · Restaurant</div>
       <div class="roi-equation">
         <div class="roi-eq-row"><span class="roi-eq-label" id="roi-line1-label">Extra covers / week</span><span class="roi-eq-value" id="roi-line1-val">+20 covers</span></div>
         <div class="roi-eq-row"><span class="roi-eq-label" id="roi-line2-label">Average spend per cover</span><span class="roi-eq-value" id="roi-line2-val">₦25,000</span></div>
         <div class="roi-eq-row"><span class="roi-eq-label" id="roi-line3-label">Weeks per month</span><span class="roi-eq-value" id="roi-line3-val">× 4 weeks</span></div>
         <div class="roi-eq-divider"></div>
         <div class="roi-eq-row"><span class="roi-eq-label">Additional monthly revenue</span><span class="roi-eq-value" id="roi-line4-val">₦2,000,000</span></div>
+      </div>
+      <div class="ramp-card">
+        <div class="ramp-label">Month 3 · Ramp Scenario (60% capacity)</div>
+        <div class="ramp-row"><span class="ramp-key">Covers per day</span><span class="ramp-val">18</span></div>
+        <div class="ramp-row"><span class="ramp-key">Average spend per cover</span><span class="ramp-val">₦25,000</span></div>
+        <div class="ramp-row"><span class="ramp-key">Days per month</span><span class="ramp-val">× 28</span></div>
+        <div class="ramp-divider"></div>
+        <div class="ramp-row ramp-total"><span class="ramp-key">Monthly revenue at ramp</span><span class="ramp-val ramp-total-val">₦12,600,000</span></div>
+        <p class="ramp-note">At 60% capacity, the restaurant alone still generates more than 2× the monthly retainer — before the spa, events centre, or rooftop contribute a single naira.</p>
       </div>
       <div class="roi-big-result">
         <div class="roi-big-label">Monthly revenue protected</div>
@@ -1487,19 +1519,21 @@ h2.sec-title {
         <div class="roi-ratio-num" id="roi-ratio">3.9×</div>
         <div class="roi-ratio-label">revenue covered<br>for every ₦1 spent on marketing</div>
       </div>
+      <div class="ramp-ratio-line">At ramp (60% capacity): still 2.3× covered · before any other venue</div>
       <div class="roi-insight-text" id="roi-insight">
-        The retainer is ₦5.4M/month. The restaurant alone generates <em>₦21M</em> at capacity. Marketing costs less than one week of restaurant revenue — and protects all four venues.
+        The retainer is ₦5.4M/month. At full capacity, the restaurant alone generates <em>₦21M</em> — the retainer is less than one week of that revenue. At 60% capacity in month three, it's still covered more than twice over. <em style="font-weight:300;opacity:0.8;">And that's before the spa books a single treatment, the event centre hosts its first occasion, or the rooftop opens for its first sundowner.</em>
       </div>
     </div>
   </div>
 
   <div class="roi-source reveal rd3">Market data: Praia Lagos · Oxid Luxury Spa · Oriental Hotel VI · Sky Restaurant Lagos</div>
+  <div class="roi-footnote reveal rd3">Full capacity figures based on comparable VI Lagos premium dining benchmarks including Praia Lagos and NOK by Alara. Ramp scenario modelled at 60% capacity, month 3 post-opening.</div>
 </div>
 
 <script>
 var roiData = [
   {
-    name: "Restaurant", icon: "🌸", tag: "Conservative scenario · Restaurant",
+    name: "Restaurant", icon: "🌸", tag: "Full capacity scenario · Restaurant",
     line1l: "Extra covers / week", line1v: "+20 covers",
     line2l: "Average spend per cover", line2v: "₦25,000",
     line3l: "Weeks per month", line3v: "× 4 weeks",
@@ -1507,10 +1541,10 @@ var roiData = [
     monthly: "₦21M", monthlyN: 21,
     annual: "Full capacity · <strong>₦252M/year</strong>",
     ratio: "3.9×",
-    insight: "The retainer is ₦5.4M/month. The restaurant alone generates <em>₦21M</em> at capacity. Marketing costs less than one week of restaurant revenue — and protects all four venues."
+    insight: "The retainer is ₦5.4M/month. At full capacity, the restaurant alone generates <em>₦21M</em> — the retainer is less than one week of that revenue. At 60% capacity in month three, it's still covered more than twice over. <em style=\"font-weight:300;opacity:0.8;\">And that's before the spa books a single treatment, the event centre hosts its first occasion, or the rooftop opens for its first sundowner.</em>"
   },
   {
-    name: "Spa", icon: "💆", tag: "Conservative scenario · The Spa",
+    name: "Spa", icon: "💆", tag: "Full capacity scenario · The Spa",
     line1l: "Extra treatments / week", line1v: "+8 treatments",
     line2l: "Average treatment value", line2v: "₦50,000",
     line3l: "Operating days / month", line3v: "× 24 days",
@@ -1521,7 +1555,7 @@ var roiData = [
     insight: "At ₦50k per treatment, the spa generates <em>₦18M/month</em> at capacity. The entire retainer is covered by fewer than 2 days of spa bookings."
   },
   {
-    name: "Events", icon: "🎉", tag: "Conservative scenario · Event Centre",
+    name: "Events", icon: "🎉", tag: "Full capacity scenario · Event Centre",
     line1l: "Extra events / month", line1v: "+2 events",
     line2l: "Average booking value", line2v: "₦2,500,000",
     line3l: "Additional revenue", line3v: "direct",
@@ -1532,7 +1566,7 @@ var roiData = [
     insight: "Just <em>2 extra events per month</em> from digital enquiries covers the retainer entirely. At full capacity the event centre generates ₦12M/month — one booking pays for 6 months of marketing."
   },
   {
-    name: "Rooftop", icon: "🌅", tag: "Conservative scenario · Rooftop",
+    name: "Rooftop", icon: "🌅", tag: "Full capacity scenario · Rooftop",
     line1l: "Extra covers / evening", line1v: "+15 covers",
     line2l: "Average spend per cover", line2v: "₦15,000",
     line3l: "Operating evenings / month", line3v: "× 20 eve",
