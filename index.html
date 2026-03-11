@@ -1139,7 +1139,7 @@ h2.sec-title {
   text-transform: uppercase;
 }
 
-/* ── PRICING REVISION: STATIC DELIVERABLE CARDS ── */
+/* ── PRICING REVISION: ACCORDION DELIVERABLE CARDS ── */
 .phase-intro-line {
   font-family: 'Cormorant Garamond', serif;
   font-style: italic;
@@ -1188,6 +1188,82 @@ h2.sec-title {
   font-family: 'DM Mono', monospace;
   font-size: 0.68rem;
   color: var(--muted-light);
+}
+/* Savings badge */
+.d-savings {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.62rem;
+  color: #8A9A5C;
+  background: rgba(168,184,124,0.12);
+  padding: 3px 10px;
+  border-radius: 12px;
+  letter-spacing: 0.02em;
+}
+/* Accordion toggle */
+.d-accordion-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 12px;
+  padding: 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: 'DM Mono', monospace;
+  font-size: 0.65rem;
+  color: var(--gold);
+  letter-spacing: 0.03em;
+  transition: color 0.2s;
+}
+.d-accordion-toggle:hover { color: #8A9A5C; }
+.d-accordion-toggle .toggle-arrow {
+  display: inline-block;
+  transition: transform 0.3s ease;
+  font-size: 0.55rem;
+}
+.d-card.expanded .d-accordion-toggle .toggle-arrow {
+  transform: rotate(180deg);
+}
+/* Accordion expandable content */
+.d-accordion-body {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, opacity 0.3s ease, padding 0.3s ease;
+  opacity: 0;
+  padding-top: 0;
+}
+.d-card.expanded .d-accordion-body {
+  max-height: 600px;
+  opacity: 1;
+  padding-top: 16px;
+}
+.d-accordion-body p {
+  font-size: 0.82rem;
+  color: var(--ink-soft);
+  line-height: 1.7;
+  margin: 0 0 14px;
+}
+.d-accordion-body ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.d-accordion-body ul li {
+  font-size: 0.78rem;
+  color: var(--ink-soft);
+  line-height: 1.65;
+  padding: 5px 0 5px 18px;
+  position: relative;
+  border-bottom: 1px solid rgba(168,184,124,0.08);
+}
+.d-accordion-body ul li:last-child { border-bottom: none; }
+.d-accordion-body ul li::before {
+  content: '✦';
+  position: absolute;
+  left: 0;
+  color: var(--gold);
+  font-size: 0.55rem;
+  top: 8px;
 }
 
 /* Total investment block */
@@ -2155,6 +2231,18 @@ function roiSwitch(idx, btn) {
           <div class="d-pricing">
             <span class="d-our">DOTxLabs: $4,500</span>
             <span class="d-market">Market: <s>$14,000</s></span>
+            <span class="d-savings">You save $9,500 (68%)</span>
+          </div>
+          <button class="d-accordion-toggle" onclick="toggleAccordion(this)">See what's included <span class="toggle-arrow">▾</span></button>
+          <div class="d-accordion-body">
+            <p>This isn't a single restaurant website — it's four distinct digital experiences under one roof, each designed to convert a different type of customer. Built on Next.js for speed and SEO performance, every section is mobile-first and booking-ready before your doors open.</p>
+            <ul>
+              <li>Restaurant section with online reservation system and Google Maps integration</li>
+              <li>Spa section with full service menu and appointment booking calendar</li>
+              <li>Event centre section with package tiers, capacity info, and enquiry flow</li>
+              <li>Rooftop experience page with reservation access and atmosphere-first design</li>
+              <li>WhatsApp integration + pre-launch coming soon page</li>
+            </ul>
           </div>
         </div>
 
@@ -2167,6 +2255,18 @@ function roiSwitch(idx, btn) {
           <div class="d-pricing">
             <span class="d-our">DOTxLabs: $1,800</span>
             <span class="d-market">Market: <s>$3,700</s></span>
+            <span class="d-savings">You save $1,900 (51%)</span>
+          </div>
+          <button class="d-accordion-toggle" onclick="toggleAccordion(this)">See what's included <span class="toggle-arrow">▾</span></button>
+          <div class="d-accordion-body">
+            <p>Your visual identity is the first thing every guest, influencer, and investor will judge you by. This package builds Jardin Délices as a brand before a single table is set — and the hype page starts building your audience the moment it goes live.</p>
+            <ul>
+              <li>3 original logo concepts with full revision round</li>
+              <li>Brand guidelines document (colours, typography, usage rules)</li>
+              <li>Digital menu design for restaurant and spa</li>
+              <li>Social media kit (profile images, highlight covers, post templates)</li>
+              <li>Coming soon / hype page with email capture and countdown</li>
+            </ul>
           </div>
         </div>
 
@@ -2179,6 +2279,18 @@ function roiSwitch(idx, btn) {
           <div class="d-pricing">
             <span class="d-our">DOTxLabs: $1,500</span>
             <span class="d-market">Market: <s>$3,200</s></span>
+            <span class="d-savings">You save $1,700 (53%)</span>
+          </div>
+          <button class="d-accordion-toggle" onclick="toggleAccordion(this)">See what's included <span class="toggle-arrow">▾</span></button>
+          <div class="d-accordion-body">
+            <p>Most Lagos restaurants appear in one Google search category. Jardin Délices will appear in four — restaurant, spa, event centre, and rooftop — each ranking independently for different search terms. Combined with TripAdvisor, Zomato, and Yelp, you're visible everywhere your guests look before they decide.</p>
+            <ul>
+              <li>4 fully optimised Google Business Profiles (one per venue)</li>
+              <li>Per-venue schema markup for rich search results</li>
+              <li>TripAdvisor, Zomato, and Yelp — claimed, optimised, and photo-loaded</li>
+              <li>Google Food Ordering integration setup</li>
+              <li>Keyword mapping for all four venue categories</li>
+            </ul>
           </div>
         </div>
 
@@ -2191,6 +2303,17 @@ function roiSwitch(idx, btn) {
           <div class="d-pricing">
             <span class="d-our">DOTxLabs: $400</span>
             <span class="d-market">Market: <s>$800</s></span>
+            <span class="d-savings">You save $400 (50%)</span>
+          </div>
+          <button class="d-accordion-toggle" onclick="toggleAccordion(this)">See what's included <span class="toggle-arrow">▾</span></button>
+          <div class="d-accordion-body">
+            <p>Scannable table menus that update in real time — no reprinting costs when dishes change or prices adjust. Every scan also generates data on what your customers are most interested in, informing future menu decisions.</p>
+            <ul>
+              <li>QR code generation for all table and counter placements</li>
+              <li>Mobile-optimised digital menu (restaurant + spa)</li>
+              <li>Instant update capability — change items without reprinting</li>
+              <li>Scan analytics showing most-viewed dishes and categories</li>
+            </ul>
           </div>
         </div>
 
@@ -2203,6 +2326,18 @@ function roiSwitch(idx, btn) {
           <div class="d-pricing">
             <span class="d-our">DOTxLabs: $1,800</span>
             <span class="d-market">Market: <s>$4,000</s></span>
+            <span class="d-savings">You save $2,200 (55%)</span>
+          </div>
+          <button class="d-accordion-toggle" onclick="toggleAccordion(this)">See what's included <span class="toggle-arrow">▾</span></button>
+          <div class="d-accordion-body">
+            <p>Your team should be focused on delivering exceptional experiences — not answering booking enquiries. These systems handle availability, confirmations, and follow-ups automatically, across both venues, 24 hours a day.</p>
+            <ul>
+              <li>Spa appointment calendar with real-time availability</li>
+              <li>Treatment package pages with online booking flow</li>
+              <li>Event centre enquiry system with package tiers and availability display</li>
+              <li>Automated confirmation and follow-up messages</li>
+              <li>Mobile-optimised booking on all devices</li>
+            </ul>
           </div>
         </div>
 
@@ -2215,6 +2350,17 @@ function roiSwitch(idx, btn) {
           <div class="d-pricing">
             <span class="d-our">DOTxLabs: $600</span>
             <span class="d-market">Market: <s>$1,200</s></span>
+            <span class="d-savings">You save $600 (50%)</span>
+          </div>
+          <button class="d-accordion-toggle" onclick="toggleAccordion(this)">See what's included <span class="toggle-arrow">▾</span></button>
+          <div class="d-accordion-body">
+            <p>Before anyone visits, they need to feel it. This page is built to create desire — stunning atmosphere-first design that makes people want to be there, with direct reservation access from the moment it loads.</p>
+            <ul>
+              <li>Dedicated rooftop section with full visual design</li>
+              <li>Opening hours, atmosphere description, and event calendar</li>
+              <li>Reservation and walk-in CTA integrated</li>
+              <li>Optimised for Instagram screenshot sharing</li>
+            </ul>
           </div>
         </div>
 
@@ -2227,15 +2373,28 @@ function roiSwitch(idx, btn) {
           <div class="d-pricing">
             <span class="d-our">DOTxLabs: $1,400</span>
             <span class="d-market">Market: <s>$4,000</s></span>
+            <span class="d-savings">You save $2,600 (65%)</span>
+          </div>
+          <button class="d-accordion-toggle" onclick="toggleAccordion(this)">See what's included <span class="toggle-arrow">▾</span></button>
+          <div class="d-accordion-body">
+            <p>One coordinated photography shoot across all four spaces, distributed strategically across every platform your guests use. A curated Lagos influencer shortlist ready to activate at launch. And an SEO structure that begins ranking before you open.</p>
+            <ul>
+              <li>Photography shot list and direction brief across all 4 venues</li>
+              <li>Distribution plan for all images across website, GBPs, and review platforms</li>
+              <li>Curated Lagos influencer shortlist (food, wellness, lifestyle, events verticals)</li>
+              <li>Launch PR playbook with influencer outreach templates</li>
+              <li>Full SEO architecture: keyword mapping, meta structure, internal linking plan</li>
+            </ul>
           </div>
         </div>
 
       </div>
 
       <div class="total-investment-block">
-        <div class="tib-headline">Total Phase 1: $12,000 CAD</div>
-        <p class="tib-market">Custom agency work at this scope — multi-venue website, full brand identity, and integrated booking systems — typically runs $18,000–$35,000 CAD. And that's usually built for a single business. This covers four venues, each one discoverable by a completely different type of customer searching Lagos right now — the diner, the spa guest, the event planner, the rooftop crowd.</p>
-        <div class="tib-payment">50% to begin. 50% on delivery.<br>You don't pay in full until it's built.</div>
+        <div class="tib-headline">Your Phase 1 Investment: $12,000 CAD</div>
+        <p class="tib-market" style="margin-bottom:10px;">Combined market rate: <s>$30,900</s> &nbsp;·&nbsp; <span style="color:#C8D4A0;font-weight:600;">You save $18,900 (61%)</span></p>
+        <p class="tib-market" style="font-style:italic;max-width:620px;">This is not a marketing expense. It is the infrastructure Jardin Délices runs on — built once, generating returns from opening day.</p>
+        <div class="tib-payment">50% to begin. 50% on delivery.<br>You don't pay in full until it's built — and working.</div>
         <p class="tib-bridge">At 60% capacity by month three, the restaurant alone covers this entire investment in under 45 days of operation — before the spa, events centre, or rooftop contribute a single naira.</p>
       </div>
 
@@ -2449,6 +2608,17 @@ function roiSwitch(idx, btn) {
       if (target) target.scrollIntoView({ behavior: 'smooth' });
     });
   });
+
+  // ── ACCORDION TOGGLE ──
+  window.toggleAccordion = function(btn) {
+    var card = btn.closest('.d-card');
+    card.classList.toggle('expanded');
+    btn.textContent = card.classList.contains('expanded') ? 'Hide details ' : 'See what\'s included ';
+    var arrow = document.createElement('span');
+    arrow.className = 'toggle-arrow';
+    arrow.textContent = '▾';
+    btn.appendChild(arrow);
+  };
 
   // ── PRICING STATE ──
   var selectedRetainer     = 3500;
